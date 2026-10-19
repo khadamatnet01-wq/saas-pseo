@@ -8,21 +8,32 @@ interface Props {
 const { toolName, pros, cons } = Astro.props;
 ---
 
-<section class="grid-2">
-  <div class="card" style="border-top: 4px solid var(--success);">
-    <h3 style="margin-bottom: 0.75rem; color: var(--success);">نقاط القوة في {toolName} (Pros)</h3>
-    <ul style="padding-right: 1.25rem;">
+<div class="grid-2" style="margin: 1.5rem 0;">
+  <div class="card" style="border-top: 4px solid var(--success); background: #ffffff;">
+    <h3 style="color: #047857; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem; margin-bottom: 1rem;">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+      </svg>
+      What We Like (Pros)
+    </h3>
+    <ul style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.65rem;">
       {pros.map((pro) => (
-        <li style="margin-bottom: 0.5rem;">{pro}</li>
+        <li style="color: #334155; font-size: 0.93rem;">{pro}</li>
       ))}
     </ul>
   </div>
-  <div class="card" style="border-top: 4px solid var(--danger);">
-    <h3 style="margin-bottom: 0.75rem; color: var(--danger);">القيود ونقاط الضعف في {toolName} (Cons)</h3>
-    <ul style="padding-right: 1.25rem;">
+
+  <div class="card" style="border-top: 4px solid var(--danger); background: #ffffff;">
+    <h3 style="color: #b91c1c; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem; margin-bottom: 1rem;">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+      </svg>
+      Key Limitations (Cons)
+    </h3>
+    <ul style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.65rem;">
       {cons.map((con) => (
-        <li style="margin-bottom: 0.5rem;">{con}</li>
+        <li style="color: #334155; font-size: 0.93rem;">{con}</li>
       ))}
     </ul>
   </div>
-</section>
+</div>

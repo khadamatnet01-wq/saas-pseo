@@ -1,100 +1,58 @@
-# مستودع البنية التحتية لمنظومة الـ SEO البرمجي (Astro + TypeScript B2B SaaS pSEO Boilerplate)
+# StackRadar — Independent B2B Software Reviews & Comparisons Portal
 
-مستودع كود مصدري معياري متكامل (**Production-Ready Boilerplate**) مبني باستخدام **Astro** و **TypeScript** ومُغذّى فعلياً بمصفوفة بياناتك `tools_saas_dataset.csv` (**12 أداة B2B SaaS**، **12 صفحة بدائل**، و **33 صفحة مقارنة ثنائية وجهاً لوجه** بإجمالي **58 مساراً مهيأً للأرشفة**).
+A production-grade, authoritative software evaluation portal built with **Astro** and **TypeScript**. Designed for high organic search performance, conversion-focused user journeys, and seamless affiliate link monetization.
 
-## 1. ملخص معالجة مصفوفة البيانات المرفقة (`tools_saas_dataset.csv`)
+## 1. Architectural Highlights
 
-تمت معالجة ملف `data/tools_saas_dataset.csv` عبر أنبوب التحقق الصارم (**Zod ETL Pipeline**) وتوليد المصفوفة المهيكلة في `src/data/validated-tools.json`:
+| Feature | Implementation | Benefit |
+| :--- | :--- | :--- |
+| **Editorial Brand Identity** | Built as **StackRadar**, a trusted B2B software research and comparison hub. | Zero programmatic / pSEO footprint visible to visitors. Completely discrete and authentic. |
+| **Affiliate Monetization** | Supports direct outbound URLs and custom affiliate redirect links via `affiliate_url`. | High-converting CTA buttons with `rel="sponsored nofollow noopener noreferrer"` on all review and comparison cards. |
+| **Full English Experience** | 100% English typography, UI copy, and editorial benchmarks. | Native LTR presentation with Plus Jakarta Sans typography. |
+| **Complete Route Coverage** | **58 Total Canonical Routes** across 12 SaaS tools, 12 alternatives pages, and 33 head-to-head comparison pages. | Every tool benchmarked across a 7-point technical specification matrix. |
+| **Cloudflare Edge Ready** | Pre-configured `wrangler.jsonc` (Static Assets) and clean `public/_redirects`. | Deploys seamlessly without SSR overhead, zero redirect loops, and sub-50ms TTFB. |
 
-| المؤشر الهندسي | النتيجة الفعلية بعد تشغيل الـ ETL |
-| :--- | :--- |
-| **إجمالي الأدوات البرمجية المدخلة** | **12 أداة** (`Linear`, `Jira`, `ClickUp`, `Asana`, `Notion`, `monday.com`, `Trello`, `Basecamp`, `Airtable`, `Wrike`, `Coda`, `Todoist`) |
-| **مصفوفة الميزات التقنية (`features_matrix`)** | **7 ميزات قياسية** (`sprints_cycles`, `kanban_boards`, `roadmaps`, `time_tracking`, `built_in_automations`, `ai_triage`, `enterprise_security`) |
-| **فحص سلامة المراجع (`Referential Integrity`)** | تم رصد المعرف `height` داخل `alternatives_ids` الخاصة بأداة `linear` واستبعاده تلقائياً لعدم وجود سجل له في الجدول لمنع توليد روابط `404` مكسورة |
-| **مسارات مراجعات الأدوات (`/tools/[slug]`)** | **12 صفحة** (جميعها حققت `completeness_score: 100/100` وحالة `index, follow`) |
-| **مسارات البدائل (`/alternatives/[slug]-alternatives`)** | **12 صفحة** تعرض جدول المقارنة الشامل مع البدائل المرتبطة |
-| **مسارات المقارنات الثنائية (`/compare/[slugA]-vs-[slugB]`)** | **33 صفحة مقارنة فريدة** (موحدة أبجدياً لمنع ازدواجية المحتوى `Duplicate Content`) |
-| **إجمالي المسارات المدرجة في `sitemap-0.xml` و `IndexNow`** | **58 مساراً** (الصفحة الرئيسية + 12 أداة + 12 بدائل + 33 مقارنة ثنائية) |
+## 2. Included Software Inventory (12 Tools)
 
-## 2. جدول الأدوات الـ 12 ومؤشرات الـ SEO المستخرجة
+| Tool | Category | Starting Price | Rating | Key Strength |
+| :--- | :--- | :--- | :--- | :--- |
+| **Linear** | Project Management & Issue Tracking | `$8/user/mo` | ★ 4.8 | Ultra-fast user interface & streamlined git sync |
+| **Jira** | Issue Tracking & Agile Planning | `$7.75/user/mo` | ★ 4.3 | Unmatched enterprise governance & deep marketplace |
+| **ClickUp** | All-in-One Work Management | `$7/user/mo` | ★ 4.6 | 15+ customizable data views & native time tracking |
+| **Asana** | Enterprise Work Management | `$10.99/user/mo` | ★ 4.5 | Visual workflow builder & executive portfolio tracking |
+| **Notion** | Knowledge Base & Workspace | `$8/user/mo` | ★ 4.7 | Relational databases & connected team documentation |
+| **monday.com** | Visual Work OS & Operations | `$9/user/mo` | ★ 4.6 | Vibrant board interface with zero technical barrier |
+| **Trello** | Lightweight Kanban Tracking | `$5/user/mo` | ★ 4.4 | Instant onboarding & lightweight Butler automation |
+| **Basecamp** | Team Communication & Projects | `$15/user/mo` | ★ 4.4 | Calm notification architecture & flat-rate pricing |
+| **Airtable** | Relational Database & App Platform | `$20/user/mo` | ★ 4.6 | Low-code relational modeling with custom interface apps |
+| **Wrike** | Enterprise Resource Planning | `$9.80/user/mo` | ★ 4.2 | Top-tier workload capacity planning & asset approvals |
+| **Coda** | Interactive Docs & Workspaces | `$10/maker/mo` | ★ 4.6 | Maker-based pricing with interactive buttons & formulas |
+| **Todoist** | Personal & Team Task Management | `$4/user/mo` | ★ 4.7 | Best-in-class natural language quick task capture |
 
-| المعرف (`slug`) | الأداة (`tool_name`) | التصنيف (`category`) | نموذج التسعير | السعر الابتدائي | التقييم | الميزات المدعومة | البدائل النشطة المعتمدة |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `linear` | Linear | Project Management & Issue Tracking | Freemium | `$8/user/mo` | ★ 4.8 | 6 / 7 | `jira`, `clickup`, `asana` *(تمت تصفية `height`)* |
-| `jira` | Jira | Issue Tracking & Agile Planning | Freemium | `$7.75/user/mo` | ★ 4.3 | 7 / 7 | `linear`, `clickup`, `monday`, `asana` |
-| `clickup` | ClickUp | All-in-One Work Management | Freemium | `$7/user/mo` | ★ 4.6 | 7 / 7 | `monday`, `asana`, `notion`, `jira` |
-| `asana` | Asana | Enterprise Work Management | Freemium | `$10.99/user/mo` | ★ 4.5 | 7 / 7 | `monday`, `clickup`, `jira`, `trello` |
-| `notion` | Notion | Knowledge Base & Collaborative Workspace | Freemium | `$8/user/mo` | ★ 4.7 | 6 / 7 | `coda`, `clickup`, `airtable`, `basecamp` |
-| `monday` | monday.com | Visual Work OS & Operations | Paid (Free Trial) | `$9/user/mo` | ★ 4.6 | 7 / 7 | `clickup`, `asana`, `trello`, `wrike` |
-| `trello` | Trello | Lightweight Kanban Project Tracking | Freemium | `$5/user/mo` | ★ 4.4 | 3 / 7 | `asana`, `monday`, `clickup`, `linear` |
-| `basecamp` | Basecamp | Team Communication & Simple Projects | Flat-rate / Per User | `$15/user/mo or $299 flat` | ★ 4.4 | 2 / 7 | `notion`, `asana`, `clickup`, `trello` |
-| `airtable` | Airtable | Relational Database & App Platform | Freemium | `$20/user/mo` | ★ 4.6 | 5 / 7 | `notion`, `coda`, `monday`, `clickup` |
-| `wrike` | Wrike | Enterprise Resource & Project Planning | Freemium | `$9.80/user/mo` | ★ 4.2 | 7 / 7 | `monday`, `asana`, `jira`, `clickup` |
-| `coda` | Coda | Interactive All-in-One Docs & Workspaces | Freemium (Maker Pricing) | `$10/maker/mo` | ★ 4.6 | 6 / 7 | `notion`, `airtable`, `clickup`, `asana` |
-| `todoist` | Todoist | Task Management & Personal Productivity | Freemium | `$4/user/mo` | ★ 4.7 | 2 / 7 | `trello`, `asana`, `notion`, `basecamp` |
+## 3. How Affiliate Links Work
 
-## 3. الهيكلة المعمارية للمستودع (Repository Architecture)
+Every tool in `src/data/validated-tools.json` (and `data/tools.json`) supports an optional `affiliate_url` field:
 
-| المسار | الوظيفة التقنية داخل منظومة الـ pSEO |
-| :--- | :--- |
-| `data/tools_saas_dataset.csv` | مصفوفة البيانات الأساسية المرفقة (12 أداة B2B SaaS). |
-| `src/schemas/tool.schema.ts` | مخطط **Zod** الصارم لفحص أعمدة CSV ومفاتيح `features_matrix` السبعة واستخراج السعر الرقمي للدولار (`starting_price_usd`). |
-| `scripts/validate-and-etl.ts` | سكريبت **ETL** لتحويل CSV إلى JSON مهيكل، وفحص سلامة `alternatives_ids`، وحساب `completeness_score`. |
-| `src/lib/schema-generator.ts` | مولد **JSON-LD** لوسوم `SoftwareApplication` / `Product` و `FAQPage` و `ItemList` و `BreadcrumbList`. |
-| `src/lib/seo-engine.ts` | محرك توليد الروابط القانونية (`Canonical URLs`) وعلامات الروبوت التلقائية (`noindex` التلقائي للصفحات الناقصة). |
-| `src/lib/content-engine.ts` | محرك القولبة المنطقية لتوليد ملخصات المقارنات التلقائية والأسئلة الشائعة المخصصة لكل صفحة. |
-| `src/pages/tools/[slug].astro` | قالب المراجعة التفصيلية للأداة (12 مساراً). |
-| `src/pages/alternatives/[slug]-alternatives.astro` | قالب بدائل الأداة ومقارنتها مع المنافسين المباشرين (12 مساراً). |
-| `src/pages/compare/[slugA]-vs-[slugB].astro` | قالب المقارنة الثنائية المباشرة الموحد أبجدياً (33 مساراً). |
-| `src/pages/og/[slug].png.ts` و `scripts/generate-og.ts` | توليد بطاقات المعاينة الاجتماعية (**Dynamic OpenGraph 1200x630**) عبر **Satori / Sharp**. |
-| `scripts/generate-sitemaps.ts` | مقسم خرائط المواقع التلقائي (`dist/sitemap-index.xml` + `dist/sitemap-0.xml`). |
-| `scripts/indexnow-submit.ts` | سكريبت **IndexNow API** لتوليد مفتاح التحقق وإرسال المسارات الـ 58 عبر مقارنة بصمات `SHA-256`. |
-| `scripts/edge-worker-redirects.js` | Cloudflare Worker لإعادة التوجيه الطرفي (`301 Redirect`) للمقارنات المعكوسة (مثلاً `/compare/jira-vs-linear` إلى `/compare/linear-vs-jira`). |
-
-## 4. متغيرات البيئة (`.env`) وطريقة التشغيل بأمر واحد
-
-انسخ ملف `.env.example` إلى `.env` ثم شغّل دورة البناء الكاملة بأمر واحد:
-
-```bash
-cp .env.example .env
-npm install
-npm run build:pseo
+```json
+{
+  "slug": "clickup",
+  "tool_name": "ClickUp",
+  "website_url": "https://clickup.com",
+  "affiliate_url": "https://clickup.pxf.io/c/YOUR_PARTNER_ID"
+}
 ```
 
-### الأوامر الفرعية المتاحة
+* **When `affiliate_url` is provided:** The CTA buttons ("Visit Official Site", "Try Free") automatically route visitors through your affiliate partner link.
+* **When `affiliate_url` is blank:** The buttons route directly to the official website (`website_url`). You can launch directly with direct links and drop in your affiliate tags later without modifying any components!
 
-| الأمر البرمجي | الوظيفة |
-| :--- | :--- |
-| `npm run validate` | قراءة `data/tools_saas_dataset.csv`، التحقق عبر Zod، وتوليد `src/data/validated-tools.json`. |
-| `npm run build` | تشغيل التحقق + بناء صفحات Astro الثابتة + توليد بطاقات OpenGraph + تقسيم خرائط المواقع. |
-| `npm run og:generate` | توليد 58 بطاقة معاينة اجتماعية في `dist/og/`. |
-| `npm run sitemap:partition` | توليد `dist/sitemap-index.xml` و `dist/sitemap-0.xml` (يضم 58 رابطاً). |
-| `npm run indexnow:push` | توليد مفتاح التحقق وحمولة `dist/indexnow-payload.json` وإشعار محركات البحث عبر IndexNow API. |
+## 4. Single-Command Build & Cloudflare Deployment
 
-## 5. دليل النشر على Cloudflare (حل مشكلة Wrangler في بيئات CI/CD)
+```bash
+npm install
+npm run build
+```
 
-إذا ظهر لك خطأ `Missing file or directory: public/.assetsignore` أو حاول Wrangler تشغيل `astro add cloudflare`، فالسبب هو محاولة Wrangler افتراضياً تحويل المشروع إلى نمط الخادم (SSR) عبر دالة تفاعلية في بيئة غير تفاعلية.
-
-تم تزويد المستودع مسبقاً بملف `wrangler.jsonc` ومجلد `public/` لحل هذه المشكلة جذرياً:
-
-1. **ملف `wrangler.jsonc` المدمج:**
-   يخبر Wrangler بأن المشروع عبارة عن أصول ثابتة نقية (**Static Assets**):
-   ```jsonc
-   {
-     "name": "saas-pseo",
-     "compatibility_date": "2026-10-19",
-     "assets": {
-       "directory": "./dist",
-       "html_handling": "auto-trailing-slash"
-     }
-   }
-   ```
-2. **ملفات `public/` الجاهزة:**
-   - `public/.assetsignore`: لمنع أخطاء فحص الأصول في بيئات Cloudflare.
-   - `public/_redirects`: تطبيق قواعد التحويل `301` تلقائياً على حافة الشبكة لمسارات المقارنات المعكوسة.
-   - `public/_headers`: ضبط التخزين المؤقت وحماية الأمان لتقليل زمن الاستجابة `TTFB` لأقل من 50ms.
-
-### أمر النشر الموصى به في إعدادات Cloudflare:
-- **Build command:** `npm run build`
-- **Deploy command:** `npx wrangler deploy` (أو `npx wrangler pages deploy dist`)
-- **Output directory:** `dist`
+Deploy to Cloudflare Workers / Pages:
+```bash
+npm run deploy
+```

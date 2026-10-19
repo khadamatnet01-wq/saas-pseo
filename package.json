@@ -1,8 +1,8 @@
 {
-  "name": "astro-pseo-saas-boilerplate",
-  "version": "1.1.1",
+  "name": "stackradar-b2b-reviews",
+  "version": "2.0.0",
   "private": true,
-  "description": "Production-Ready Programmatic SEO (pSEO) Boilerplate for B2B SaaS Comparisons & Alternatives using Astro + TypeScript (Cloudflare Ready)",
+  "description": "StackRadar - Independent B2B Software Reviews & Comparisons (Affiliate Ready)",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
@@ -12,9 +12,7 @@
     "indexnow:push": "tsx scripts/indexnow-submit.ts",
     "build": "npm run validate && astro build && npm run og:generate && npm run sitemap:partition",
     "build:pseo": "npm run validate && astro build && npm run og:generate && npm run sitemap:partition && npm run indexnow:push",
-    "deploy": "npm run build && wrangler deploy",
-    "deploy:pages": "npm run build && wrangler pages deploy dist",
-    "preview": "npm run build && wrangler dev"
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "astro": "^4.15.0",
@@ -29,6 +27,6 @@
     "@types/node": "^20.14.10",
     "tsx": "^4.16.2",
     "typescript": "^5.5.4",
-    "wrangler": "^3.114.0"
+    "wrangler": "^4.151.2"
   }
 }

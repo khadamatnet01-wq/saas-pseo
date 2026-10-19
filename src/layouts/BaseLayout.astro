@@ -10,64 +10,264 @@ const { seo } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
   <head>
     <SEOHead seo={seo} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style is:global>
       :root {
+        --primary: #0f172a;
+        --primary-light: #1e293b;
+        --accent: #2563eb;
+        --accent-hover: #1d4ed8;
+        --accent-soft: #eff6ff;
+        --text: #0f172a;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
         --bg: #f8fafc;
         --surface: #ffffff;
-        --border: #e2e8f0;
-        --text: #0f172a;
-        --muted: #475569;
-        --accent: #2563eb;
-        --success: #16a34a;
-        --danger: #dc2626;
+        --success: #10b981;
+        --success-soft: #ecfdf5;
+        --danger: #ef4444;
+        --danger-soft: #fef2f2;
+        --warning: #f59e0b;
+        --warning-soft: #fffbeb;
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+        --radius: 12px;
+        --radius-lg: 16px;
       }
       * { box-sizing: border-box; margin: 0; padding: 0; }
       body {
-        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-        background: var(--bg);
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background-color: var(--bg);
         color: var(--text);
-        line-height: 1.65;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
       }
-      .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.25rem; }
-      header.site-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem 0; }
-      header.site-header .nav-inner {
-        max-width: 1100px; margin: 0 auto; padding: 0 1.25rem;
-        display: flex; justify-content: space-between; align-items: center;
+      a { color: var(--accent); text-decoration: none; transition: color 0.15s ease; }
+      a:hover { color: var(--accent-hover); }
+
+      /* Header */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
       }
-      a { color: var(--accent); text-decoration: none; }
-      a:hover { text-decoration: underline; }
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0.9rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .brand-logo {
+        font-weight: 800;
+        font-size: 1.35rem;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        letter-spacing: -0.02em;
+      }
+      .brand-badge {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        background: #dbeafe;
+        color: #1e40af;
+        padding: 0.2rem 0.55rem;
+        border-radius: 6px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        font-size: 0.92rem;
+        font-weight: 600;
+      }
+      .nav-links a { color: var(--text-muted); }
+      .nav-links a:hover { color: var(--text); }
+
+      /* Layout */
+      .main-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2.5rem 1.5rem 4rem;
+      }
+
+      /* Cards & Containers */
       .card {
-        background: var(--surface); border: 1px solid var(--border);
-        border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 1.75rem;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
       }
+      .card-hover:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+      }
+
+      /* Buttons & CTA (Affiliate Architecture) */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-weight: 700;
+        font-size: 0.95rem;
+        padding: 0.75rem 1.35rem;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        border: none;
+        text-align: center;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #ffffff !important;
+        box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+      }
+      .btn-primary:hover {
+        background: var(--accent-hover);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+      }
+      .btn-secondary {
+        background: #ffffff;
+        color: var(--text) !important;
+        border: 1px solid var(--border);
+      }
+      .btn-secondary:hover {
+        background: #f8fafc;
+        border-color: #cbd5e1;
+      }
+
+      /* Badges */
       .badge {
-        display: inline-block; padding: 0.25rem 0.75rem; border-radius: 999px;
-        font-size: 0.85rem; font-weight: 600; background: #eff6ff; color: var(--accent);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.3rem 0.75rem;
+        border-radius: 9999px;
       }
-      .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.25rem; }
-      table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-      th, td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); text-align: right; }
-      th { background: #f1f5f9; font-weight: 700; }
+      .badge-neutral { background: #f1f5f9; color: #475569; }
+      .badge-success { background: var(--success-soft); color: #047857; }
+      .badge-accent { background: var(--accent-soft); color: var(--accent); }
+      .badge-warning { background: var(--warning-soft); color: #b45309; }
+
+      /* Grids */
+      .grid-3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
+      .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+
+      /* Table */
+      .table-wrapper {
+        overflow-x: auto;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-sm);
+        margin: 1.5rem 0;
+      }
+      table { width: 100%; border-collapse: collapse; text-align: left; }
+      th, td { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); }
+      th { background: #f8fafc; font-weight: 700; font-size: 0.88rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+      td { font-size: 0.95rem; }
+      tr:last-child td { border-bottom: none; }
+
+      /* Editorial Footer */
+      .site-footer {
+        background: #ffffff;
+        border-top: 1px solid var(--border);
+        padding: 3rem 1.5rem 2.5rem;
+        margin-top: 4rem;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
+      .footer-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 2.5rem;
+      }
+      @media (max-width: 768px) {
+        .footer-inner { grid-template-columns: 1fr; }
+        .grid-3 { grid-template-columns: 1fr; }
+      }
     </style>
   </head>
   <body>
     <header class="site-header">
-      <div class="nav-inner">
-        <a href="/" style="font-weight: 800; font-size: 1.2rem; color: var(--text);">B2B SaaS Radar</a>
-        <nav style="display: flex; gap: 1.25rem; font-size: 0.95rem;">
-          <a href="/">الدليل الرئيسي (12 أداة)</a>
-          <a href="/sitemap-index.xml">خريطة الموقع (58 مساراً)</a>
+      <div class="nav-container">
+        <a href="/" class="brand-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          StackRadar
+          <span class="brand-badge">B2B Directory</span>
+        </a>
+        <nav class="nav-links">
+          <a href="/#software">All Software</a>
+          <a href="/#comparisons">Comparisons</a>
+          <a href="/sitemap-index.xml">Sitemap</a>
         </nav>
       </div>
     </header>
-    <main class="container">
+
+    <main class="main-container">
       <slot />
     </main>
-    <footer class="container" style="border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem;">
-      <p>منظومة SEO البرمجية (Astro Zero-JS pSEO Engine) — آخر تحديث للبيانات: {seo.lastModified}</p>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <div style="font-weight: 800; font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem;">
+            StackRadar
+          </div>
+          <p style="line-height: 1.6; max-width: 440px;">
+            StackRadar is an independent software research and buyer's intelligence platform. We test, benchmark, and review enterprise software to help growing teams select the right tech stack.
+          </p>
+          <p style="margin-top: 0.75rem; font-size: 0.8rem; color: #94a3b8;">
+            Affiliate Disclosure: We may earn a commission when you click partner links on our site at no additional cost to you.
+          </p>
+        </div>
+        <div>
+          <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.75rem;">Categories</div>
+          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+            <a href="/#software">Project Management</a>
+            <a href="/#software">Issue Tracking</a>
+            <a href="/#software">Connected Workspaces</a>
+            <a href="/#software">Relational Databases</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.75rem;">Editorial Trust</div>
+          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+            <span>✓ 100% Independent Reviews</span>
+            <span>✓ Real Feature Matrix Testing</span>
+            <span>✓ Updated for 2026</span>
+          </div>
+        </div>
+      </div>
+      <div style="max-width: 1200px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 0.85rem;">
+        <p>&copy; 2026 StackRadar. All rights reserved.</p>
+        <p>Verified Software Intelligence</p>
+      </div>
     </footer>
   </body>
 </html>

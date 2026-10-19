@@ -29,43 +29,43 @@ export async function renderOgCardSvg(payload: OgCardPayload): Promise<string> {
       <stop offset="100%" stop-color="#1e293b" />
     </linearGradient>
     <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3b82f6" />
-      <stop offset="100%" stop-color="#06b6d4" />
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#38bdf8" />
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bgGrad)" />
-  <rect x="0" y="0" width="1200" height="12" fill="url(#accentGrad)" />
-  <rect x="70" y="70" width="1060" height="490" rx="24" fill="#1e293b" stroke="#334155" stroke-width="2" />
-  <rect x="110" y="120" width="420" height="48" rx="24" fill="#1d4ed8" />
-  <text x="320" y="152" fill="#ffffff" font-family="system-ui, sans-serif" font-size="20" font-weight="700" text-anchor="middle">${safeBadge}</text>
-  <text x="110" y="275" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="52" font-weight="800">${safeTitle}</text>
-  <text x="110" y="355" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="26" font-weight="500">${safeSubtitle}</text>
-  <line x1="110" y1="440" x2="1090" y2="440" stroke="#334155" stroke-width="2" />
-  <text x="110" y="500" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="24" font-weight="700">B2B SaaS Radar — Programmatic SEO Intelligence</text>
+  <rect x="0" y="0" width="1200" height="10" fill="url(#accentGrad)" />
+  <rect x="60" y="60" width="1080" height="510" rx="20" fill="#1e293b" stroke="#334155" stroke-width="2" />
+  <rect x="100" y="110" width="280" height="42" rx="21" fill="#1d4ed8" />
+  <text x="240" y="138" fill="#ffffff" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="18" font-weight="700" text-anchor="middle">${safeBadge}</text>
+  <text x="100" y="270" fill="#f8fafc" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="52" font-weight="800">${safeTitle}</text>
+  <text x="100" y="350" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="26" font-weight="500">${safeSubtitle}</text>
+  <line x1="100" y1="440" x2="1100" y2="440" stroke="#334155" stroke-width="2" />
+  <text x="100" y="495" fill="#38bdf8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="22" font-weight="700">StackRadar — Independent Software Reviews</text>
 </svg>`;
 }
 
-async function runBatchOgGeneration() {
+async function runBatchOg() {
   const outDir = path.join(process.cwd(), 'dist', 'og');
   fs.mkdirSync(outDir, { recursive: true });
 
   const tools = getAllTools();
   const pairs = getAllComparisonPairs();
 
-  const items: { slug: string; payload: OgCardPayload }[] = [
+  const items = [
     {
       slug: 'home',
       payload: {
-        title: 'B2B SaaS Radar (2026)',
-        subtitle: `${tools.length} Tools & ${pairs.length} Head-to-Head Comparisons`,
-        badge: 'Programmatic SEO'
+        title: 'StackRadar',
+        subtitle: `${tools.length} B2B Tools & ${pairs.length} Comparisons (2026)`,
+        badge: 'Independent Reviews'
       }
     },
     ...tools.map((t) => ({
       slug: `tool-${t.slug}`,
       payload: {
-        title: `${t.tool_name} Review & Pricing`,
-        subtitle: `Rating: ${t.rating}/5 | ${t.pricing_model} (${t.pricing_starting_at})`,
+        title: `${t.tool_name} Review`,
+        subtitle: `Rating: ${t.rating}/5.0 | Starts at ${t.pricing_starting_at}`,
         badge: t.category
       }
     })),
@@ -73,7 +73,7 @@ async function runBatchOgGeneration() {
       slug: `alt-${t.slug}`,
       payload: {
         title: `Top ${t.alternatives_ids.length} ${t.tool_name} Alternatives`,
-        subtitle: 'Side-by-Side Pricing & 7-Point Feature Matrix (2026)',
+        subtitle: `Pricing & Feature Matrix Breakdown (2026)`,
         badge: 'Alternatives Guide'
       }
     })),
@@ -81,8 +81,8 @@ async function runBatchOgGeneration() {
       slug: `cmp-${p.slug}`,
       payload: {
         title: `${p.toolA.tool_name} vs ${p.toolB.tool_name}`,
-        subtitle: `${p.toolA.pricing_starting_at} vs ${p.toolB.pricing_starting_at} | ${p.sharedFeaturesCount}/7 Shared Features`,
-        badge: 'Head-to-Head Comparison'
+        subtitle: `${p.toolA.pricing_starting_at} vs ${p.toolB.pricing_starting_at} | Tested Specs`,
+        badge: 'Head-to-Head'
       }
     }))
   ];
@@ -103,9 +103,9 @@ async function runBatchOgGeneration() {
     }
   }
 
-  console.log(`[OG Generator] تم توليد ${items.length} بطاقة معاينة اجتماعية في المسار: ${outDir}`);
+  console.log(`[OG] Generated ${items.length} cards in ${outDir}`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  runBatchOgGeneration();
+  runBatchOg();
 }

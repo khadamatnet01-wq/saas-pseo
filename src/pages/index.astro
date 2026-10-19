@@ -1,15 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PricingBadge from '../components/PricingBadge.astro';
-import { getAllTools, getAllComparisonPairs } from '../lib/data-loader';
+import { getAllTools, getAllComparisonPairs, getOutboundUrl } from '../lib/data-loader';
 import { buildSEOMetadata } from '../lib/seo-engine';
 
 const tools = getAllTools();
 const pairs = getAllComparisonPairs();
 
 const seo = buildSEOMetadata({
-  title: 'دليل مقارنات وبدائل برمجيات الأعمال B2B SaaS (12 أداة و 33 مقارنة مباشرة)',
-  description: 'منصة مقارنات برمجية شاملة لتحليل الميزات، الأسعار، والبدائل لأفضل 12 أداة إدارة مشاريع وإنتاجية B2B SaaS.',
+  title: 'StackRadar — Independent B2B Software Reviews & Comparisons (2026)',
+  description: 'Compare top enterprise project management, agile issue tracking, and team productivity software side-by-side with verified specs and pricing.',
   canonicalPath: '/',
   ogSlug: 'home',
   shouldIndex: true
@@ -17,38 +16,95 @@ const seo = buildSEOMetadata({
 ---
 
 <BaseLayout seo={seo}>
-  <section class="card">
-    <h1>دليل مقارنات وبدائل برمجيات الأعمال (B2B SaaS Comparisons)</h1>
-    <p style="color: var(--muted); margin-top: 0.5rem;">
-      مبني مباشرة على مصفوفة <code>tools_saas_dataset.csv</code> (12 أداة، 12 صفحة بدائل، و 33 مقارنة ثنائية وجهاً لوجه).
+  <!-- Hero Section -->
+  <section style="text-align: center; padding: 2rem 0 3.5rem; max-width: 820px; margin: 0 auto;">
+    <div class="badge badge-accent" style="margin-bottom: 1rem; font-size: 0.85rem;">
+      Verified Software Index • Updated for 2026
+    </div>
+    <h1 style="font-size: 2.75rem; font-weight: 800; letter-spacing: -0.03em; color: var(--primary); line-height: 1.15; margin-bottom: 1rem;">
+      Find the Perfect Software Stack for Your Team
+    </h1>
+    <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem;">
+      Objective benchmarks, side-by-side feature matrices, and head-to-head pricing comparisons across the world's leading business platforms.
     </p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="#software" class="btn btn-primary">Browse All Software ({tools.length})</a>
+      <a href="#comparisons" class="btn btn-secondary">Explore Comparisons ({pairs.length})</a>
+    </div>
   </section>
 
-  <h2 style="margin: 1.5rem 0 1rem;">الأدوات البرمجية المصنفة ({tools.length})</h2>
-  <div class="grid-2">
-    {tools.map((tool) => (
-      <article class="card">
-        <span class="badge">{tool.category}</span>
-        <h3 style="margin-top: 0.5rem;"><a href={`/tools/${tool.slug}`}>{tool.tool_name}</a></h3>
-        <p style="color: var(--muted); font-size: 0.95rem; margin: 0.4rem 0;">{tool.summary}</p>
-        <PricingBadge tool={tool} />
-        <div style="margin-top: 1rem; display: flex; gap: 1rem; font-size: 0.9rem;">
-          <a href={`/tools/${tool.slug}`}>المراجعة التفصيلية &larr;</a>
-          <a href={`/alternatives/${tool.slug}-alternatives`}>أفضل البدائل ({tool.alternatives_ids.length}) &larr;</a>
-        </div>
-      </article>
-    ))}
-  </div>
+  <!-- Software Directory Grid -->
+  <section id="software" style="margin-bottom: 4rem;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem;">
+      <div>
+        <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--primary);">Top B2B Platforms</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Curated reviews and technical evaluation across 12 market leaders.</p>
+      </div>
+    </div>
 
-  <h2 style="margin: 2rem 0 1rem;">المقارنات الثنائية المباشرة ({pairs.length})</h2>
-  <div class="grid-2">
-    {pairs.map((pair) => (
-      <a href={`/compare/${pair.slug}`} class="card" style="display: block; color: inherit;">
-        <h3 style="color: var(--accent);">{pair.toolA.tool_name} vs {pair.toolB.tool_name}</h3>
-        <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0.35rem;">
-          {pair.toolA.pricing_starting_at} مقابل {pair.toolB.pricing_starting_at} • الميزات المشتركة ({pair.sharedFeaturesCount}/7)
-        </p>
-      </a>
-    ))}
-  </div>
+    <div class="grid-3">
+      {tools.map((tool) => (
+        <article class="card card-hover" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+              <span class="badge badge-neutral">{tool.category}</span>
+              <span class="badge badge-warning">★ {tool.rating}</span>
+            </div>
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.4rem;">
+              <a href={`/tools/${tool.slug}`} style="color: var(--primary);">{tool.tool_name}</a>
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.55; margin-bottom: 1rem;">
+              {tool.summary}
+            </p>
+          </div>
+
+          <div>
+            <div style="padding-top: 1rem; border-top: 1px solid var(--border); margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+              <span style="font-weight: 600; color: var(--text);">{tool.pricing_starting_at}</span>
+              <span style="color: var(--text-muted);">{tool.seo_metrics.supported_features_count}/7 Features</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem;">
+              <a href={`/tools/${tool.slug}`} class="btn btn-secondary" style="padding: 0.55rem 0.75rem; font-size: 0.85rem;">
+                Review
+              </a>
+              <a
+                href={getOutboundUrl(tool)}
+                target="_blank"
+                rel="sponsored nofollow noopener noreferrer"
+                class="btn btn-primary"
+                style="padding: 0.55rem 0.75rem; font-size: 0.85rem;"
+              >
+                Visit Site &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- Popular Head-to-Head Comparisons -->
+  <section id="comparisons">
+    <div style="margin-bottom: 1.5rem;">
+      <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--primary);">Head-to-Head Comparisons</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">Direct side-by-side breakdowns to settle your team's buying decisions.</p>
+    </div>
+
+    <div class="grid-3">
+      {pairs.map((pair) => (
+        <a href={`/compare/${pair.slug}`} class="card card-hover" style="display: block; color: inherit;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <span class="badge badge-accent">Face-Off</span>
+            <span style="font-size: 0.82rem; color: var(--text-muted);">{pair.sharedFeaturesCount}/7 Shared Specs</span>
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 0.4rem;">
+            {pair.toolA.tool_name} vs {pair.toolB.tool_name}
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5;">
+            {pair.toolA.pricing_starting_at} vs {pair.toolB.pricing_starting_at} • Compare full feature matrix &rarr;
+          </p>
+        </a>
+      ))}
+    </div>
+  </section>
 </BaseLayout>

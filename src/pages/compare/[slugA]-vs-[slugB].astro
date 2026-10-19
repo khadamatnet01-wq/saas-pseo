@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import ProsConsCard from '../../components/ProsConsCard.astro';
 import FAQSection from '../../components/FAQSection.astro';
-import { getAllComparisonPairs, type ComparisonPair } from '../../lib/data-loader';
+import { getAllComparisonPairs, type ComparisonPair, getOutboundUrl } from '../../lib/data-loader';
 import { generateComparisonFAQs, generateComparisonVerdict } from '../../lib/content-engine';
 import {
   generateComparisonSchema,
@@ -31,11 +31,11 @@ const { pair } = Astro.props;
 const { toolA, toolB } = pair;
 const verdict = generateComparisonVerdict(toolA, toolB);
 const faqs = generateComparisonFAQs(toolA, toolB);
-const siteUrl = (process.env.PUBLIC_SITE_URL || 'https://saascompare.example.com').replace(/\/+$/, '');
+const siteUrl = (process.env.PUBLIC_SITE_URL || 'https://saas-pseo.hefainahmed.workers.dev').replace(/\/+$/, '');
 const pageUrl = `${siteUrl}/compare/${pair.slug}`;
 
 const seo = buildSEOMetadata({
-  title: `${toolA.tool_name} vs ${toolB.tool_name} (2026): مقارنة الأسعار والميزات الكاملة`,
+  title: `${toolA.tool_name} vs ${toolB.tool_name} (2026): In-Depth Comparison`,
   description: verdict,
   canonicalPath: `/compare/${pair.slug}`,
   ogSlug: `cmp-${pair.slug}`,
@@ -45,8 +45,8 @@ const seo = buildSEOMetadata({
     generateComparisonSchema(toolA, toolB, pageUrl),
     generateFAQPageSchema(faqs),
     generateBreadcrumbSchema([
-      { name: 'الرئيسية', url: siteUrl },
-      { name: 'المقارنات الثنائية', url: `${siteUrl}/#comparisons` },
+      { name: 'Home', url: siteUrl },
+      { name: 'Comparisons', url: `${siteUrl}/#comparisons` },
       { name: `${toolA.tool_name} vs ${toolB.tool_name}`, url: pageUrl }
     ])
   ]
@@ -54,19 +54,57 @@ const seo = buildSEOMetadata({
 ---
 
 <BaseLayout seo={seo}>
-  <div class="card">
-    <span class="badge">مقارنة مباشرة ({pair.sharedFeaturesCount}/7 ميزات مشتركة)</span>
-    <h1 style="margin-top: 0.5rem;">{toolA.tool_name} مقابل {toolB.tool_name}: مقارنة شاملة لعام 2026</h1>
-    <p style="margin-top: 0.6rem; color: var(--muted); font-size: 1.05rem;">{verdict}</p>
+  <!-- Face-Off Header -->
+  <div class="card" style="margin-bottom: 2rem;">
+    <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
+      <span class="badge badge-accent">Head-to-Head Comparison</span>
+      <span class="badge badge-neutral">{pair.sharedFeaturesCount}/7 Shared Core Features</span>
+    </div>
+    <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--primary); margin: 0.5rem 0;">
+      {toolA.tool_name} vs {toolB.tool_name}
+    </h1>
+    <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; max-width: 840px;">
+      {verdict}
+    </p>
+
+    <!-- Outbound CTA Buttons -->
+    <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+      <a
+        href={getOutboundUrl(toolA)}
+        target="_blank"
+        rel="sponsored nofollow noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Try {toolA.tool_name} &rarr;
+      </a>
+      <a
+        href={getOutboundUrl(toolB)}
+        target="_blank"
+        rel="sponsored nofollow noopener noreferrer"
+        class="btn btn-secondary"
+      >
+        Try {toolB.tool_name} &rarr;
+      </a>
+    </div>
   </div>
 
+  <!-- Comparison Matrix -->
   <ComparisonTable tools={[toolA, toolB]} />
 
-  <h2 style="margin: 1.5rem 0 0.75rem;">تحليل {toolA.tool_name} ({toolA.pricing_starting_at})</h2>
-  <ProsConsCard toolName={toolA.tool_name} pros={toolA.pros} cons={toolA.cons} />
+  <!-- Side-by-side Pros & Cons Breakdown -->
+  <div style="margin: 2.5rem 0 1rem;">
+    <h2 style="font-size: 1.45rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">
+      {toolA.tool_name} Detailed Assessment
+    </h2>
+    <ProsConsCard toolName={toolA.tool_name} pros={toolA.pros} cons={toolA.cons} />
+  </div>
 
-  <h2 style="margin: 1.5rem 0 0.75rem;">تحليل {toolB.tool_name} ({toolB.pricing_starting_at})</h2>
-  <ProsConsCard toolName={toolB.tool_name} pros={toolB.pros} cons={toolB.cons} />
+  <div style="margin: 2rem 0 1rem;">
+    <h2 style="font-size: 1.45rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">
+      {toolB.tool_name} Detailed Assessment
+    </h2>
+    <ProsConsCard toolName={toolB.tool_name} pros={toolB.pros} cons={toolB.cons} />
+  </div>
 
-  <FAQSection faqs={faqs} heading={`أسئلة شائعة للمفاضلة بين ${toolA.tool_name} و ${toolB.tool_name}`} />
+  <FAQSection faqs={faqs} heading={`Choosing Between ${toolA.tool_name} and ${toolB.tool_name}`} />
 </BaseLayout>

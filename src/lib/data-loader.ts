@@ -26,9 +26,6 @@ export function getResolvedAlternatives(tool: EnrichedSaaSTool): EnrichedSaaSToo
     .filter((item): item is EnrichedSaaSTool => Boolean(item));
 }
 
-/**
- * توليد أزواج المقارنات الثنائية الموحدة أبجدياً (Canonical Comparison Pairs)
- */
 export function getAllComparisonPairs(): ComparisonPair[] {
   const pairs: ComparisonPair[] = [];
   const seenPairs = new Set<string>();
@@ -60,4 +57,14 @@ export function getAllComparisonPairs(): ComparisonPair[] {
   }
 
   return pairs;
+}
+
+/**
+ * Returns the effective outbound URL for a tool (affiliate link if present, otherwise direct website URL)
+ */
+export function getOutboundUrl(tool: EnrichedSaaSTool): string {
+  if (tool.affiliate_url && tool.affiliate_url.trim().length > 0) {
+    return tool.affiliate_url.trim();
+  }
+  return tool.website_url;
 }

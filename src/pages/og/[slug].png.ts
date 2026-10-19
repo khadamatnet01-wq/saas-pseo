@@ -11,16 +11,16 @@ export async function getStaticPaths() {
     {
       params: { slug: 'home' },
       props: {
-        title: 'B2B SaaS Radar (2026)',
-        subtitle: `${tools.length} Tools & ${pairs.length} Head-to-Head Comparisons`,
-        badge: 'Programmatic SEO'
+        title: 'StackRadar',
+        subtitle: `${tools.length} B2B Tools & ${pairs.length} Comparisons (2026)`,
+        badge: 'Independent Reviews'
       }
     },
     ...tools.map((t) => ({
       params: { slug: `tool-${t.slug}` },
       props: {
-        title: `${t.tool_name} Review & Pricing`,
-        subtitle: `Rating: ${t.rating}/5 | ${t.pricing_model} (${t.pricing_starting_at})`,
+        title: `${t.tool_name} Review`,
+        subtitle: `Rating: ${t.rating}/5.0 | Starts at ${t.pricing_starting_at}`,
         badge: t.category
       }
     })),
@@ -28,7 +28,7 @@ export async function getStaticPaths() {
       params: { slug: `alt-${t.slug}` },
       props: {
         title: `Top ${t.alternatives_ids.length} ${t.tool_name} Alternatives`,
-        subtitle: `Side-by-Side Pricing & 7-Point Feature Matrix (2026)`,
+        subtitle: `Pricing & Feature Matrix Breakdown (2026)`,
         badge: 'Alternatives Guide'
       }
     })),
@@ -36,8 +36,8 @@ export async function getStaticPaths() {
       params: { slug: `cmp-${p.slug}` },
       props: {
         title: `${p.toolA.tool_name} vs ${p.toolB.tool_name}`,
-        subtitle: `${p.toolA.pricing_starting_at} vs ${p.toolB.pricing_starting_at} | ${p.sharedFeaturesCount}/7 Shared Features`,
-        badge: 'Head-to-Head Comparison'
+        subtitle: `${p.toolA.pricing_starting_at} vs ${p.toolB.pricing_starting_at} | Tested Specs`,
+        badge: 'Head-to-Head'
       }
     }))
   ];

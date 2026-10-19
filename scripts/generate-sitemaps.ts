@@ -9,15 +9,13 @@ export interface SitemapEntry {
   priority: string;
 }
 
-const SITE_URL = (process.env.PUBLIC_SITE_URL || 'https://saascompare.example.com').replace(/\/+$/, '');
-const RAW_CHUNK_SIZE = Number(process.env.SITEMAP_MAX_URLS_PER_FILE || 25000);
-const CHUNK_SIZE = Math.max(10000, Math.min(45000, RAW_CHUNK_SIZE));
+const SITE_URL = (process.env.PUBLIC_SITE_URL || 'https://saas-pseo.hefainahmed.workers.dev').replace(/\/+$/, '');
 const DIST_DIR = path.join(process.cwd(), 'dist');
 
 export function collectIndexableUrls(): SitemapEntry[] {
   const tools = getAllTools();
   const pairs = getAllComparisonPairs();
-  const today = new Date().toISOString().split('T')[0];
+  const today = '2026-10-19';
 
   const entries: SitemapEntry[] = [
     {
@@ -30,7 +28,6 @@ export function collectIndexableUrls(): SitemapEntry[] {
 
   for (const tool of tools) {
     if (!tool.seo_metrics.should_index) continue;
-
     entries.push({
       loc: `${SITE_URL}/tools/${tool.slug}`,
       lastmod: tool.last_updated,
@@ -52,7 +49,7 @@ export function collectIndexableUrls(): SitemapEntry[] {
     if (!pair.shouldIndex) continue;
     entries.push({
       loc: `${SITE_URL}/compare/${pair.slug}`,
-      lastmod: pair.toolA.last_updated,
+      lastmod: today,
       changefreq: 'weekly',
       priority: '0.8'
     });
@@ -100,25 +97,17 @@ ${sitemapNodes}
 function runSitemapPartitioner(): void {
   fs.mkdirSync(DIST_DIR, { recursive: true });
   const allEntries = collectIndexableUrls();
-  const today = new Date().toISOString().split('T')[0];
+  const today = '2026-10-19';
 
-  const chunks: SitemapEntry[][] = [];
-  for (let i = 0; i < allEntries.length; i += CHUNK_SIZE) {
-    chunks.push(allEntries.slice(i, i + CHUNK_SIZE));
-  }
-
-  const generatedFiles: { filename: string; lastmod: string }[] = [];
-
-  chunks.forEach((chunk, idx) => {
-    const filename = `sitemap-${idx}.xml`;
-    fs.writeFileSync(path.join(DIST_DIR, filename), buildSitemapXml(chunk), 'utf-8');
-    generatedFiles.push({ filename, lastmod: today });
-  });
-
-  fs.writeFileSync(path.join(DIST_DIR, 'sitemap-index.xml'), buildSitemapIndexXml(generatedFiles), 'utf-8');
+  fs.writeFileSync(path.join(DIST_DIR, 'sitemap-0.xml'), buildSitemapXml(allEntries), 'utf-8');
+  fs.writeFileSync(
+    path.join(DIST_DIR, 'sitemap-index.xml'),
+    buildSitemapIndexXml([{ filename: 'sitemap-0.xml', lastmod: today }]),
+    'utf-8'
+  );
   fs.writeFileSync(path.join(DIST_DIR, 'indexable-urls.json'), JSON.stringify(allEntries, null, 2), 'utf-8');
 
-  console.log(`[Sitemap Partitioner] تم توليد ${allEntries.length} رابطاً عبر ${generatedFiles.length} خريطة فرعية.`);
+  console.log(`[Sitemap] Successfully generated ${allEntries.length} canonical URLs for ${SITE_URL}`);
 }
 
 runSitemapPartitioner();

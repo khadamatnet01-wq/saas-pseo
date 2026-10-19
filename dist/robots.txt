@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://saascompare.example.com/sitemap-index.xml
+
+Sitemap: https://saas-pseo.hefainahmed.workers.dev/sitemap-index.xml

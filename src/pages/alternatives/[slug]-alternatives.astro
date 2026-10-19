@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import FAQSection from '../../components/FAQSection.astro';
-import { getAllTools, getResolvedAlternatives } from '../../lib/data-loader';
+import { getAllTools, getResolvedAlternatives, getOutboundUrl } from '../../lib/data-loader';
 import { generateToolFAQs } from '../../lib/content-engine';
 import { generateFAQPageSchema, generateBreadcrumbSchema } from '../../lib/schema-generator';
 import { buildSEOMetadata } from '../../lib/seo-engine';
@@ -23,12 +23,12 @@ interface Props {
 const { tool } = Astro.props;
 const alternatives = getResolvedAlternatives(tool);
 const faqs = generateToolFAQs(tool, alternatives);
-const siteUrl = (process.env.PUBLIC_SITE_URL || 'https://saascompare.example.com').replace(/\/+$/, '');
+const siteUrl = (process.env.PUBLIC_SITE_URL || 'https://saas-pseo.hefainahmed.workers.dev').replace(/\/+$/, '');
 const pageUrl = `${siteUrl}/alternatives/${tool.slug}-alternatives`;
 
 const seo = buildSEOMetadata({
-  title: `أفضل ${alternatives.length} بدائل لـ ${tool.tool_name} في 2026 (مقارنة الأسعار والميزات)`,
-  description: `قارن بين أفضل بدائل ${tool.tool_name} في فئة ${tool.category} من حيث السعر (${tool.pricing_starting_at}) ومصفوفة الميزات.`,
+  title: `Top ${alternatives.length} ${tool.tool_name} Alternatives & Competitors (2026)`,
+  description: `Looking for an alternative to ${tool.tool_name}? Compare the top ${alternatives.length} competitors in ${tool.category} based on pricing, features, and ratings.`,
   canonicalPath: `/alternatives/${tool.slug}-alternatives`,
   ogSlug: `alt-${tool.slug}`,
   shouldIndex: tool.seo_metrics.should_index && alternatives.length > 0,
@@ -36,42 +36,76 @@ const seo = buildSEOMetadata({
   schemas: [
     generateFAQPageSchema(faqs),
     generateBreadcrumbSchema([
-      { name: 'الرئيسية', url: siteUrl },
+      { name: 'Home', url: siteUrl },
       { name: tool.tool_name, url: `${siteUrl}/tools/${tool.slug}` },
-      { name: `بدائل ${tool.tool_name}`, url: pageUrl }
+      { name: `${tool.tool_name} Alternatives`, url: pageUrl }
     ])
   ]
 });
 ---
 
 <BaseLayout seo={seo}>
-  <div class="card">
-    <h1>أفضل {alternatives.length} بدائل ومنافسين لـ {tool.tool_name} لعام 2026</h1>
-    <p style="color: var(--muted); margin-top: 0.5rem;">
-      {tool.summary} — إذا كنت تواجه قيوداً مثل ({tool.cons[0]})، فإليك مقارنة شاملة مع أقوى البدائل المتاحة.
+  <div class="card" style="margin-bottom: 2rem;">
+    <span class="badge badge-accent">Alternative Guide</span>
+    <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--primary); margin: 0.5rem 0;">
+      Best {tool.tool_name} Alternatives in 2026
+    </h1>
+    <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 800px;">
+      While {tool.tool_name} excels in {tool.pros[0]}, limitations like {tool.cons[0]} lead many teams to seek alternative options. Below is our side-by-side comparison of the top {alternatives.length} competitors.
     </p>
   </div>
 
+  <!-- Comparison Table -->
   <ComparisonTable tools={[tool, ...alternatives]} />
 
-  <section class="grid-2">
-    {alternatives.map((alt, idx) => {
-      const [first, second] = [tool.slug, alt.slug].sort((a, b) => a.localeCompare(b));
-      return (
-        <div class="card">
-          <span class="badge">البديل #{idx + 1} — ★ {alt.rating}/5</span>
-          <h2 style="margin-top: 0.5rem;">{alt.tool_name}</h2>
-          <p style="color: var(--muted); font-size: 0.95rem; margin: 0.4rem 0;">{alt.summary}</p>
-          <p><strong>السعر:</strong> {alt.pricing_starting_at} ({alt.pricing_model})</p>
-          <p><strong>أبرز نقطة قوة:</strong> {alt.pros[0]}</p>
-          <div style="margin-top: 1rem; display: flex; gap: 1rem;">
-            <a href={`/compare/${first}-vs-${second}`}>مقارنة {tool.tool_name} vs {alt.tool_name} &larr;</a>
-            <a href={`/tools/${alt.slug}`}>مراجعة {alt.tool_name}</a>
-          </div>
-        </div>
-      );
-    })}
-  </section>
+  <!-- Detailed Alternative Cards -->
+  <div style="margin: 3rem 0 2rem;">
+    <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 1.25rem;">
+      Individual Competitor Breakdowns
+    </h2>
+    <div class="grid-2">
+      {alternatives.map((alt, idx) => {
+        const [first, second] = [tool.slug, alt.slug].sort((a, b) => a.localeCompare(b));
+        return (
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="badge badge-neutral">Alternative #{idx + 1}</span>
+                <span class="badge badge-warning">★ {alt.rating}</span>
+              </div>
+              <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--primary); margin-bottom: 0.4rem;">
+                {alt.tool_name}
+              </h3>
+              <p style="font-size: 0.93rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+                {alt.summary}
+              </p>
+              <p style="font-size: 0.9rem; margin-bottom: 0.4rem;">
+                <strong>Starting Price:</strong> {alt.pricing_starting_at} ({alt.pricing_model})
+              </p>
+              <p style="font-size: 0.9rem; color: #047857; margin-bottom: 1rem;">
+                <strong>Top Strength:</strong> {alt.pros[0]}
+              </p>
+            </div>
 
-  <FAQSection faqs={faqs} heading={`أسئلة شائعة حول بدائل ${tool.tool_name}`} />
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+              <a href={`/compare/${first}-vs-${second}`} class="btn btn-secondary" style="font-size: 0.85rem;">
+                Compare vs {tool.tool_name}
+              </a>
+              <a
+                href={getOutboundUrl(alt)}
+                target="_blank"
+                rel="sponsored nofollow noopener noreferrer"
+                class="btn btn-primary"
+                style="font-size: 0.85rem;"
+              >
+                Visit Site &rarr;
+              </a>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  <FAQSection faqs={faqs} heading={`Switching from ${tool.tool_name} FAQ`} />
 </BaseLayout>

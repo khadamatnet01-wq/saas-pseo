@@ -16,6 +16,7 @@ const schemas = JSON.parse(seo.jsonLdString) as Record<string, unknown>[];
 <meta name="robots" content={seo.robotsDirective} />
 <link rel="canonical" href={seo.canonicalUrl} />
 
+<!-- OpenGraph Metadata -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content={seo.fullTitle} />
 <meta property="og:description" content={seo.description} />
@@ -24,11 +25,13 @@ const schemas = JSON.parse(seo.jsonLdString) as Record<string, unknown>[];
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 
+<!-- Twitter Card Metadata -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={seo.fullTitle} />
 <meta name="twitter:description" content={seo.description} />
 <meta name="twitter:image" content={seo.ogImageUrl} />
 
+<!-- Structured Data (JSON-LD) -->
 {schemas.map((schemaObj) => (
   <script type="application/ld+json" set:html={JSON.stringify(schemaObj)} />
 ))}

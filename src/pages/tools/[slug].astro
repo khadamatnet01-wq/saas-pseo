@@ -1,10 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PricingBadge from '../../components/PricingBadge.astro';
 import ProsConsCard from '../../components/ProsConsCard.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import FAQSection from '../../components/FAQSection.astro';
-import { getAllTools, getResolvedAlternatives } from '../../lib/data-loader';
+import { getAllTools, getResolvedAlternatives, getOutboundUrl } from '../../lib/data-loader';
 import { generateToolFAQs } from '../../lib/content-engine';
 import {
   generateToolProductSchema,
@@ -29,12 +28,12 @@ interface Props {
 const { tool } = Astro.props;
 const alternatives = getResolvedAlternatives(tool);
 const faqs = generateToolFAQs(tool, alternatives);
-const siteUrl = (process.env.PUBLIC_SITE_URL || 'https://saascompare.example.com').replace(/\/+$/, '');
+const siteUrl = (process.env.PUBLIC_SITE_URL || 'https://saas-pseo.hefainahmed.workers.dev').replace(/\/+$/, '');
 const pageUrl = `${siteUrl}/tools/${tool.slug}`;
 
 const seo = buildSEOMetadata({
-  title: `مراجعة ${tool.tool_name} (2026): الأسعار (${tool.pricing_starting_at})، المميزات، العيوب والبدائل`,
-  description: `${tool.summary} تعرف على تسعير ${tool.tool_name} (${tool.pricing_model}) ومصفوفة الميزات الكاملة.`,
+  title: `${tool.tool_name} Review (2026): Pricing, Features, Pros & Cons`,
+  description: `In-depth review of ${tool.tool_name} (${tool.pricing_starting_at}). Detailed breakdown of ${tool.category} features, user ratings, and alternatives.`,
   canonicalPath: `/tools/${tool.slug}`,
   ogSlug: `tool-${tool.slug}`,
   shouldIndex: tool.seo_metrics.should_index,
@@ -43,8 +42,8 @@ const seo = buildSEOMetadata({
     generateToolProductSchema(tool, pageUrl),
     generateFAQPageSchema(faqs),
     generateBreadcrumbSchema([
-      { name: 'الرئيسية', url: siteUrl },
-      { name: tool.category, url: `${siteUrl}/#tools` },
+      { name: 'Home', url: siteUrl },
+      { name: 'Software', url: `${siteUrl}/#software` },
       { name: tool.tool_name, url: pageUrl }
     ])
   ]
@@ -52,35 +51,80 @@ const seo = buildSEOMetadata({
 ---
 
 <BaseLayout seo={seo}>
+  <!-- Hero Card with High-Converting CTA -->
   <article>
-    <div class="card">
-      <span class="badge">{tool.category}</span>
-      <h1 style="margin-top: 0.5rem;">مراجعة {tool.tool_name}: الأسعار، الميزات التقنية، والتقييم</h1>
-      <p style="color: var(--muted); font-size: 1.05rem; margin-top: 0.4rem;">{tool.summary}</p>
-      <PricingBadge tool={tool} />
+    <div class="card" style="margin-bottom: 2rem; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
+            <span class="badge badge-neutral">{tool.category}</span>
+            <span class="badge badge-warning">★ {tool.rating} / 5.0 Rating</span>
+          </div>
+          <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--primary); letter-spacing: -0.02em;">
+            {tool.tool_name} Review
+          </h1>
+          <p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.4rem; max-width: 720px;">
+            {tool.summary}
+          </p>
+        </div>
+
+        <!-- High Converting CTA Card -->
+        <div style="background: #ffffff; border: 1px solid var(--border); padding: 1.25rem 1.5rem; border-radius: var(--radius); min-width: 260px; text-align: center; box-shadow: var(--shadow-sm);">
+          <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Starting Price</div>
+          <div style="font-size: 1.65rem; font-weight: 800; color: var(--primary); margin: 0.2rem 0 0.75rem;">
+            {tool.pricing_starting_at}
+          </div>
+          <a
+            href={getOutboundUrl(tool)}
+            target="_blank"
+            rel="sponsored nofollow noopener noreferrer"
+            class="btn btn-primary"
+            style="width: 100%;"
+          >
+            Visit Official Site &rarr;
+          </a>
+          <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Direct official website access
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!-- Pros & Cons -->
     <ProsConsCard toolName={tool.tool_name} pros={tool.pros} cons={tool.cons} />
 
-    <ComparisonTable tools={[tool, ...alternatives.slice(0, 3)]} />
+    <!-- Feature Matrix Benchmark -->
+    <div style="margin: 2.5rem 0;">
+      <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">
+        Feature Matrix & Benchmark
+      </h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">
+        Comparing {tool.tool_name} against its closest category competitors.
+      </p>
+      <ComparisonTable tools={[tool, ...alternatives.slice(0, 2)]} />
+    </div>
 
-    <section class="card">
-      <h2>المقارنات الثنائية والبدائل المباشرة لـ {tool.tool_name}</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.75rem;">
-        <a href={`/alternatives/${tool.slug}-alternatives`} class="badge">
-          جميع بدائل {tool.tool_name} ({alternatives.length})
+    <!-- Direct Alternatives Quick Links -->
+    <div class="card" style="margin: 2rem 0;">
+      <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin-bottom: 0.75rem;">
+        Compare {tool.tool_name} with Key Rivals
+      </h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+        <a href={`/alternatives/${tool.slug}-alternatives`} class="btn btn-secondary" style="font-size: 0.88rem;">
+          View All {tool.tool_name} Alternatives ({alternatives.length}) &rarr;
         </a>
         {alternatives.map((alt) => {
           const [first, second] = [tool.slug, alt.slug].sort((a, b) => a.localeCompare(b));
           return (
-            <a href={`/compare/${first}-vs-${second}`} class="badge">
+            <a href={`/compare/${first}-vs-${second}`} class="badge badge-accent" style="padding: 0.5rem 0.85rem; font-size: 0.88rem;">
               {tool.tool_name} vs {alt.tool_name}
             </a>
           );
         })}
       </div>
-    </section>
+    </div>
 
-    <FAQSection faqs={faqs} heading={`الأسئلة الشائعة حول ${tool.tool_name}`} />
+    <!-- FAQs -->
+    <FAQSection faqs={faqs} heading={`${tool.tool_name} FAQ`} />
   </article>
 </BaseLayout>

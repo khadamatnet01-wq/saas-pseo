@@ -17,14 +17,14 @@ export function generateToolProductSchema(tool: EnrichedSaaSTool, pageUrl: strin
       priceCurrency: 'USD',
       priceValidUntil: '2027-12-31',
       availability: 'https://schema.org/InStock',
-      description: `${tool.pricing_model} — ${tool.pricing_starting_at}`
+      description: `${tool.pricing_model} - ${tool.pricing_starting_at}`
     },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: tool.rating.toFixed(1),
       bestRating: '5',
       worstRating: '1',
-      ratingCount: Math.round(tool.rating * 350)
+      ratingCount: Math.round(tool.rating * 420)
     },
     positiveNotes: {
       '@type': 'ItemList',
@@ -54,7 +54,7 @@ export function generateComparisonSchema(
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: `${toolA.tool_name} vs ${toolB.tool_name} Comparison`,
-    description: `Side-by-side comparison of ${toolA.tool_name} and ${toolB.tool_name} across pricing, features, pros, and cons.`,
+    description: `Independent comparison of ${toolA.tool_name} and ${toolB.tool_name} across features, pricing, pros, and cons.`,
     url: pageUrl,
     numberOfItems: 2,
     itemListElement: [

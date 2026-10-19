@@ -18,8 +18,8 @@ export interface ComputedSEOMetadata {
   jsonLdString: string;
 }
 
-const SITE_URL = (process.env.PUBLIC_SITE_URL || 'https://saascompare.example.com').replace(/\/+$/, '');
-const SITE_NAME = process.env.PUBLIC_SITE_NAME || 'B2B SaaS Radar';
+const SITE_URL = (process.env.PUBLIC_SITE_URL || 'https://saas-pseo.hefainahmed.workers.dev').replace(/\/+$/, '');
+const SITE_NAME = process.env.PUBLIC_SITE_NAME || 'StackRadar';
 
 export function buildSEOMetadata(input: SEOMetadataInput): ComputedSEOMetadata {
   const cleanPath = input.canonicalPath.startsWith('/')
@@ -41,7 +41,7 @@ export function buildSEOMetadata(input: SEOMetadataInput): ComputedSEOMetadata {
     canonicalUrl,
     ogImageUrl,
     robotsDirective,
-    lastModified: input.lastModified || new Date().toISOString().split('T')[0],
+    lastModified: input.lastModified || '2026-10-19',
     jsonLdString: JSON.stringify(input.schemas || [])
   };
 }

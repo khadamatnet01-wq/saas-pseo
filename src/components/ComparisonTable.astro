@@ -1,6 +1,7 @@
 ---
 import type { EnrichedSaaSTool } from '../schemas/tool.schema';
-import { FEATURE_LABELS } from '../lib/content-engine';
+import { FEATURE_METADATA } from '../lib/content-engine';
+import { getOutboundUrl } from '../lib/data-loader';
 
 interface Props {
   tools: EnrichedSaaSTool[];
@@ -10,55 +11,74 @@ const { tools } = Astro.props;
 const featureKeys = Object.keys(tools[0]?.features_matrix || {});
 ---
 
-<div class="card" style="overflow-x: auto;">
-  <h2 style="margin-bottom: 1rem;">مصفوفة مقارنة الميزات التقنية (Features Matrix)</h2>
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
-        <th>المعيار / الميزة التقنية</th>
+        <th style="width: 28%;">Feature / Benchmark</th>
         {tools.map((t) => (
-          <th>{t.tool_name}</th>
+          <th style="width: calc(72% / tools.length);">
+            <div style="font-size: 1.05rem; font-weight: 800; color: var(--primary);">{t.tool_name}</div>
+            <div style="font-size: 0.8rem; font-weight: 500; text-transform: none; color: var(--text-muted); margin-top: 0.2rem;">
+              {t.pricing_model}
+            </div>
+          </th>
         ))}
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><strong>التصنيف (Category)</strong></td>
+        <td><strong>Starting Price</strong></td>
         {tools.map((t) => (
-          <td>{t.category}</td>
+          <td>
+            <span style="font-weight: 700; color: var(--accent);">{t.pricing_starting_at}</span>
+          </td>
         ))}
       </tr>
       <tr>
-        <td><strong>نموذج التسعير</strong></td>
+        <td><strong>User Rating</strong></td>
         {tools.map((t) => (
-          <td>{t.pricing_model}</td>
-        ))}
-      </tr>
-      <tr>
-        <td><strong>السعر الابتدائي</strong></td>
-        {tools.map((t) => (
-          <td dir="ltr">{t.pricing_starting_at}</td>
-        ))}
-      </tr>
-      <tr>
-        <td><strong>التقييم العام</strong></td>
-        {tools.map((t) => (
-          <td>★ {t.rating} / 5.0</td>
+          <td>
+            <span style="color: #b45309; font-weight: 700;">★ {t.rating}</span> / 5.0
+          </td>
         ))}
       </tr>
       {featureKeys.map((key) => (
         <tr>
-          <td>{FEATURE_LABELS[key]?.ar || key}</td>
+          <td>
+            <div style="font-weight: 600;">{FEATURE_METADATA[key]?.label || key}</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">{FEATURE_METADATA[key]?.description || ''}</div>
+          </td>
           {tools.map((t) => {
-            const val = t.features_matrix[key];
+            const hasFeature = t.features_matrix[key];
             return (
               <td>
-                {val === true ? '✅ مدعوم' : '❌ غير مدعوم'}
+                {hasFeature ? (
+                  <span class="badge badge-success">✓ Supported</span>
+                ) : (
+                  <span class="badge badge-neutral" style="color: #94a3b8;">✕ Not Native</span>
+                )}
               </td>
             );
           })}
         </tr>
       ))}
+      <tr>
+        <td><strong>Official Access</strong></td>
+        {tools.map((t) => (
+          <td>
+            <a
+              href={getOutboundUrl(t)}
+              target="_blank"
+              rel="sponsored nofollow noopener noreferrer"
+              class="btn btn-primary"
+              style="padding: 0.5rem 1rem; font-size: 0.85rem;"
+            >
+              Visit {t.tool_name} &rarr;
+            </a>
+          </td>
+        ))}
+      </tr>
     </tbody>
   </table>
 </div>

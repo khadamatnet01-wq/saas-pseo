@@ -33,13 +33,9 @@
       "clickup",
       "asana"
     ],
-    "last_updated": "2026-10-18",
-    "raw_alternatives_ids": [
-      "jira",
-      "clickup",
-      "asana",
-      "height"
-    ],
+    "website_url": "https://linear.app",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -82,13 +78,9 @@
       "monday",
       "asana"
     ],
-    "last_updated": "2026-10-18",
-    "raw_alternatives_ids": [
-      "linear",
-      "clickup",
-      "monday",
-      "asana"
-    ],
+    "website_url": "https://www.atlassian.com/software/jira",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -131,13 +123,9 @@
       "notion",
       "jira"
     ],
-    "last_updated": "2026-10-18",
-    "raw_alternatives_ids": [
-      "monday",
-      "asana",
-      "notion",
-      "jira"
-    ],
+    "website_url": "https://clickup.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -180,13 +168,9 @@
       "jira",
       "trello"
     ],
-    "last_updated": "2026-10-18",
-    "raw_alternatives_ids": [
-      "monday",
-      "clickup",
-      "jira",
-      "trello"
-    ],
+    "website_url": "https://asana.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -229,13 +213,9 @@
       "airtable",
       "basecamp"
     ],
-    "last_updated": "2026-10-18",
-    "raw_alternatives_ids": [
-      "coda",
-      "clickup",
-      "airtable",
-      "basecamp"
-    ],
+    "website_url": "https://www.notion.so",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -278,13 +258,9 @@
       "trello",
       "wrike"
     ],
-    "last_updated": "2026-10-18",
-    "raw_alternatives_ids": [
-      "clickup",
-      "asana",
-      "trello",
-      "wrike"
-    ],
+    "website_url": "https://monday.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -326,13 +302,9 @@
       "clickup",
       "linear"
     ],
-    "last_updated": "2026-10-18",
-    "raw_alternatives_ids": [
-      "asana",
-      "monday",
-      "clickup",
-      "linear"
-    ],
+    "website_url": "https://trello.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -375,13 +347,9 @@
       "clickup",
       "trello"
     ],
-    "last_updated": "2026-10-18",
-    "raw_alternatives_ids": [
-      "notion",
-      "asana",
-      "clickup",
-      "trello"
-    ],
+    "website_url": "https://basecamp.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -424,13 +392,9 @@
       "monday",
       "clickup"
     ],
-    "last_updated": "2026-10-18",
-    "raw_alternatives_ids": [
-      "notion",
-      "coda",
-      "monday",
-      "clickup"
-    ],
+    "website_url": "https://airtable.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -473,13 +437,9 @@
       "jira",
       "clickup"
     ],
-    "last_updated": "2026-10-18",
-    "raw_alternatives_ids": [
-      "monday",
-      "asana",
-      "jira",
-      "clickup"
-    ],
+    "website_url": "https://www.wrike.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -522,13 +482,9 @@
       "clickup",
       "asana"
     ],
-    "last_updated": "2026-10-18",
-    "raw_alternatives_ids": [
-      "notion",
-      "airtable",
-      "clickup",
-      "asana"
-    ],
+    "website_url": "https://coda.io",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -570,13 +526,9 @@
       "notion",
       "basecamp"
     ],
-    "last_updated": "2026-10-18",
-    "raw_alternatives_ids": [
-      "trello",
-      "asana",
-      "notion",
-      "basecamp"
-    ],
+    "website_url": "https://todoist.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,

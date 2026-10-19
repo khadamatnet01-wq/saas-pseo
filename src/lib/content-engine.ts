@@ -5,34 +5,34 @@ export interface FAQItem {
   answer: string;
 }
 
-export const FEATURE_LABELS: Record<string, { ar: string; en: string }> = {
+export const FEATURE_METADATA: Record<string, { label: string; description: string }> = {
   sprints_cycles: {
-    ar: 'إدارة الدورات والسبرنتات (Sprints & Cycles)',
-    en: 'Sprints & Cycles'
+    label: 'Sprints & Agile Cycles',
+    description: 'Built-in support for time-boxed sprints, iterations, and agile backlog management.'
   },
   kanban_boards: {
-    ar: 'لوحات كانبان التفاعلية (Kanban Boards)',
-    en: 'Kanban Boards'
+    label: 'Interactive Kanban Boards',
+    description: 'Visual drag-and-drop workflow tracking with custom status columns and swimlanes.'
   },
   roadmaps: {
-    ar: 'خرائط الطريق والتخطيط الزمني (Roadmaps)',
-    en: 'Roadmaps'
+    label: 'Strategic Roadmaps & Gantt',
+    description: 'Timeline visualization, project milestone dependencies, and executive portfolio views.'
   },
   time_tracking: {
-    ar: 'تتبع الوقت المدمج (Native Time Tracking)',
-    en: 'Time Tracking'
+    label: 'Native Time Tracking',
+    description: 'In-app timers, billable hours tracking, and detailed timesheet reporting.'
   },
   built_in_automations: {
-    ar: 'أتمتة العمليات المدمجة (Built-in Automations)',
-    en: 'Built-in Automations'
+    label: 'No-Code Workflow Automations',
+    description: 'Trigger-based automations to assign tasks, sync statuses, and send notifications.'
   },
   ai_triage: {
-    ar: 'الفرز والتصنيف بالذكاء الاصطناعي (AI Triage & Copilot)',
-    en: 'AI Triage'
+    label: 'AI Copilot & Smart Triage',
+    description: 'Generative AI assistance for summarizing issues, auto-labeling, and drafting updates.'
   },
   enterprise_security: {
-    ar: 'أمان المؤسسات والصلاحيات المتقدمة (Enterprise Security)',
-    en: 'Enterprise Security'
+    label: 'Enterprise Security & Governance',
+    description: 'SOC2 Type II compliance, SAML SSO single sign-on, and granular role permissions.'
   }
 };
 
@@ -40,30 +40,29 @@ export function generateToolFAQs(
   tool: EnrichedSaaSTool,
   alternatives: EnrichedSaaSTool[]
 ): FAQItem[] {
-  const topAltNames = alternatives.map((a) => a.tool_name).join('، ');
-  const supportedNames = Object.entries(tool.features_matrix)
-    .filter(([, v]) => v === true)
-    .map(([k]) => FEATURE_LABELS[k]?.ar || k)
-    .join('، ');
+  const altNames = alternatives.map((a) => a.tool_name).join(', ');
+  const supportedCount = tool.seo_metrics.supported_features_count;
 
   return [
     {
-      question: `ما هو نموذج تسعير ${tool.tool_name} وتكلفة الباقة الابتدائية؟`,
-      answer: `يعمل ${tool.tool_name} بنموذج (${tool.pricing_model}) وتبدأ أسعاره من (${tool.pricing_starting_at})، وحصل على تقييم ${tool.rating}/5 في فئة ${tool.category}.`
+      question: `How much does ${tool.tool_name} cost, and is there a free plan?`,
+      answer: `${tool.tool_name} operates on a ${tool.pricing_model} pricing model, with paid plans starting at ${tool.pricing_starting_at}. Most plans include a risk-free trial period to test core features before upgrading.`
     },
     {
-      question: `ما هي الميزات التقنية المدعومة في ${tool.tool_name}؟`,
-      answer: `يدعم ${tool.tool_name} ${tool.seo_metrics.supported_features_count} من أصل ${tool.seo_metrics.total_features_evaluated} ميزات أساسية تشمل: ${supportedNames}.`
+      question: `What are the best alternatives to ${tool.tool_name}?`,
+      answer: altNames
+        ? `Top market alternatives to ${tool.tool_name} in the ${tool.category} space include ${altNames}. The ideal choice depends on your team's workflow, budget, and integration requirements.`
+        : `Several competitive solutions exist across ${tool.category} offering varied feature sets and pricing tiers.`
     },
     {
-      question: `ما هي أبرز مميزات وعيوب ${tool.tool_name} عند الاستخدام الفعلي؟`,
-      answer: `تتمثل أبرز نقاط القوة في: (${tool.pros.join(' | ')})، بينما تشمل أبرز التحديات والقيود: (${tool.cons.join(' | ')}).`
+      question: `What are the primary strengths and limitations of ${tool.tool_name}?`,
+      answer: `Key advantages include ${tool.pros.slice(0, 2).join(' and ')}. On the other hand, potential limitations reported by users include ${tool.cons.slice(0, 2).join(' and ')}.`
     },
     {
-      question: `ما هي أفضل البدائل المباشرة لـ ${tool.tool_name}؟`,
-      answer: topAltNames
-        ? `تشمل قائمة البدائل المعتمدة لـ ${tool.tool_name} كلاً من: ${topAltNames}. يمكنك مقارنة كل بديل وجهاً لوجه من حيث السعر ومصفوفة الميزات.`
-        : `تتوفر عدة بدائل في فئة ${tool.category}.`
+      question: `Does ${tool.tool_name} support enterprise-level security and compliance?`,
+      answer: tool.features_matrix.enterprise_security
+        ? `Yes, ${tool.tool_name} includes enterprise-grade governance controls, data encryption, and role-based access controls designed for scaling organizations.`
+        : `${tool.tool_name} provides standard cloud security protocols, though large enterprises should verify custom compliance needs.`
     }
   ];
 }
@@ -72,21 +71,21 @@ export function generateComparisonFAQs(
   toolA: EnrichedSaaSTool,
   toolB: EnrichedSaaSTool
 ): FAQItem[] {
-  const cheaperTool = toolA.starting_price_usd <= toolB.starting_price_usd ? toolA : toolB;
   const higherRated = toolA.rating >= toolB.rating ? toolA : toolB;
+  const cheaper = toolA.starting_price_usd <= toolB.starting_price_usd ? toolA : toolB;
 
   return [
     {
-      question: `أيهما أقل تكلفة: ${toolA.tool_name} أم ${toolB.tool_name}؟`,
-      answer: `تبدأ تكلفة ${toolA.tool_name} من (${toolA.pricing_starting_at} - ${toolA.pricing_model})، بينما تبدأ تكلفة ${toolB.tool_name} من (${toolB.pricing_starting_at} - ${toolB.pricing_model})، مما يجعل ${cheaperTool.tool_name} الخيار الأقل سعراً عند البداية.`
+      question: `Which is more cost-effective: ${toolA.tool_name} or ${toolB.tool_name}?`,
+      answer: `${cheaper.tool_name} starts at an entry rate of ${cheaper.pricing_starting_at} (${cheaper.pricing_model}), whereas ${toolA.tool_name === cheaper ? toolB.tool_name : toolA.tool_name} begins at ${toolA.tool_name === cheaper ? toolB.pricing_starting_at : toolA.pricing_starting_at}. For teams prioritizing lean software budgets, ${cheaper.tool_name} provides an accessible starting point.`
     },
     {
-      question: `أيهما يتفوق في تقييمات المستخدمين: ${toolA.tool_name} أم ${toolB.tool_name}؟`,
-      answer: `يتفوق ${higherRated.tool_name} بتقييم ${higherRated.rating}/5 مقارنةً بمنافسه، ويتميز بـ: ${higherRated.pros[0]}.`
+      question: `How do ${toolA.tool_name} and ${toolB.tool_name} compare in verified user ratings?`,
+      answer: `${higherRated.tool_name} holds the edge with a verified rating of ${higherRated.rating}/5.0, praised especially for ${higherRated.pros[0]}. Meanwhile, ${toolA.tool_name === higherRated ? toolB.tool_name : toolA.tool_name} scores ${toolA.tool_name === higherRated ? toolB.rating : toolA.rating}/5.0.`
     },
     {
-      question: `ما الفرق الجوهري بين ${toolA.tool_name} و ${toolB.tool_name} في الميزات التقنية؟`,
-      answer: `يدعم ${toolA.tool_name} ${toolA.seo_metrics.supported_features_count}/7 من الميزات القياسية (${toolA.category})، بينما يدعم ${toolB.tool_name} ${toolB.seo_metrics.supported_features_count}/7 من الميزات (${toolB.category}).`
+      question: `When should you choose ${toolA.tool_name} over ${toolB.tool_name}?`,
+      answer: `Choose ${toolA.tool_name} if your priority is ${toolA.pros[0]} within ${toolA.category}. Opt for ${toolB.tool_name} if you require ${toolB.pros[0]} and ${toolB.pricing_starting_at} pricing.`
     }
   ];
 }
@@ -102,15 +101,15 @@ export function generateComparisonVerdict(
     (k) => toolB.features_matrix[k] === true && toolA.features_matrix[k] === false
   );
 
-  const aDiff =
+  const aText =
     uniqueToA.length > 0
-      ? `يتفوق ${toolA.tool_name} بدعم (${uniqueToA.map((k) => FEATURE_LABELS[k]?.en || k).join(', ')})`
-      : `يشترك ${toolA.tool_name} في كافة مزاياه الأساسية مع منافسه`;
+      ? `${toolA.tool_name} stands out with native support for ${uniqueToA.map((k) => FEATURE_METADATA[k]?.label || k).join(', ')}`
+      : `${toolA.tool_name} delivers dependable standard features for ${toolA.category}`;
 
-  const bDiff =
+  const bText =
     uniqueToB.length > 0
-      ? `بينما ينفرد ${toolB.tool_name} بدعم (${uniqueToB.map((k) => FEATURE_LABELS[k]?.en || k).join(', ')})`
-      : `ويقدم ${toolB.tool_name} تغطية مماثلة في مصفوفة الميزات`;
+      ? `while ${toolB.tool_name} counters with specialized capabilities in ${uniqueToB.map((k) => FEATURE_METADATA[k]?.label || k).join(', ')}`
+      : `while ${toolB.tool_name} matches core capabilities with competitive pricing starting at ${toolB.pricing_starting_at}`;
 
-  return `مقارنة شاملة بين ${toolA.tool_name} (${toolA.pricing_starting_at}، تقييم ${toolA.rating}/5) و ${toolB.tool_name} (${toolB.pricing_starting_at}، تقييم ${toolB.rating}/5): ${aDiff}، ${bDiff}.`;
+  return `In our head-to-head analysis of ${toolA.tool_name} (${toolA.pricing_starting_at}, rated ${toolA.rating}/5) versus ${toolB.tool_name} (${toolB.pricing_starting_at}, rated ${toolB.rating}/5), ${aText}, ${bText}.`;
 }

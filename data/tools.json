@@ -31,10 +31,18 @@
     "alternatives_ids": [
       "jira",
       "clickup",
-      "asana",
-      "height"
+      "asana"
     ],
-    "last_updated": "2026-10-18"
+    "website_url": "https://linear.app",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
+    "seo_metrics": {
+      "completeness_score": 100,
+      "should_index": true,
+      "noindex_reason": null,
+      "supported_features_count": 6,
+      "total_features_evaluated": 7
+    }
   },
   {
     "slug": "jira",
@@ -70,7 +78,16 @@
       "monday",
       "asana"
     ],
-    "last_updated": "2026-10-18"
+    "website_url": "https://www.atlassian.com/software/jira",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
+    "seo_metrics": {
+      "completeness_score": 100,
+      "should_index": true,
+      "noindex_reason": null,
+      "supported_features_count": 7,
+      "total_features_evaluated": 7
+    }
   },
   {
     "slug": "clickup",
@@ -106,7 +123,16 @@
       "notion",
       "jira"
     ],
-    "last_updated": "2026-10-18"
+    "website_url": "https://clickup.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
+    "seo_metrics": {
+      "completeness_score": 100,
+      "should_index": true,
+      "noindex_reason": null,
+      "supported_features_count": 7,
+      "total_features_evaluated": 7
+    }
   },
   {
     "slug": "asana",
@@ -142,7 +168,16 @@
       "jira",
       "trello"
     ],
-    "last_updated": "2026-10-18"
+    "website_url": "https://asana.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
+    "seo_metrics": {
+      "completeness_score": 100,
+      "should_index": true,
+      "noindex_reason": null,
+      "supported_features_count": 7,
+      "total_features_evaluated": 7
+    }
   },
   {
     "slug": "notion",
@@ -178,7 +213,16 @@
       "airtable",
       "basecamp"
     ],
-    "last_updated": "2026-10-18"
+    "website_url": "https://www.notion.so",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
+    "seo_metrics": {
+      "completeness_score": 100,
+      "should_index": true,
+      "noindex_reason": null,
+      "supported_features_count": 6,
+      "total_features_evaluated": 7
+    }
   },
   {
     "slug": "monday",
@@ -214,7 +258,16 @@
       "trello",
       "wrike"
     ],
-    "last_updated": "2026-10-18"
+    "website_url": "https://monday.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
+    "seo_metrics": {
+      "completeness_score": 100,
+      "should_index": true,
+      "noindex_reason": null,
+      "supported_features_count": 7,
+      "total_features_evaluated": 7
+    }
   },
   {
     "slug": "trello",
@@ -249,7 +302,16 @@
       "clickup",
       "linear"
     ],
-    "last_updated": "2026-10-18"
+    "website_url": "https://trello.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
+    "seo_metrics": {
+      "completeness_score": 100,
+      "should_index": true,
+      "noindex_reason": null,
+      "supported_features_count": 3,
+      "total_features_evaluated": 7
+    }
   },
   {
     "slug": "basecamp",
@@ -285,7 +347,16 @@
       "clickup",
       "trello"
     ],
-    "last_updated": "2026-10-18"
+    "website_url": "https://basecamp.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
+    "seo_metrics": {
+      "completeness_score": 100,
+      "should_index": true,
+      "noindex_reason": null,
+      "supported_features_count": 2,
+      "total_features_evaluated": 7
+    }
   },
   {
     "slug": "airtable",
@@ -321,7 +392,16 @@
       "monday",
       "clickup"
     ],
-    "last_updated": "2026-10-18"
+    "website_url": "https://airtable.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
+    "seo_metrics": {
+      "completeness_score": 100,
+      "should_index": true,
+      "noindex_reason": null,
+      "supported_features_count": 5,
+      "total_features_evaluated": 7
+    }
   },
   {
     "slug": "wrike",
@@ -357,7 +437,16 @@
       "jira",
       "clickup"
     ],
-    "last_updated": "2026-10-18"
+    "website_url": "https://www.wrike.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
+    "seo_metrics": {
+      "completeness_score": 100,
+      "should_index": true,
+      "noindex_reason": null,
+      "supported_features_count": 7,
+      "total_features_evaluated": 7
+    }
   },
   {
     "slug": "coda",
@@ -393,7 +482,16 @@
       "clickup",
       "asana"
     ],
-    "last_updated": "2026-10-18"
+    "website_url": "https://coda.io",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
+    "seo_metrics": {
+      "completeness_score": 100,
+      "should_index": true,
+      "noindex_reason": null,
+      "supported_features_count": 6,
+      "total_features_evaluated": 7
+    }
   },
   {
     "slug": "todoist",
@@ -428,6 +526,15 @@
       "notion",
       "basecamp"
     ],
-    "last_updated": "2026-10-18"
+    "website_url": "https://todoist.com",
+    "affiliate_url": "",
+    "last_updated": "2026-10-19",
+    "seo_metrics": {
+      "completeness_score": 100,
+      "should_index": true,
+      "noindex_reason": null,
+      "supported_features_count": 2,
+      "total_features_evaluated": 7
+    }
   }
 ]

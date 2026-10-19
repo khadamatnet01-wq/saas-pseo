@@ -1,0 +1,4 @@
+# Cloudflare Assets Ignore
+.git
+.DS_Store
+*.map

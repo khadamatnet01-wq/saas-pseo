@@ -1,0 +1,34 @@
+# Cloudflare Native Edge Redirects
+# 301 normalization for reverse comparison pairs to prevent duplicate content
+/compare/jira-vs-linear /compare/linear-vs-jira 301
+/compare/clickup-vs-linear /compare/clickup-vs-linear 301
+/compare/asana-vs-linear /compare/asana-vs-linear 301
+/compare/trello-vs-linear /compare/linear-vs-trello 301
+/compare/clickup-vs-jira /compare/clickup-vs-jira 301
+/compare/monday-vs-jira /compare/jira-vs-monday 301
+/compare/asana-vs-jira /compare/asana-vs-jira 301
+/compare/wrike-vs-jira /compare/jira-vs-wrike 301
+/compare/monday-vs-clickup /compare/clickup-vs-monday 301
+/compare/notion-vs-clickup /compare/clickup-vs-notion 301
+/compare/trello-vs-clickup /compare/clickup-vs-trello 301
+/compare/wrike-vs-clickup /compare/clickup-vs-wrike 301
+/compare/coda-vs-clickup /compare/clickup-vs-coda 301
+/compare/airtable-vs-clickup /compare/airtable-vs-clickup 301
+/compare/basecamp-vs-clickup /compare/basecamp-vs-clickup 301
+/compare/monday-vs-asana /compare/asana-vs-monday 301
+/compare/trello-vs-asana /compare/asana-vs-trello 301
+/compare/wrike-vs-asana /compare/asana-vs-wrike 301
+/compare/coda-vs-asana /compare/asana-vs-coda 301
+/compare/basecamp-vs-asana /compare/asana-vs-basecamp 301
+/compare/todoist-vs-asana /compare/asana-vs-todoist 301
+/compare/airtable-vs-notion /compare/airtable-vs-notion 301
+/compare/basecamp-vs-notion /compare/basecamp-vs-notion 301
+/compare/coda-vs-notion /compare/coda-vs-notion 301
+/compare/todoist-vs-notion /compare/notion-vs-todoist 301
+/compare/trello-vs-monday /compare/monday-vs-trello 301
+/compare/wrike-vs-monday /compare/monday-vs-wrike 301
+/compare/airtable-vs-monday /compare/airtable-vs-monday 301
+/compare/basecamp-vs-trello /compare/basecamp-vs-trello 301
+/compare/todoist-vs-trello /compare/todoist-vs-trello 301
+/compare/coda-vs-airtable /compare/airtable-vs-coda 301
+/compare/todoist-vs-basecamp /compare/basecamp-vs-todoist 301

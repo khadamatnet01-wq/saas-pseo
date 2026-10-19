@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://saascompare.example.com/sitemap-index.xml

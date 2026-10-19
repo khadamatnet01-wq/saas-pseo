@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PricingBadge from '../../components/PricingBadge.astro';
+import ProsConsCard from '../../components/ProsConsCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import { getAllTools, getResolvedAlternatives } from '../../lib/data-loader';
+import { generateToolFAQs } from '../../lib/content-engine';
+import {
+  generateToolProductSchema,
+  generateFAQPageSchema,
+  generateBreadcrumbSchema
+} from '../../lib/schema-generator';
+import { buildSEOMetadata } from '../../lib/seo-engine';
+import type { EnrichedSaaSTool } from '../../schemas/tool.schema';
+
+export async function getStaticPaths() {
+  const tools = getAllTools();
+  return tools.map((tool) => ({
+    params: { slug: tool.slug },
+    props: { tool }
+  }));
+}
+
+interface Props {
+  tool: EnrichedSaaSTool;
+}
+
+const { tool } = Astro.props;
+const alternatives = getResolvedAlternatives(tool);
+const faqs = generateToolFAQs(tool, alternatives);
+const siteUrl = (process.env.PUBLIC_SITE_URL || 'https://saascompare.example.com').replace(/\/+$/, '');
+const pageUrl = `${siteUrl}/tools/${tool.slug}`;
+
+const seo = buildSEOMetadata({
+  title: `مراجعة ${tool.tool_name} (2026): الأسعار (${tool.pricing_starting_at})، المميزات، العيوب والبدائل`,
+  description: `${tool.summary} تعرف على تسعير ${tool.tool_name} (${tool.pricing_model}) ومصفوفة الميزات الكاملة.`,
+  canonicalPath: `/tools/${tool.slug}`,
+  ogSlug: `tool-${tool.slug}`,
+  shouldIndex: tool.seo_metrics.should_index,
+  lastModified: tool.last_updated,
+  schemas: [
+    generateToolProductSchema(tool, pageUrl),
+    generateFAQPageSchema(faqs),
+    generateBreadcrumbSchema([
+      { name: 'الرئيسية', url: siteUrl },
+      { name: tool.category, url: `${siteUrl}/#tools` },
+      { name: tool.tool_name, url: pageUrl }
+    ])
+  ]
+});
+---
+
+<BaseLayout seo={seo}>
+  <article>
+    <div class="card">
+      <span class="badge">{tool.category}</span>
+      <h1 style="margin-top: 0.5rem;">مراجعة {tool.tool_name}: الأسعار، الميزات التقنية، والتقييم</h1>
+      <p style="color: var(--muted); font-size: 1.05rem; margin-top: 0.4rem;">{tool.summary}</p>
+      <PricingBadge tool={tool} />
+    </div>
+
+    <ProsConsCard toolName={tool.tool_name} pros={tool.pros} cons={tool.cons} />
+
+    <ComparisonTable tools={[tool, ...alternatives.slice(0, 3)]} />
+
+    <section class="card">
+      <h2>المقارنات الثنائية والبدائل المباشرة لـ {tool.tool_name}</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.75rem;">
+        <a href={`/alternatives/${tool.slug}-alternatives`} class="badge">
+          جميع بدائل {tool.tool_name} ({alternatives.length})
+        </a>
+        {alternatives.map((alt) => {
+          const [first, second] = [tool.slug, alt.slug].sort((a, b) => a.localeCompare(b));
+          return (
+            <a href={`/compare/${first}-vs-${second}`} class="badge">
+              {tool.tool_name} vs {alt.tool_name}
+            </a>
+          );
+        })}
+      </div>
+    </section>
+
+    <FAQSection faqs={faqs} heading={`الأسئلة الشائعة حول ${tool.tool_name}`} />
+  </article>
+</BaseLayout>

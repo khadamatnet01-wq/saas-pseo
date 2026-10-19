@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import { getAllTools, getResolvedAlternatives } from '../../lib/data-loader';
+import { generateToolFAQs } from '../../lib/content-engine';
+import { generateFAQPageSchema, generateBreadcrumbSchema } from '../../lib/schema-generator';
+import { buildSEOMetadata } from '../../lib/seo-engine';
+import type { EnrichedSaaSTool } from '../../schemas/tool.schema';
+
+export async function getStaticPaths() {
+  const tools = getAllTools();
+  return tools.map((tool) => ({
+    params: { slug: tool.slug },
+    props: { tool }
+  }));
+}
+
+interface Props {
+  tool: EnrichedSaaSTool;
+}
+
+const { tool } = Astro.props;
+const alternatives = getResolvedAlternatives(tool);
+const faqs = generateToolFAQs(tool, alternatives);
+const siteUrl = (process.env.PUBLIC_SITE_URL || 'https://saascompare.example.com').replace(/\/+$/, '');
+const pageUrl = `${siteUrl}/alternatives/${tool.slug}-alternatives`;
+
+const seo = buildSEOMetadata({
+  title: `أفضل ${alternatives.length} بدائل لـ ${tool.tool_name} في 2026 (مقارنة الأسعار والميزات)`,
+  description: `قارن بين أفضل بدائل ${tool.tool_name} في فئة ${tool.category} من حيث السعر (${tool.pricing_starting_at}) ومصفوفة الميزات.`,
+  canonicalPath: `/alternatives/${tool.slug}-alternatives`,
+  ogSlug: `alt-${tool.slug}`,
+  shouldIndex: tool.seo_metrics.should_index && alternatives.length > 0,
+  lastModified: tool.last_updated,
+  schemas: [
+    generateFAQPageSchema(faqs),
+    generateBreadcrumbSchema([
+      { name: 'الرئيسية', url: siteUrl },
+      { name: tool.tool_name, url: `${siteUrl}/tools/${tool.slug}` },
+      { name: `بدائل ${tool.tool_name}`, url: pageUrl }
+    ])
+  ]
+});
+---
+
+<BaseLayout seo={seo}>
+  <div class="card">
+    <h1>أفضل {alternatives.length} بدائل ومنافسين لـ {tool.tool_name} لعام 2026</h1>
+    <p style="color: var(--muted); margin-top: 0.5rem;">
+      {tool.summary} — إذا كنت تواجه قيوداً مثل ({tool.cons[0]})، فإليك مقارنة شاملة مع أقوى البدائل المتاحة.
+    </p>
+  </div>
+
+  <ComparisonTable tools={[tool, ...alternatives]} />
+
+  <section class="grid-2">
+    {alternatives.map((alt, idx) => {
+      const [first, second] = [tool.slug, alt.slug].sort((a, b) => a.localeCompare(b));
+      return (
+        <div class="card">
+          <span class="badge">البديل #{idx + 1} — ★ {alt.rating}/5</span>
+          <h2 style="margin-top: 0.5rem;">{alt.tool_name}</h2>
+          <p style="color: var(--muted); font-size: 0.95rem; margin: 0.4rem 0;">{alt.summary}</p>
+          <p><strong>السعر:</strong> {alt.pricing_starting_at} ({alt.pricing_model})</p>
+          <p><strong>أبرز نقطة قوة:</strong> {alt.pros[0]}</p>
+          <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+            <a href={`/compare/${first}-vs-${second}`}>مقارنة {tool.tool_name} vs {alt.tool_name} &larr;</a>
+            <a href={`/tools/${alt.slug}`}>مراجعة {alt.tool_name}</a>
+          </div>
+        </div>
+      );
+    })}
+  </section>
+
+  <FAQSection faqs={faqs} heading={`أسئلة شائعة حول بدائل ${tool.tool_name}`} />
+</BaseLayout>

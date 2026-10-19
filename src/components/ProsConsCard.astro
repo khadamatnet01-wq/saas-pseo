@@ -1,0 +1,28 @@
+---
+interface Props {
+  toolName: string;
+  pros: string[];
+  cons: string[];
+}
+
+const { toolName, pros, cons } = Astro.props;
+---
+
+<section class="grid-2">
+  <div class="card" style="border-top: 4px solid var(--success);">
+    <h3 style="margin-bottom: 0.75rem; color: var(--success);">نقاط القوة في {toolName} (Pros)</h3>
+    <ul style="padding-right: 1.25rem;">
+      {pros.map((pro) => (
+        <li style="margin-bottom: 0.5rem;">{pro}</li>
+      ))}
+    </ul>
+  </div>
+  <div class="card" style="border-top: 4px solid var(--danger);">
+    <h3 style="margin-bottom: 0.75rem; color: var(--danger);">القيود ونقاط الضعف في {toolName} (Cons)</h3>
+    <ul style="padding-right: 1.25rem;">
+      {cons.map((con) => (
+        <li style="margin-bottom: 0.5rem;">{con}</li>
+      ))}
+    </ul>
+  </div>
+</section>

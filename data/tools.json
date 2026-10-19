@@ -1,0 +1,433 @@
+[
+  {
+    "slug": "linear",
+    "tool_name": "Linear",
+    "category": "Project Management & Issue Tracking",
+    "pricing_model": "Freemium",
+    "pricing_starting_at": "$8/user/mo",
+    "starting_price_usd": 8.0,
+    "rating": 4.8,
+    "summary": "Fast, keyboard-first issue tracker and sprint management system designed specifically for software engineering teams.",
+    "features_matrix": {
+      "sprints_cycles": true,
+      "kanban_boards": true,
+      "roadmaps": true,
+      "time_tracking": false,
+      "built_in_automations": true,
+      "ai_triage": true,
+      "enterprise_security": true
+    },
+    "pros": [
+      "Ultra-fast user interface",
+      "Intuitive keyboard shortcuts",
+      "Streamlined git workflows and PR syncing",
+      "Minimalist modern design"
+    ],
+    "cons": [
+      "Not suitable for non-technical marketing or sales teams",
+      "Limited traditional Gantt/waterfall views",
+      "Minimal built-in financial reporting"
+    ],
+    "alternatives_ids": [
+      "jira",
+      "clickup",
+      "asana",
+      "height"
+    ],
+    "last_updated": "2026-10-18"
+  },
+  {
+    "slug": "jira",
+    "tool_name": "Jira",
+    "category": "Issue Tracking & Agile Planning",
+    "pricing_model": "Freemium",
+    "pricing_starting_at": "$7.75/user/mo",
+    "starting_price_usd": 7.75,
+    "rating": 4.3,
+    "summary": "The enterprise standard for agile product development, deep sprint management, and complex cross-team release governance.",
+    "features_matrix": {
+      "sprints_cycles": true,
+      "kanban_boards": true,
+      "roadmaps": true,
+      "time_tracking": true,
+      "built_in_automations": true,
+      "ai_triage": true,
+      "enterprise_security": true
+    },
+    "pros": [
+      "Unmatched enterprise governance and permission granularities",
+      "Massive marketplace with 3,000+ app integrations",
+      "Powerful JQL custom search"
+    ],
+    "cons": [
+      "Heavy and notoriously slow UI",
+      "Complex setup requiring dedicated Jira admin",
+      "High price creep on enterprise tiers"
+    ],
+    "alternatives_ids": [
+      "linear",
+      "clickup",
+      "monday",
+      "asana"
+    ],
+    "last_updated": "2026-10-18"
+  },
+  {
+    "slug": "clickup",
+    "tool_name": "ClickUp",
+    "category": "All-in-One Work Management",
+    "pricing_model": "Freemium",
+    "pricing_starting_at": "$7/user/mo",
+    "starting_price_usd": 7.0,
+    "rating": 4.6,
+    "summary": "All-in-one productivity platform replacing tasks, docs, chat, whiteboards, and spreadsheets in a single workspace.",
+    "features_matrix": {
+      "sprints_cycles": true,
+      "kanban_boards": true,
+      "roadmaps": true,
+      "time_tracking": true,
+      "built_in_automations": true,
+      "ai_triage": true,
+      "enterprise_security": true
+    },
+    "pros": [
+      "Extremely feature-rich at an aggressive price point",
+      "Deep native time tracking and custom fields",
+      "15+ different data views (List, Board, Gantt, Mind Map)"
+    ],
+    "cons": [
+      "Feature bloat causes performance hiccups",
+      "Occasional sync glitches",
+      "Overwhelming learning curve for basic users"
+    ],
+    "alternatives_ids": [
+      "monday",
+      "asana",
+      "notion",
+      "jira"
+    ],
+    "last_updated": "2026-10-18"
+  },
+  {
+    "slug": "asana",
+    "tool_name": "Asana",
+    "category": "Enterprise Work Management",
+    "pricing_model": "Freemium",
+    "pricing_starting_at": "$10.99/user/mo",
+    "starting_price_usd": 10.99,
+    "rating": 4.5,
+    "summary": "Intuitive enterprise project and portfolio management software focused on cross-functional alignment and executive reporting.",
+    "features_matrix": {
+      "sprints_cycles": true,
+      "kanban_boards": true,
+      "roadmaps": true,
+      "time_tracking": true,
+      "built_in_automations": true,
+      "ai_triage": true,
+      "enterprise_security": true
+    },
+    "pros": [
+      "Polished, accessible user experience for business teams",
+      "Top-tier portfolio and goal (OKR) tracking",
+      "Robust visual workflow builder"
+    ],
+    "cons": [
+      "Expensive per-seat pricing",
+      "Limited free tier features",
+      "Only one assignee per task limitation requires subtask workarounds"
+    ],
+    "alternatives_ids": [
+      "monday",
+      "clickup",
+      "jira",
+      "trello"
+    ],
+    "last_updated": "2026-10-18"
+  },
+  {
+    "slug": "notion",
+    "tool_name": "Notion",
+    "category": "Knowledge Base & Collaborative Workspace",
+    "pricing_model": "Freemium",
+    "pricing_starting_at": "$8/user/mo",
+    "starting_price_usd": 8.0,
+    "rating": 4.7,
+    "summary": "Connected workspace combining flexible relational databases, team wikis, project documentation, and generative AI writing.",
+    "features_matrix": {
+      "sprints_cycles": true,
+      "kanban_boards": true,
+      "roadmaps": true,
+      "time_tracking": false,
+      "built_in_automations": true,
+      "ai_triage": true,
+      "enterprise_security": true
+    },
+    "pros": [
+      "Infinite flexibility with relational databases",
+      "Superb documentation and wiki engine",
+      "Strong community templates ecosystem"
+    ],
+    "cons": [
+      "Lacks native granular sprint reporting and velocity charts",
+      "Performance lags on gigantic databases",
+      "Requires discipline to prevent messy structures"
+    ],
+    "alternatives_ids": [
+      "coda",
+      "clickup",
+      "airtable",
+      "basecamp"
+    ],
+    "last_updated": "2026-10-18"
+  },
+  {
+    "slug": "monday",
+    "tool_name": "monday.com",
+    "category": "Visual Work OS & Operations",
+    "pricing_model": "Paid (Free Trial)",
+    "pricing_starting_at": "$9/user/mo",
+    "starting_price_usd": 9.0,
+    "rating": 4.6,
+    "summary": "Highly visual, customizable Work OS enabling non-technical teams to build customized workflows, marketing calendars, and CRM funnels.",
+    "features_matrix": {
+      "sprints_cycles": true,
+      "kanban_boards": true,
+      "roadmaps": true,
+      "time_tracking": true,
+      "built_in_automations": true,
+      "ai_triage": true,
+      "enterprise_security": true
+    },
+    "pros": [
+      "Vibrant visual board interface with zero technical barrier",
+      "Excellent pre-built templates for marketing and HR",
+      "Strong mobile app experience"
+    ],
+    "cons": [
+      "Minimum 3-seat purchase requirement",
+      "Advanced automations locked behind expensive pro/enterprise tiers",
+      "Less suited for software code management"
+    ],
+    "alternatives_ids": [
+      "clickup",
+      "asana",
+      "trello",
+      "wrike"
+    ],
+    "last_updated": "2026-10-18"
+  },
+  {
+    "slug": "trello",
+    "tool_name": "Trello",
+    "category": "Lightweight Kanban Project Tracking",
+    "pricing_model": "Freemium",
+    "pricing_starting_at": "$5/user/mo",
+    "starting_price_usd": 5.0,
+    "rating": 4.4,
+    "summary": "Simple, card-based visual Kanban tool ideal for small teams, content pipelines, and straightforward operational checklists.",
+    "features_matrix": {
+      "sprints_cycles": false,
+      "kanban_boards": true,
+      "roadmaps": false,
+      "time_tracking": false,
+      "built_in_automations": true,
+      "ai_triage": false,
+      "enterprise_security": true
+    },
+    "pros": [
+      "Instant onboarding with zero training required",
+      "Generous free tier",
+      "Lightweight Butler automation engine"
+    ],
+    "cons": [
+      "Not equipped for complex cross-project dependencies or sprint cycles",
+      "Relies heavily on third-party Power-Ups for basic features"
+    ],
+    "alternatives_ids": [
+      "asana",
+      "monday",
+      "clickup",
+      "linear"
+    ],
+    "last_updated": "2026-10-18"
+  },
+  {
+    "slug": "basecamp",
+    "tool_name": "Basecamp",
+    "category": "Team Communication & Simple Projects",
+    "pricing_model": "Flat-rate / Per User",
+    "pricing_starting_at": "$15/user/mo or $299 flat",
+    "starting_price_usd": 15.0,
+    "rating": 4.4,
+    "summary": "Calm, all-in-one project collaboration hub combining message boards, to-dos, group chat, and client access portals without notification fatigue.",
+    "features_matrix": {
+      "sprints_cycles": false,
+      "kanban_boards": true,
+      "roadmaps": false,
+      "time_tracking": false,
+      "built_in_automations": false,
+      "ai_triage": false,
+      "enterprise_security": true
+    },
+    "pros": [
+      "Flat-rate pricing option for unlimited users saves huge money for large teams",
+      "Clean, calm notification design",
+      "Built-in client portal controls"
+    ],
+    "cons": [
+      "Strict opinionated methodology that resists customization",
+      "No native Gantt chart or sprint capacity tracking",
+      "Basic to-do features"
+    ],
+    "alternatives_ids": [
+      "notion",
+      "asana",
+      "clickup",
+      "trello"
+    ],
+    "last_updated": "2026-10-18"
+  },
+  {
+    "slug": "airtable",
+    "tool_name": "Airtable",
+    "category": "Relational Database & App Platform",
+    "pricing_model": "Freemium",
+    "pricing_starting_at": "$20/user/mo",
+    "starting_price_usd": 20.0,
+    "rating": 4.6,
+    "summary": "Low-code relational database engine disguised as an intuitive spreadsheet, empowering operations teams to build custom business software.",
+    "features_matrix": {
+      "sprints_cycles": false,
+      "kanban_boards": true,
+      "roadmaps": true,
+      "time_tracking": false,
+      "built_in_automations": true,
+      "ai_triage": true,
+      "enterprise_security": true
+    },
+    "pros": [
+      "Powerful relational data modeling with zero SQL knowledge",
+      "Dynamic interface designer for internal business apps",
+      "Rich JavaScript scripting extensions"
+    ],
+    "cons": [
+      "Substantial cost jump on paid tiers",
+      "Hard row limits per base on lower plans",
+      "Overkill for simple personal task lists"
+    ],
+    "alternatives_ids": [
+      "notion",
+      "coda",
+      "monday",
+      "clickup"
+    ],
+    "last_updated": "2026-10-18"
+  },
+  {
+    "slug": "wrike",
+    "tool_name": "Wrike",
+    "category": "Enterprise Resource & Project Planning",
+    "pricing_model": "Freemium",
+    "pricing_starting_at": "$9.80/user/mo",
+    "starting_price_usd": 9.8,
+    "rating": 4.2,
+    "summary": "Heavy-duty enterprise project management platform specializing in cross-departmental resource allocation, timesheets, and digital asset approvals.",
+    "features_matrix": {
+      "sprints_cycles": true,
+      "kanban_boards": true,
+      "roadmaps": true,
+      "time_tracking": true,
+      "built_in_automations": true,
+      "ai_triage": true,
+      "enterprise_security": true
+    },
+    "pros": [
+      "Top-tier workload and capacity planning",
+      "Built-in digital asset proofing and approvals for creative teams",
+      "Robust multi-folder project hierarchy"
+    ],
+    "cons": [
+      "Dated user interface compared to modern tools",
+      "Steep configuration curve",
+      "Key features split across multiple paid add-on packages"
+    ],
+    "alternatives_ids": [
+      "monday",
+      "asana",
+      "jira",
+      "clickup"
+    ],
+    "last_updated": "2026-10-18"
+  },
+  {
+    "slug": "coda",
+    "tool_name": "Coda",
+    "category": "Interactive All-in-One Docs & Workspaces",
+    "pricing_model": "Freemium (Maker Pricing)",
+    "pricing_starting_at": "$10/maker/mo",
+    "starting_price_usd": 10.0,
+    "rating": 4.6,
+    "summary": "Document-first productivity platform featuring interactive buttons, automated formulas, and deep two-way API integrations (Packs).",
+    "features_matrix": {
+      "sprints_cycles": true,
+      "kanban_boards": true,
+      "roadmaps": true,
+      "time_tracking": false,
+      "built_in_automations": true,
+      "ai_triage": true,
+      "enterprise_security": true
+    },
+    "pros": [
+      "Maker-based pricing model charges only for doc creators while doc viewers/editors are free",
+      "Superior formula calculation engine",
+      "Interactive action buttons"
+    ],
+    "cons": [
+      "Mobile app performance lags behind desktop",
+      "Learning curve for advanced formula syntax",
+      "Slower rendering on massive docs"
+    ],
+    "alternatives_ids": [
+      "notion",
+      "airtable",
+      "clickup",
+      "asana"
+    ],
+    "last_updated": "2026-10-18"
+  },
+  {
+    "slug": "todoist",
+    "tool_name": "Todoist",
+    "category": "Task Management & Personal Productivity",
+    "pricing_model": "Freemium",
+    "pricing_starting_at": "$4/user/mo",
+    "starting_price_usd": 4.0,
+    "rating": 4.7,
+    "summary": "Industry-leading personal and small team task manager renowned for natural language processing, swift quick-add, and reliable synchronization.",
+    "features_matrix": {
+      "sprints_cycles": false,
+      "kanban_boards": true,
+      "roadmaps": false,
+      "time_tracking": false,
+      "built_in_automations": false,
+      "ai_triage": true,
+      "enterprise_security": false
+    },
+    "pros": [
+      "Best-in-class natural language task capture",
+      "Frictionless synchronization across all devices",
+      "Lightweight and distraction-free interface"
+    ],
+    "cons": [
+      "Not designed for complex enterprise agile sprints or multi-layered project dependencies",
+      "Limited reporting metrics"
+    ],
+    "alternatives_ids": [
+      "trello",
+      "asana",
+      "notion",
+      "basecamp"
+    ],
+    "last_updated": "2026-10-18"
+  }
+]

@@ -1,0 +1,34 @@
+---
+import type { ComputedSEOMetadata } from '../lib/seo-engine';
+
+interface Props {
+  seo: ComputedSEOMetadata;
+}
+
+const { seo } = Astro.props;
+const schemas = JSON.parse(seo.jsonLdString) as Record<string, unknown>[];
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{seo.fullTitle}</title>
+<meta name="description" content={seo.description} />
+<meta name="robots" content={seo.robotsDirective} />
+<link rel="canonical" href={seo.canonicalUrl} />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content={seo.fullTitle} />
+<meta property="og:description" content={seo.description} />
+<meta property="og:url" content={seo.canonicalUrl} />
+<meta property="og:image" content={seo.ogImageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={seo.fullTitle} />
+<meta name="twitter:description" content={seo.description} />
+<meta name="twitter:image" content={seo.ogImageUrl} />
+
+{schemas.map((schemaObj) => (
+  <script type="application/ld+json" set:html={JSON.stringify(schemaObj)} />
+))}

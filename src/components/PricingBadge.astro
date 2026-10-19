@@ -1,0 +1,22 @@
+---
+import type { EnrichedSaaSTool } from '../schemas/tool.schema';
+
+interface Props {
+  tool: EnrichedSaaSTool;
+}
+
+const { tool } = Astro.props;
+---
+
+<div style="display: flex; flex-wrap: wrap; gap: 0.65rem; align-items: center; margin: 0.75rem 0;">
+  <span class="badge">{tool.pricing_model}</span>
+  <span class="badge" style="background: #f0fdf4; color: #15803d;">
+    السعر: {tool.pricing_starting_at}
+  </span>
+  <span class="badge" style="background: #fefce8; color: #a16207;">
+    التقييم: ★ {tool.rating} / 5.0
+  </span>
+  <span class="badge" style="background: #f3e8ff; color: #7e22ce;">
+    الميزات المدعومة: {tool.seo_metrics.supported_features_count}/{tool.seo_metrics.total_features_evaluated}
+  </span>
+</div>

@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import ProsConsCard from '../../components/ProsConsCard.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import { getAllComparisonPairs, type ComparisonPair } from '../../lib/data-loader';
+import { generateComparisonFAQs, generateComparisonVerdict } from '../../lib/content-engine';
+import {
+  generateComparisonSchema,
+  generateFAQPageSchema,
+  generateBreadcrumbSchema
+} from '../../lib/schema-generator';
+import { buildSEOMetadata } from '../../lib/seo-engine';
+
+export async function getStaticPaths() {
+  const pairs = getAllComparisonPairs();
+  return pairs.map((pair) => ({
+    params: {
+      slugA: pair.toolA.slug,
+      slugB: pair.toolB.slug
+    },
+    props: { pair }
+  }));
+}
+
+interface Props {
+  pair: ComparisonPair;
+}
+
+const { pair } = Astro.props;
+const { toolA, toolB } = pair;
+const verdict = generateComparisonVerdict(toolA, toolB);
+const faqs = generateComparisonFAQs(toolA, toolB);
+const siteUrl = (process.env.PUBLIC_SITE_URL || 'https://saascompare.example.com').replace(/\/+$/, '');
+const pageUrl = `${siteUrl}/compare/${pair.slug}`;
+
+const seo = buildSEOMetadata({
+  title: `${toolA.tool_name} vs ${toolB.tool_name} (2026): مقارنة الأسعار والميزات الكاملة`,
+  description: verdict,
+  canonicalPath: `/compare/${pair.slug}`,
+  ogSlug: `cmp-${pair.slug}`,
+  shouldIndex: pair.shouldIndex,
+  lastModified: toolA.last_updated,
+  schemas: [
+    generateComparisonSchema(toolA, toolB, pageUrl),
+    generateFAQPageSchema(faqs),
+    generateBreadcrumbSchema([
+      { name: 'الرئيسية', url: siteUrl },
+      { name: 'المقارنات الثنائية', url: `${siteUrl}/#comparisons` },
+      { name: `${toolA.tool_name} vs ${toolB.tool_name}`, url: pageUrl }
+    ])
+  ]
+});
+---
+
+<BaseLayout seo={seo}>
+  <div class="card">
+    <span class="badge">مقارنة مباشرة ({pair.sharedFeaturesCount}/7 ميزات مشتركة)</span>
+    <h1 style="margin-top: 0.5rem;">{toolA.tool_name} مقابل {toolB.tool_name}: مقارنة شاملة لعام 2026</h1>
+    <p style="margin-top: 0.6rem; color: var(--muted); font-size: 1.05rem;">{verdict}</p>
+  </div>
+
+  <ComparisonTable tools={[toolA, toolB]} />
+
+  <h2 style="margin: 1.5rem 0 0.75rem;">تحليل {toolA.tool_name} ({toolA.pricing_starting_at})</h2>
+  <ProsConsCard toolName={toolA.tool_name} pros={toolA.pros} cons={toolA.cons} />
+
+  <h2 style="margin: 1.5rem 0 0.75rem;">تحليل {toolB.tool_name} ({toolB.pricing_starting_at})</h2>
+  <ProsConsCard toolName={toolB.tool_name} pros={toolB.pros} cons={toolB.cons} />
+
+  <FAQSection faqs={faqs} heading={`أسئلة شائعة للمفاضلة بين ${toolA.tool_name} و ${toolB.tool_name}`} />
+</BaseLayout>

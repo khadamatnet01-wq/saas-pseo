@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PricingBadge from '../components/PricingBadge.astro';
+import { getAllTools, getAllComparisonPairs } from '../lib/data-loader';
+import { buildSEOMetadata } from '../lib/seo-engine';
+
+const tools = getAllTools();
+const pairs = getAllComparisonPairs();
+
+const seo = buildSEOMetadata({
+  title: 'دليل مقارنات وبدائل برمجيات الأعمال B2B SaaS (12 أداة و 22 مقارنة مباشرة)',
+  description: 'منصة مقارنات برمجية شاملة لتحليل الميزات، الأسعار، والبدائل لأفضل 12 أداة إدارة مشاريع وإنتاجية B2B SaaS.',
+  canonicalPath: '/',
+  ogSlug: 'home',
+  shouldIndex: true
+});
+---
+
+<BaseLayout seo={seo}>
+  <section class="card">
+    <h1>دليل مقارنات وبدائل برمجيات الأعمال (B2B SaaS Comparisons)</h1>
+    <p style="color: var(--muted); margin-top: 0.5rem;">
+      مبني مباشرة على مصفوفة <code>tools_saas_dataset.csv</code> (12 أداة، 12 صفحة بدائل، و 22 مقارنة ثنائية وجهاً لوجه).
+    </p>
+  </section>
+
+  <h2 style="margin: 1.5rem 0 1rem;">الأدوات البرمجية المصنفة ({tools.length})</h2>
+  <div class="grid-2">
+    {tools.map((tool) => (
+      <article class="card">
+        <span class="badge">{tool.category}</span>
+        <h3 style="margin-top: 0.5rem;"><a href={`/tools/${tool.slug}`}>{tool.tool_name}</a></h3>
+        <p style="color: var(--muted); font-size: 0.95rem; margin: 0.4rem 0;">{tool.summary}</p>
+        <PricingBadge tool={tool} />
+        <div style="margin-top: 1rem; display: flex; gap: 1rem; font-size: 0.9rem;">
+          <a href={`/tools/${tool.slug}`}>المراجعة التفصيلية &larr;</a>
+          <a href={`/alternatives/${tool.slug}-alternatives`}>أفضل البدائل ({tool.alternatives_ids.length}) &larr;</a>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <h2 style="margin: 2rem 0 1rem;">المقارنات الثنائية المباشرة ({pairs.length})</h2>
+  <div class="grid-2">
+    {pairs.map((pair) => (
+      <a href={`/compare/${pair.slug}`} class="card" style="display: block; color: inherit;">
+        <h3 style="color: var(--accent);">{pair.toolA.tool_name} vs {pair.toolB.tool_name}</h3>
+        <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0.35rem;">
+          {pair.toolA.pricing_starting_at} مقابل {pair.toolB.pricing_starting_at} • الميزات المشتركة ({pair.sharedFeaturesCount}/7)
+        </p>
+      </a>
+    ))}
+  </div>
+</BaseLayout>

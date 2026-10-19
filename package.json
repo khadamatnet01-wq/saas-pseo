@@ -1,0 +1,31 @@
+{
+  "name": "astro-pseo-saas-boilerplate",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Production-Ready Programmatic SEO (pSEO) Boilerplate for B2B SaaS Comparisons & Alternatives using Astro + TypeScript (Configured for tools_saas_dataset.csv)",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "validate": "tsx scripts/validate-and-etl.ts",
+    "og:generate": "tsx scripts/generate-og.ts",
+    "sitemap:partition": "tsx scripts/generate-sitemaps.ts",
+    "indexnow:push": "tsx scripts/indexnow-submit.ts",
+    "build": "npm run validate && astro build && npm run og:generate && npm run sitemap:partition",
+    "build:pseo": "npm run validate && astro build && npm run og:generate && npm run sitemap:partition && npm run indexnow:push",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.15.0",
+    "csv-parse": "^5.5.6",
+    "satori": "^0.10.14",
+    "satori-html": "^0.3.2",
+    "schema-dts": "^1.1.2",
+    "sharp": "^0.33.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.4"
+  }
+}

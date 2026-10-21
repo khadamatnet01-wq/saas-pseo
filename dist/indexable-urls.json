@@ -54,18 +54,6 @@
     "priority": "0.8"
   },
   {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/notion",
-    "lastmod": "2026-10-19",
-    "changefreq": "weekly",
-    "priority": "0.9"
-  },
-  {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/notion-alternatives",
-    "lastmod": "2026-10-19",
-    "changefreq": "weekly",
-    "priority": "0.8"
-  },
-  {
     "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/monday",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
@@ -102,18 +90,6 @@
     "priority": "0.8"
   },
   {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/airtable",
-    "lastmod": "2026-10-19",
-    "changefreq": "weekly",
-    "priority": "0.9"
-  },
-  {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/airtable-alternatives",
-    "lastmod": "2026-10-19",
-    "changefreq": "weekly",
-    "priority": "0.8"
-  },
-  {
     "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/wrike",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
@@ -121,6 +97,114 @@
   },
   {
     "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/wrike-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/height",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/height-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/shortcut",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/shortcut-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/smartsheet",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/smartsheet-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/teamwork",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/teamwork-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/meistertask",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/meistertask-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/nifty",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/nifty-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/paymo",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/paymo-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/notion",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/notion-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/airtable",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/airtable-alternatives",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
     "priority": "0.8"
@@ -150,6 +234,378 @@
     "priority": "0.8"
   },
   {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/ticktick",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/ticktick-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/confluence",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/confluence-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/slite",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/slite-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/nuclino",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/nuclino-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/craft",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/craft-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/obsidian",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/obsidian-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/baserow",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/baserow-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/nocodb",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/nocodb-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/fibery",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/fibery-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/hubspot",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/hubspot-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/pipedrive",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/pipedrive-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/salesforce",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/salesforce-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/zoho-crm",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/zoho-crm-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/close",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/close-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/attio",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/attio-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/copper",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/copper-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/freshsales",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/freshsales-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/intercom",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/intercom-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/zendesk",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/zendesk-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/freshdesk",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/freshdesk-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/helpscout",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/helpscout-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/crisp",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/crisp-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/posthog",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/posthog-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/mixpanel",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/mixpanel-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/amplitude",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/amplitude-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/zapier",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/zapier-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/make",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/make-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/n8n",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/n8n-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/slack",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/slack-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/microsoft-teams",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/microsoft-teams-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/tools/loom",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.9"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/alternatives/loom-alternatives",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
     "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/jira-vs-linear",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
@@ -163,6 +619,18 @@
   },
   {
     "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/asana-vs-linear",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/height-vs-linear",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/linear-vs-shortcut",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
     "priority": "0.8"
@@ -186,6 +654,12 @@
     "priority": "0.8"
   },
   {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/jira-vs-shortcut",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
     "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/clickup-vs-monday",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
@@ -204,6 +678,12 @@
     "priority": "0.8"
   },
   {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/clickup-vs-wrike",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
     "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/asana-vs-monday",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
@@ -216,19 +696,7 @@
     "priority": "0.8"
   },
   {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/coda-vs-notion",
-    "lastmod": "2026-10-19",
-    "changefreq": "weekly",
-    "priority": "0.8"
-  },
-  {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/airtable-vs-notion",
-    "lastmod": "2026-10-19",
-    "changefreq": "weekly",
-    "priority": "0.8"
-  },
-  {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/basecamp-vs-notion",
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/asana-vs-wrike",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
     "priority": "0.8"
@@ -246,13 +714,25 @@
     "priority": "0.8"
   },
   {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/monday-vs-smartsheet",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
     "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/clickup-vs-trello",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
     "priority": "0.8"
   },
   {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/linear-vs-trello",
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/meistertask-vs-trello",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/todoist-vs-trello",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
     "priority": "0.8"
@@ -276,25 +756,13 @@
     "priority": "0.8"
   },
   {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/airtable-vs-coda",
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/basecamp-vs-teamwork",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
     "priority": "0.8"
   },
   {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/airtable-vs-monday",
-    "lastmod": "2026-10-19",
-    "changefreq": "weekly",
-    "priority": "0.8"
-  },
-  {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/airtable-vs-clickup",
-    "lastmod": "2026-10-19",
-    "changefreq": "weekly",
-    "priority": "0.8"
-  },
-  {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/asana-vs-wrike",
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/basecamp-vs-nifty",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
     "priority": "0.8"
@@ -306,7 +774,199 @@
     "priority": "0.8"
   },
   {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/clickup-vs-wrike",
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/smartsheet-vs-wrike",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/height-vs-jira",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/height-vs-shortcut",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/clickup-vs-height",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/asana-vs-height",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/asana-vs-shortcut",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/clickup-vs-shortcut",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/asana-vs-smartsheet",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/airtable-vs-smartsheet",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/clickup-vs-smartsheet",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/clickup-vs-teamwork",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/monday-vs-teamwork",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/teamwork-vs-wrike",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/paymo-vs-teamwork",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/asana-vs-meistertask",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/meistertask-vs-monday",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/meistertask-vs-todoist",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/meistertask-vs-nifty",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/clickup-vs-nifty",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/asana-vs-nifty",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/monday-vs-nifty",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/nifty-vs-teamwork",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/clickup-vs-paymo",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/paymo-vs-trello",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/basecamp-vs-paymo",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/monday-vs-paymo",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/coda-vs-notion",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/airtable-vs-notion",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/confluence-vs-notion",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/notion-vs-slite",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/airtable-vs-coda",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/airtable-vs-baserow",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/airtable-vs-nocodb",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
     "priority": "0.8"
@@ -318,13 +978,19 @@
     "priority": "0.8"
   },
   {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/asana-vs-coda",
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/coda-vs-fibery",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
     "priority": "0.8"
   },
   {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/todoist-vs-trello",
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/coda-vs-confluence",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/ticktick-vs-todoist",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
     "priority": "0.8"
@@ -342,7 +1008,625 @@
     "priority": "0.8"
   },
   {
-    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/basecamp-vs-todoist",
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/ticktick-vs-trello",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/notion-vs-ticktick",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/asana-vs-ticktick",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/clickup-vs-ticktick",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/confluence-vs-slite",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/confluence-vs-nuclino",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/confluence-vs-jira",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/nuclino-vs-slite",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/coda-vs-slite",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/craft-vs-slite",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/notion-vs-nuclino",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/nuclino-vs-obsidian",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/coda-vs-nuclino",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/craft-vs-notion",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/coda-vs-craft",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/craft-vs-obsidian",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/craft-vs-nuclino",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/notion-vs-obsidian",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/coda-vs-obsidian",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/baserow-vs-nocodb",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/baserow-vs-smartsheet",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/baserow-vs-coda",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/baserow-vs-notion",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/nocodb-vs-smartsheet",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/coda-vs-nocodb",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/nocodb-vs-notion",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/fibery-vs-notion",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/airtable-vs-fibery",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/clickup-vs-fibery",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/fibery-vs-linear",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/hubspot-vs-pipedrive",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/hubspot-vs-salesforce",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/hubspot-vs-zoho-crm",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/close-vs-hubspot",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/attio-vs-hubspot",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/close-vs-pipedrive",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/pipedrive-vs-zoho-crm",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/copper-vs-pipedrive",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/freshsales-vs-pipedrive",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/salesforce-vs-zoho-crm",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/pipedrive-vs-salesforce",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/freshsales-vs-salesforce",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/close-vs-salesforce",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/freshsales-vs-zoho-crm",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/copper-vs-zoho-crm",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/attio-vs-close",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/close-vs-freshsales",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/close-vs-copper",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/attio-vs-pipedrive",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/airtable-vs-attio",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/attio-vs-copper",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/copper-vs-hubspot",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/copper-vs-freshsales",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/freshsales-vs-hubspot",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/intercom-vs-zendesk",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/freshdesk-vs-intercom",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/helpscout-vs-intercom",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/crisp-vs-intercom",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/hubspot-vs-intercom",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/freshdesk-vs-zendesk",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/helpscout-vs-zendesk",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/crisp-vs-zendesk",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/salesforce-vs-zendesk",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/freshdesk-vs-helpscout",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/crisp-vs-freshdesk",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/freshdesk-vs-zoho-crm",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/crisp-vs-helpscout",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/crisp-vs-hubspot",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/mixpanel-vs-posthog",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/amplitude-vs-posthog",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/intercom-vs-posthog",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/linear-vs-posthog",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/jira-vs-posthog",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/amplitude-vs-mixpanel",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/intercom-vs-mixpanel",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/hubspot-vs-mixpanel",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/airtable-vs-mixpanel",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/amplitude-vs-salesforce",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/amplitude-vs-hubspot",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/amplitude-vs-smartsheet",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/make-vs-zapier",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/n8n-vs-zapier",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/airtable-vs-zapier",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/clickup-vs-zapier",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/monday-vs-zapier",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/make-vs-n8n",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/airtable-vs-make",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/make-vs-nocodb",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/baserow-vs-make",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/n8n-vs-posthog",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/n8n-vs-nocodb",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/baserow-vs-n8n",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/microsoft-teams-vs-slack",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/basecamp-vs-slack",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/clickup-vs-slack",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/notion-vs-slack",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/loom-vs-slack",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/loom-vs-microsoft-teams",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/basecamp-vs-microsoft-teams",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/asana-vs-microsoft-teams",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/microsoft-teams-vs-monday",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/loom-vs-notion",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/jira-vs-loom",
+    "lastmod": "2026-10-19",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://saas-pseo.hefainahmed.workers.dev/compare/linear-vs-loom",
     "lastmod": "2026-10-19",
     "changefreq": "weekly",
     "priority": "0.8"

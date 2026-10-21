@@ -1,58 +1,41 @@
-# StackRadar — Independent B2B Software Reviews & Comparisons Portal
+# StackRadar — 50 B2B SaaS Tools Reviews, Alternatives & Comparisons Portal
 
-A production-grade, authoritative software evaluation portal built with **Astro** and **TypeScript**. Designed for high organic search performance, conversion-focused user journeys, and seamless affiliate link monetization.
+A production-ready B2B software evaluation portal built with **Astro** and **TypeScript**, pre-loaded with **50 high-intent B2B SaaS platforms** across 5 lucrative categories, generating **272 total canonical routes** (1 Homepage + 50 Tool Reviews + 50 Alternatives Guides + 171 Head-to-Head Comparisons).
 
-## 1. Architectural Highlights
+## 1. Scale & Route Summary
 
-| Feature | Implementation | Benefit |
-| :--- | :--- | :--- |
-| **Editorial Brand Identity** | Built as **StackRadar**, a trusted B2B software research and comparison hub. | Zero programmatic / pSEO footprint visible to visitors. Completely discrete and authentic. |
-| **Affiliate Monetization** | Supports direct outbound URLs and custom affiliate redirect links via `affiliate_url`. | High-converting CTA buttons with `rel="sponsored nofollow noopener noreferrer"` on all review and comparison cards. |
-| **Full English Experience** | 100% English typography, UI copy, and editorial benchmarks. | Native LTR presentation with Plus Jakarta Sans typography. |
-| **Complete Route Coverage** | **58 Total Canonical Routes** across 12 SaaS tools, 12 alternatives pages, and 33 head-to-head comparison pages. | Every tool benchmarked across a 7-point technical specification matrix. |
-| **Cloudflare Edge Ready** | Pre-configured `wrangler.jsonc` (Static Assets) and clean `public/_redirects`. | Deploys seamlessly without SSR overhead, zero redirect loops, and sub-50ms TTFB. |
+| Metric | Count | Route Pattern |
+| :--- | :---: | :--- |
+| **Main Directory & Category Clusters** | **1** | `/` |
+| **In-Depth Software Reviews** | **50** | `/tools/[slug]` |
+| **Competitor & Alternatives Guides** | **50** | `/alternatives/[slug]-alternatives` |
+| **Head-to-Head Comparison Pages** | **171** | `/compare/[slugA]-vs-[slugB]` |
+| **Total Indexable Canonical Pages** | **272 Pages** | Listed in `dist/sitemap-0.xml` |
 
-## 2. Included Software Inventory (12 Tools)
+## 2. The 50 Included B2B SaaS Platforms by Category
 
-| Tool | Category | Starting Price | Rating | Key Strength |
-| :--- | :--- | :--- | :--- | :--- |
-| **Linear** | Project Management & Issue Tracking | `$8/user/mo` | ★ 4.8 | Ultra-fast user interface & streamlined git sync |
-| **Jira** | Issue Tracking & Agile Planning | `$7.75/user/mo` | ★ 4.3 | Unmatched enterprise governance & deep marketplace |
-| **ClickUp** | All-in-One Work Management | `$7/user/mo` | ★ 4.6 | 15+ customizable data views & native time tracking |
-| **Asana** | Enterprise Work Management | `$10.99/user/mo` | ★ 4.5 | Visual workflow builder & executive portfolio tracking |
-| **Notion** | Knowledge Base & Workspace | `$8/user/mo` | ★ 4.7 | Relational databases & connected team documentation |
-| **monday.com** | Visual Work OS & Operations | `$9/user/mo` | ★ 4.6 | Vibrant board interface with zero technical barrier |
-| **Trello** | Lightweight Kanban Tracking | `$5/user/mo` | ★ 4.4 | Instant onboarding & lightweight Butler automation |
-| **Basecamp** | Team Communication & Projects | `$15/user/mo` | ★ 4.4 | Calm notification architecture & flat-rate pricing |
-| **Airtable** | Relational Database & App Platform | `$20/user/mo` | ★ 4.6 | Low-code relational modeling with custom interface apps |
-| **Wrike** | Enterprise Resource Planning | `$9.80/user/mo` | ★ 4.2 | Top-tier workload capacity planning & asset approvals |
-| **Coda** | Interactive Docs & Workspaces | `$10/maker/mo` | ★ 4.6 | Maker-based pricing with interactive buttons & formulas |
-| **Todoist** | Personal & Team Task Management | `$4/user/mo` | ★ 4.7 | Best-in-class natural language quick task capture |
+### A. Project Management & Issue Tracking (15 Tools)
+`Linear`, `Jira`, `ClickUp`, `Asana`, `monday.com`, `Trello`, `Basecamp`, `Wrike`, `Height`, `Shortcut`, `Smartsheet`, `Teamwork.com`, `MeisterTask`, `Nifty`, `Paymo`
 
-## 3. How Affiliate Links Work
+### B. Knowledge Base, Docs & Collaborative Workspaces (13 Tools)
+`Notion`, `Airtable`, `Coda`, `Todoist`, `TickTick`, `Atlassian Confluence`, `Slite`, `Nuclino`, `Craft Docs`, `Obsidian`, `Baserow`, `NocoDB`, `Fibery`
 
-Every tool in `src/data/validated-tools.json` (and `data/tools.json`) supports an optional `affiliate_url` field:
+### C. CRM, Sales & Revenue Operations (8 Tools)
+`HubSpot CRM`, `Pipedrive`, `Salesforce Sales Cloud`, `Zoho CRM`, `Close CRM`, `Attio`, `Copper CRM`, `Freshsales`
 
-```json
-{
-  "slug": "clickup",
-  "tool_name": "ClickUp",
-  "website_url": "https://clickup.com",
-  "affiliate_url": "https://clickup.pxf.io/c/YOUR_PARTNER_ID"
-}
-```
+### D. Customer Support, Helpdesk & Product Analytics (8 Tools)
+`Intercom`, `Zendesk`, `Freshdesk`, `Help Scout`, `Crisp`, `PostHog`, `Mixpanel`, `Amplitude`
 
-* **When `affiliate_url` is provided:** The CTA buttons ("Visit Official Site", "Try Free") automatically route visitors through your affiliate partner link.
-* **When `affiliate_url` is blank:** The buttons route directly to the official website (`website_url`). You can launch directly with direct links and drop in your affiliate tags later without modifying any components!
+### E. Workflow Automation & Team Collaboration (6 Tools)
+`Zapier`, `Make (Integromat)`, `n8n`, `Slack`, `Microsoft Teams`, `Loom`
 
-## 4. Single-Command Build & Cloudflare Deployment
+## 3. Affiliate Monetization Setup
+
+All 50 tools currently route outbound CTA buttons directly to their official websites (`website_url`). To activate affiliate commissions for any tool, populate its `affiliate_url` field in `src/data/validated-tools.json` or `data/tools.json`.
+
+## 4. Build & Deploy Commands
 
 ```bash
 npm install
 npm run build
-```
-
-Deploy to Cloudflare Workers / Pages:
-```bash
-npm run deploy
 ```

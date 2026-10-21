@@ -1,8 +1,8 @@
 {
   "name": "stackradar-b2b-reviews",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
-  "description": "StackRadar - Independent B2B Software Reviews & Comparisons (Affiliate Ready)",
+  "description": "StackRadar - 50 B2B SaaS Tools Reviews, Alternatives & Comparisons Portal",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
@@ -10,8 +10,8 @@
     "og:generate": "tsx scripts/generate-og.ts",
     "sitemap:partition": "tsx scripts/generate-sitemaps.ts",
     "indexnow:push": "tsx scripts/indexnow-submit.ts",
-    "build": "npm run validate && astro build && npm run og:generate && npm run sitemap:partition",
-    "build:pseo": "npm run validate && astro build && npm run og:generate && npm run sitemap:partition && npm run indexnow:push",
+    "build": "npm run validate && astro build && npm run sitemap:partition",
+    "build:pseo": "npm run validate && astro build && npm run sitemap:partition && npm run indexnow:push",
     "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {

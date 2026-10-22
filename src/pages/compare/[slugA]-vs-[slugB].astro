@@ -31,7 +31,7 @@ const { pair } = Astro.props;
 const { toolA, toolB } = pair;
 const verdict = generateComparisonVerdict(toolA, toolB);
 const faqs = generateComparisonFAQs(toolA, toolB);
-const siteUrl = (process.env.PUBLIC_SITE_URL || 'https://saas-pseo.hefainahmed.workers.dev').replace(/\/+$/, '');
+const siteUrl = (process.env.PUBLIC_SITE_URL || 'https://stackvs.xyz').replace(/\/+$/, '');
 const pageUrl = `${siteUrl}/compare/${pair.slug}`;
 
 const seo = buildSEOMetadata({

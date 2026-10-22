@@ -18,8 +18,8 @@ export interface ComputedSEOMetadata {
   jsonLdString: string;
 }
 
-const SITE_URL = (process.env.PUBLIC_SITE_URL || 'https://saas-pseo.hefainahmed.workers.dev').replace(/\/+$/, '');
-const SITE_NAME = process.env.PUBLIC_SITE_NAME || 'StackRadar';
+const SITE_URL = (process.env.PUBLIC_SITE_URL || 'https://stackvs.xyz').replace(/\/+$/, '');
+const SITE_NAME = process.env.PUBLIC_SITE_NAME || 'StackVS';
 
 export function buildSEOMetadata(input: SEOMetadataInput): ComputedSEOMetadata {
   const cleanPath = input.canonicalPath.startsWith('/')

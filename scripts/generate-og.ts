@@ -41,7 +41,7 @@ export async function renderOgCardSvg(payload: OgCardPayload): Promise<string> {
   <text x="100" y="270" fill="#f8fafc" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="52" font-weight="800">${safeTitle}</text>
   <text x="100" y="350" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="26" font-weight="500">${safeSubtitle}</text>
   <line x1="100" y1="440" x2="1100" y2="440" stroke="#334155" stroke-width="2" />
-  <text x="100" y="495" fill="#38bdf8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="22" font-weight="700">StackRadar — Independent Software Reviews</text>
+  <text x="100" y="495" fill="#38bdf8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="22" font-weight="700">StackVS — Independent Software Reviews</text>
 </svg>`;
 }
 
@@ -56,7 +56,7 @@ async function runBatchOg() {
     {
       slug: 'home',
       payload: {
-        title: 'StackRadar',
+        title: 'StackVS',
         subtitle: `${tools.length} B2B Tools & ${pairs.length} Comparisons (2026)`,
         badge: 'Independent Reviews'
       }

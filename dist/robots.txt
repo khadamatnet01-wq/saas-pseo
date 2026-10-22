@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://saas-pseo.hefainahmed.workers.dev/sitemap-index.xml
+Sitemap: https://stackvs.xyz/sitemap-index.xml

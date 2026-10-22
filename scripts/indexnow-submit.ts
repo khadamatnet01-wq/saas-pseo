@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const SITE_URL = (process.env.PUBLIC_SITE_URL || "https://saas-pseo.hefainahmed.workers.dev").replace(/\/+$/, "");
+const SITE_URL = (process.env.PUBLIC_SITE_URL || "https://stackvs.xyz").replace(/\/+$/, "");
 const INDEXNOW_KEY = process.env.INDEXNOW_API_KEY || "8f9d2a7b4c6e1f3a9d8b7c6e5f4a3b2c";
 const DIST_DIR = path.join(process.cwd(), "dist");
 const URLS_FILE = path.join(DIST_DIR, "indexable-urls.json");

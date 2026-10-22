@@ -9,7 +9,7 @@ export interface SitemapEntry {
   priority: string;
 }
 
-const SITE_URL = (process.env.PUBLIC_SITE_URL || 'https://saas-pseo.hefainahmed.workers.dev').replace(/\/+$/, '');
+const SITE_URL = (process.env.PUBLIC_SITE_URL || 'https://stackvs.xyz').replace(/\/+$/, '');
 const DIST_DIR = path.join(process.cwd(), 'dist');
 
 export function collectIndexableUrls(): SitemapEntry[] {

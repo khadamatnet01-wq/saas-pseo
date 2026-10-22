@@ -1,4 +1,4 @@
-# StackRadar — 50 B2B SaaS Tools Reviews, Alternatives & Comparisons Portal
+# StackVS — 50 B2B SaaS Tools Reviews, Alternatives & Comparisons Portal
 
 A production-ready B2B software evaluation portal built with **Astro** and **TypeScript**, pre-loaded with **50 high-intent B2B SaaS platforms** across 5 lucrative categories, generating **272 total canonical routes** (1 Homepage + 50 Tool Reviews + 50 Alternatives Guides + 171 Head-to-Head Comparisons).
 

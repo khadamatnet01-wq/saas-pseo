@@ -11,7 +11,7 @@ export async function getStaticPaths() {
     {
       params: { slug: 'home' },
       props: {
-        title: 'StackRadar',
+        title: 'StackVS',
         subtitle: `${tools.length} B2B Tools & ${pairs.length} Comparisons (2026)`,
         badge: 'Independent Reviews'
       }

@@ -28,7 +28,7 @@ interface Props {
 const { tool } = Astro.props;
 const alternatives = getResolvedAlternatives(tool);
 const faqs = generateToolFAQs(tool, alternatives);
-const siteUrl = (process.env.PUBLIC_SITE_URL || 'https://saas-pseo.hefainahmed.workers.dev').replace(/\/+$/, '');
+const siteUrl = (process.env.PUBLIC_SITE_URL || 'https://stackvs.xyz').replace(/\/+$/, '');
 const pageUrl = `${siteUrl}/tools/${tool.slug}`;
 
 const seo = buildSEOMetadata({

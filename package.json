@@ -2,7 +2,7 @@
   "name": "stackradar-b2b-reviews",
   "version": "2.1.0",
   "private": true,
-  "description": "StackRadar - 50 B2B SaaS Tools Reviews, Alternatives & Comparisons Portal",
+  "description": "StackVS - 50 B2B SaaS Tools Reviews, Alternatives & Comparisons Portal",
   "type": "module",
   "scripts": {
     "dev": "astro dev",

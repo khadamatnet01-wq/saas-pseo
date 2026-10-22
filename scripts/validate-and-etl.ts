@@ -80,13 +80,18 @@ function runEtl() {
     trim: true
   }) as Record<string, string>[];
 
-  const today = '2026-10-19';
+  const today = '2026-10-22';
   const validatedTools: SaaSTool[] = [];
   const knownSlugs = new Set<string>();
 
   for (const row of records) {
     const slug = row.slug.trim();
     const rawAlts = row.alternatives_ids.split(',').map((s) => s.trim()).filter(Boolean);
+    const website_url = row.website_url?.trim() || WEBSITE_MAP[slug] || `https://${slug}.com`;
+    const domain = new URL(website_url).hostname.replace(/^www\./, '');
+    const logo_url = row.logo_url?.trim() || `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+    const screenshot_url = row.screenshot_url?.trim() || `https://api.microlink.io?url=${encodeURIComponent(website_url)}&screenshot=true&meta=false&embed=screenshot.url`;
+
     const item: SaaSTool = {
       slug,
       tool_name: row.tool_name.trim(),
@@ -100,8 +105,10 @@ function runEtl() {
       pros: row.pros.split(';').map((s) => s.trim()).filter(Boolean),
       cons: row.cons.split(';').map((s) => s.trim()).filter(Boolean),
       alternatives_ids: rawAlts,
-      website_url: row.website_url?.trim() || WEBSITE_MAP[slug] || `https://${slug}.com`,
-      affiliate_url: '',
+      website_url,
+      affiliate_url: row.affiliate_url?.trim() || '',
+      logo_url,
+      screenshot_url,
       last_updated: today
     };
 

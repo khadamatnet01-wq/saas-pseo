@@ -5,7 +5,7 @@
     "category": "Project Management & Issue Tracking",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$8/user/mo",
-    "starting_price_usd": 8.0,
+    "starting_price_usd": 0.0,
     "rating": 4.8,
     "summary": "Fast, keyboard-first issue tracker and sprint management system designed specifically for software engineering teams.",
     "features_matrix": {
@@ -37,7 +37,9 @@
     ],
     "website_url": "https://linear.app",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=linear.app&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://linear.app&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -52,7 +54,7 @@
     "category": "Project Management & Issue Tracking",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$7.75/user/mo",
-    "starting_price_usd": 7.75,
+    "starting_price_usd": 0.0,
     "rating": 4.3,
     "summary": "The enterprise standard for agile product development, deep sprint management, and complex cross-team release governance.",
     "features_matrix": {
@@ -83,7 +85,9 @@
     ],
     "website_url": "https://www.atlassian.com/software/jira",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=atlassian.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.atlassian.com/software/jira&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -98,7 +102,7 @@
     "category": "Project Management & Issue Tracking",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$7/user/mo",
-    "starting_price_usd": 7.0,
+    "starting_price_usd": 0.0,
     "rating": 4.6,
     "summary": "All-in-one productivity platform replacing tasks, docs, chat, whiteboards, and spreadsheets in a single workspace.",
     "features_matrix": {
@@ -129,7 +133,9 @@
     ],
     "website_url": "https://clickup.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=clickup.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://clickup.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -144,7 +150,7 @@
     "category": "Project Management & Issue Tracking",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$10.99/user/mo",
-    "starting_price_usd": 10.99,
+    "starting_price_usd": 0.0,
     "rating": 4.5,
     "summary": "Intuitive enterprise project and portfolio management software focused on cross-functional alignment and executive reporting.",
     "features_matrix": {
@@ -175,7 +181,9 @@
     ],
     "website_url": "https://asana.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=asana.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://asana.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -190,7 +198,7 @@
     "category": "Project Management & Issue Tracking",
     "pricing_model": "Paid (Free Trial)",
     "pricing_starting_at": "$9/user/mo",
-    "starting_price_usd": 9.0,
+    "starting_price_usd": 0.0,
     "rating": 4.6,
     "summary": "Highly visual, customizable Work OS enabling non-technical teams to build customized workflows, marketing calendars, and CRM funnels.",
     "features_matrix": {
@@ -221,7 +229,9 @@
     ],
     "website_url": "https://monday.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=monday.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://monday.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -236,7 +246,7 @@
     "category": "Project Management & Issue Tracking",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$5/user/mo",
-    "starting_price_usd": 5.0,
+    "starting_price_usd": 0.0,
     "rating": 4.4,
     "summary": "Simple, card-based visual Kanban tool ideal for small teams, content pipelines, and straightforward operational checklists.",
     "features_matrix": {
@@ -267,7 +277,9 @@
     ],
     "website_url": "https://trello.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=trello.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://trello.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -282,7 +294,7 @@
     "category": "Project Management & Issue Tracking",
     "pricing_model": "Flat-rate / Per User",
     "pricing_starting_at": "$15/user/mo",
-    "starting_price_usd": 15.0,
+    "starting_price_usd": 0.0,
     "rating": 4.4,
     "summary": "Calm, all-in-one project collaboration hub combining message boards, to-dos, group chat, and client access portals without notification fatigue.",
     "features_matrix": {
@@ -313,7 +325,9 @@
     ],
     "website_url": "https://basecamp.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=basecamp.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://basecamp.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -328,7 +342,7 @@
     "category": "Project Management & Issue Tracking",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$9.80/user/mo",
-    "starting_price_usd": 9.8,
+    "starting_price_usd": 0.0,
     "rating": 4.2,
     "summary": "Heavy-duty enterprise project management platform specializing in cross-departmental resource allocation, timesheets, and digital asset approvals.",
     "features_matrix": {
@@ -359,7 +373,9 @@
     ],
     "website_url": "https://www.wrike.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=wrike.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.wrike.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -374,7 +390,7 @@
     "category": "Project Management & Issue Tracking",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$8.50/user/mo",
-    "starting_price_usd": 8.5,
+    "starting_price_usd": 0.0,
     "rating": 4.6,
     "summary": "Autonomous AI-powered project collaboration and issue tracking platform built for modern product and engineering teams.",
     "features_matrix": {
@@ -405,7 +421,9 @@
     ],
     "website_url": "https://height.app",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=height.app&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://height.app&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -420,7 +438,7 @@
     "category": "Project Management & Issue Tracking",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$8.50/user/mo",
-    "starting_price_usd": 8.5,
+    "starting_price_usd": 0.0,
     "rating": 4.5,
     "summary": "Agile project management software that bridges the gap between coding-focused issue trackers and high-level company roadmaps.",
     "features_matrix": {
@@ -451,7 +469,9 @@
     ],
     "website_url": "https://shortcut.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=shortcut.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://shortcut.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -466,7 +486,7 @@
     "category": "Project Management & Issue Tracking",
     "pricing_model": "Paid (Free Trial)",
     "pricing_starting_at": "$9/user/mo",
-    "starting_price_usd": 9.0,
+    "starting_price_usd": 0.0,
     "rating": 4.4,
     "summary": "Enterprise work execution platform combining familiar spreadsheet grids with automated workflows, Gantt charts, and portfolio governance.",
     "features_matrix": {
@@ -497,7 +517,9 @@
     ],
     "website_url": "https://www.smartsheet.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=smartsheet.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.smartsheet.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -512,7 +534,7 @@
     "category": "Project Management & Issue Tracking",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$10.99/user/mo",
-    "starting_price_usd": 10.99,
+    "starting_price_usd": 0.0,
     "rating": 4.5,
     "summary": "Client-centric project management and resource scheduling platform built specifically for agencies, consultancies, and professional services.",
     "features_matrix": {
@@ -543,7 +565,9 @@
     ],
     "website_url": "https://www.teamwork.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=teamwork.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.teamwork.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -558,7 +582,7 @@
     "category": "Project Management & Issue Tracking",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$13.50/user/mo",
-    "starting_price_usd": 13.5,
+    "starting_price_usd": 0.0,
     "rating": 4.3,
     "summary": "Intuitive, European GDPR-compliant Kanban task manager designed for streamlined visual team collaboration.",
     "features_matrix": {
@@ -589,7 +613,9 @@
     ],
     "website_url": "https://www.meistertask.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=meistertask.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.meistertask.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -604,7 +630,7 @@
     "category": "Project Management & Issue Tracking",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$9/user/mo",
-    "starting_price_usd": 9.0,
+    "starting_price_usd": 0.0,
     "rating": 4.6,
     "summary": "Collaborative workspace uniting milestone roadmaps, task boards, team discussions, and project docs in a unified interface.",
     "features_matrix": {
@@ -635,7 +661,9 @@
     ],
     "website_url": "https://niftypm.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=niftypm.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://niftypm.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -650,7 +678,7 @@
     "category": "Project Management & Issue Tracking",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$5.90/user/mo",
-    "starting_price_usd": 5.9,
+    "starting_price_usd": 0.0,
     "rating": 4.5,
     "summary": "Work management and invoicing software tailored for creative agencies, freelancers, and small remote service teams.",
     "features_matrix": {
@@ -681,7 +709,9 @@
     ],
     "website_url": "https://www.paymoapp.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=paymoapp.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.paymoapp.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -696,7 +726,7 @@
     "category": "Knowledge Base & Collaborative Workspace",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$8/user/mo",
-    "starting_price_usd": 8.0,
+    "starting_price_usd": 0.0,
     "rating": 4.7,
     "summary": "Connected workspace combining flexible relational databases, team wikis, project documentation, and generative AI writing.",
     "features_matrix": {
@@ -727,7 +757,9 @@
     ],
     "website_url": "https://www.notion.so",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=notion.so&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.notion.so&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -742,7 +774,7 @@
     "category": "Knowledge Base & Collaborative Workspace",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$20/user/mo",
-    "starting_price_usd": 20.0,
+    "starting_price_usd": 0.0,
     "rating": 4.6,
     "summary": "Low-code relational database engine disguised as an intuitive spreadsheet, empowering operations teams to build custom business software.",
     "features_matrix": {
@@ -773,7 +805,9 @@
     ],
     "website_url": "https://airtable.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=airtable.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://airtable.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -788,7 +822,7 @@
     "category": "Knowledge Base & Collaborative Workspace",
     "pricing_model": "Freemium (Maker Pricing)",
     "pricing_starting_at": "$10/maker/mo",
-    "starting_price_usd": 10.0,
+    "starting_price_usd": 0.0,
     "rating": 4.6,
     "summary": "Document-first productivity platform featuring interactive buttons, automated formulas, and deep two-way API integrations (Packs).",
     "features_matrix": {
@@ -819,7 +853,9 @@
     ],
     "website_url": "https://coda.io",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=coda.io&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://coda.io&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -834,7 +870,7 @@
     "category": "Knowledge Base & Collaborative Workspace",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$4/user/mo",
-    "starting_price_usd": 4.0,
+    "starting_price_usd": 0.0,
     "rating": 4.7,
     "summary": "Industry-leading personal and small team task manager renowned for natural language processing, swift quick-add, and reliable synchronization.",
     "features_matrix": {
@@ -865,7 +901,9 @@
     ],
     "website_url": "https://todoist.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=todoist.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://todoist.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -880,7 +918,7 @@
     "category": "Knowledge Base & Collaborative Workspace",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$3/user/mo",
-    "starting_price_usd": 3.0,
+    "starting_price_usd": 0.0,
     "rating": 4.6,
     "summary": "All-in-one personal productivity and team task suite featuring built-in Pomodoro timers, habit trackers, Eisenhower matrices, and calendar views.",
     "features_matrix": {
@@ -911,7 +949,9 @@
     ],
     "website_url": "https://ticktick.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=ticktick.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://ticktick.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -926,7 +966,7 @@
     "category": "Knowledge Base & Collaborative Workspace",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$6.05/user/mo",
-    "starting_price_usd": 6.05,
+    "starting_price_usd": 0.0,
     "rating": 4.3,
     "summary": "Enterprise team workspace and technical documentation hub deeply integrated with Jira and the Atlassian developer ecosystem.",
     "features_matrix": {
@@ -957,7 +997,9 @@
     ],
     "website_url": "https://www.atlassian.com/software/confluence",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=atlassian.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.atlassian.com/software/confluence&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -972,7 +1014,7 @@
     "category": "Knowledge Base & Collaborative Workspace",
     "pricing_model": "Paid (Free Trial)",
     "pricing_starting_at": "$8/user/mo",
-    "starting_price_usd": 8.0,
+    "starting_price_usd": 0.0,
     "rating": 4.6,
     "summary": "AI-powered company knowledge base that automatically flags outdated documentation and answers employee questions instantly.",
     "features_matrix": {
@@ -1003,7 +1045,9 @@
     ],
     "website_url": "https://slite.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=slite.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://slite.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1018,7 +1062,7 @@
     "category": "Knowledge Base & Collaborative Workspace",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$5/user/mo",
-    "starting_price_usd": 5.0,
+    "starting_price_usd": 0.0,
     "rating": 4.7,
     "summary": "Unified, lightweight team wiki and real-time collaborative knowledge base built around speed, markdown simplicity, and visual graph views.",
     "features_matrix": {
@@ -1049,7 +1093,9 @@
     ],
     "website_url": "https://www.nuclino.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=nuclino.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.nuclino.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1064,7 +1110,7 @@
     "category": "Knowledge Base & Collaborative Workspace",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$8/user/mo",
-    "starting_price_usd": 8.0,
+    "starting_price_usd": 0.0,
     "rating": 4.7,
     "summary": "Design-forward document and knowledge platform that produces presentation-grade client proposals, engineering specs, and team wikis.",
     "features_matrix": {
@@ -1095,7 +1141,9 @@
     ],
     "website_url": "https://www.craft.do",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=craft.do&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.craft.do&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1110,7 +1158,7 @@
     "category": "Knowledge Base & Collaborative Workspace",
     "pricing_model": "Freemium (Commercial License)",
     "pricing_starting_at": "$50/user/yr",
-    "starting_price_usd": 50.0,
+    "starting_price_usd": 0.0,
     "rating": 4.8,
     "summary": "Local-first, privacy-centric markdown knowledge base featuring bidirectional linking, interactive knowledge graphs, and 1,500+ community plugins.",
     "features_matrix": {
@@ -1140,7 +1188,9 @@
     ],
     "website_url": "https://obsidian.md",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=obsidian.md&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://obsidian.md&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1155,7 +1205,7 @@
     "category": "Knowledge Base & Collaborative Workspace",
     "pricing_model": "Freemium / Open-Source",
     "pricing_starting_at": "$5/user/mo",
-    "starting_price_usd": 5.0,
+    "starting_price_usd": 0.0,
     "rating": 4.5,
     "summary": "Open-source, self-hostable no-code relational database and application builder designed as a privacy-first alternative to Airtable.",
     "features_matrix": {
@@ -1186,7 +1236,9 @@
     ],
     "website_url": "https://baserow.io",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=baserow.io&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://baserow.io&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1201,7 +1253,7 @@
     "category": "Knowledge Base & Collaborative Workspace",
     "pricing_model": "Freemium / Open-Source",
     "pricing_starting_at": "$12/user/mo",
-    "starting_price_usd": 12.0,
+    "starting_price_usd": 0.0,
     "rating": 4.6,
     "summary": "Open-source platform that turns any existing MySQL, PostgreSQL, or SQL Server database into a collaborative smart spreadsheet.",
     "features_matrix": {
@@ -1232,7 +1284,9 @@
     ],
     "website_url": "https://nocodb.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=nocodb.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://nocodb.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1247,7 +1301,7 @@
     "category": "Knowledge Base & Collaborative Workspace",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$10/user/mo",
-    "starting_price_usd": 10.0,
+    "starting_price_usd": 0.0,
     "rating": 4.6,
     "summary": "Connected work and product discovery platform that lets product teams mold custom relational databases, wikis, and whiteboards.",
     "features_matrix": {
@@ -1278,7 +1332,9 @@
     ],
     "website_url": "https://fibery.io",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=fibery.io&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://fibery.io&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1293,7 +1349,7 @@
     "category": "CRM & Revenue Operations",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$15/user/mo",
-    "starting_price_usd": 15.0,
+    "starting_price_usd": 0.0,
     "rating": 4.6,
     "summary": "Unified customer platform combining sales pipeline management, marketing automation, customer service, and revenue analytics.",
     "features_matrix": {
@@ -1324,7 +1380,9 @@
     ],
     "website_url": "https://www.hubspot.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=hubspot.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.hubspot.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1339,7 +1397,7 @@
     "category": "CRM & Revenue Operations",
     "pricing_model": "Paid (Free Trial)",
     "pricing_starting_at": "$14/user/mo",
-    "starting_price_usd": 14.0,
+    "starting_price_usd": 0.0,
     "rating": 4.5,
     "summary": "Sales-focused CRM designed by salespeople around visual Kanban deal pipelines, activity-based selling, and automated follow-ups.",
     "features_matrix": {
@@ -1370,7 +1428,9 @@
     ],
     "website_url": "https://www.pipedrive.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=pipedrive.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.pipedrive.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1385,7 +1445,7 @@
     "category": "CRM & Revenue Operations",
     "pricing_model": "Paid (Free Trial)",
     "pricing_starting_at": "$25/user/mo",
-    "starting_price_usd": 25.0,
+    "starting_price_usd": 0.0,
     "rating": 4.3,
     "summary": "The global enterprise standard for customer relationship management, custom object modeling, and complex revenue governance.",
     "features_matrix": {
@@ -1416,7 +1476,9 @@
     ],
     "website_url": "https://www.salesforce.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=salesforce.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.salesforce.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1431,7 +1493,7 @@
     "category": "CRM & Revenue Operations",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$14/user/mo",
-    "starting_price_usd": 14.0,
+    "starting_price_usd": 0.0,
     "rating": 4.4,
     "summary": "Comprehensive, high-value CRM suite offering omnichannel sales engagement, AI assistant Zia, and deep integration with 45+ Zoho business apps.",
     "features_matrix": {
@@ -1462,7 +1524,9 @@
     ],
     "website_url": "https://www.zoho.com/crm/",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=zoho.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.zoho.com/crm/&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1477,7 +1541,7 @@
     "category": "CRM & Revenue Operations",
     "pricing_model": "Paid (Free Trial)",
     "pricing_starting_at": "$49/user/mo",
-    "starting_price_usd": 49.0,
+    "starting_price_usd": 0.0,
     "rating": 4.7,
     "summary": "High-velocity inside sales CRM with built-in global calling, power dialers, two-way SMS, and automated email sequences.",
     "features_matrix": {
@@ -1491,7 +1555,7 @@
     },
     "pros": [
       "Built-in power dialer, VoIP calling, and SMS with zero third-party tools needed",
-      "Engineered for speed\u2014reps live in a single unified inbox",
+      "Engineered for speed—reps live in a single unified inbox",
       "AI call transcription and coaching summaries"
     ],
     "cons": [
@@ -1508,7 +1572,9 @@
     ],
     "website_url": "https://www.close.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=close.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.close.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1523,7 +1589,7 @@
     "category": "CRM & Revenue Operations",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$29/user/mo",
-    "starting_price_usd": 29.0,
+    "starting_price_usd": 0.0,
     "rating": 4.8,
     "summary": "Next-generation, data-driven CRM that automatically syncs email and calendar streams to build real-time relationship intelligence graphs.",
     "features_matrix": {
@@ -1536,7 +1602,7 @@
       "enterprise_security": true
     },
     "pros": [
-      "Zero manual data entry\u2014auto-enriches companies and contacts from emails",
+      "Zero manual data entry—auto-enriches companies and contacts from emails",
       "Flexible Notion/Airtable-like data model for custom PLG workflows",
       "Lightning-fast modern UI loved by startups and VCs"
     ],
@@ -1554,7 +1620,9 @@
     ],
     "website_url": "https://attio.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=attio.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://attio.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1569,7 +1637,7 @@
     "category": "CRM & Revenue Operations",
     "pricing_model": "Paid (Free Trial)",
     "pricing_starting_at": "$9/user/mo",
-    "starting_price_usd": 9.0,
+    "starting_price_usd": 0.0,
     "rating": 4.5,
     "summary": "Google Workspace-native CRM that lives directly inside Gmail and Google Calendar for relationship-driven agencies and consultancies.",
     "features_matrix": {
@@ -1600,7 +1668,9 @@
     ],
     "website_url": "https://www.copper.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=copper.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.copper.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1615,7 +1685,7 @@
     "category": "CRM & Revenue Operations",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$9/user/mo",
-    "starting_price_usd": 9.0,
+    "starting_price_usd": 0.0,
     "rating": 4.4,
     "summary": "AI-powered sales CRM with built-in phone, chat, email tracking, and Freddy AI lead scoring for growing mid-market sales teams.",
     "features_matrix": {
@@ -1646,7 +1716,9 @@
     ],
     "website_url": "https://www.freshworks.com/crm/sales/",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=freshworks.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.freshworks.com/crm/sales/&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1661,7 +1733,7 @@
     "category": "Customer Support & Product Analytics",
     "pricing_model": "Paid (Free Trial)",
     "pricing_starting_at": "$29/seat/mo",
-    "starting_price_usd": 29.0,
+    "starting_price_usd": 0.0,
     "rating": 4.6,
     "summary": "AI-first customer service platform combining Fin AI Agent, proactive in-app messenger, shared inbox, and automated help center.",
     "features_matrix": {
@@ -1692,7 +1764,9 @@
     ],
     "website_url": "https://www.intercom.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=intercom.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.intercom.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1707,7 +1781,7 @@
     "category": "Customer Support & Product Analytics",
     "pricing_model": "Paid (Free Trial)",
     "pricing_starting_at": "$19/agent/mo",
-    "starting_price_usd": 19.0,
+    "starting_price_usd": 0.0,
     "rating": 4.3,
     "summary": "Enterprise omnichannel customer service and ticketing suite built for high-volume support centers, SLAs, and global operations.",
     "features_matrix": {
@@ -1738,7 +1812,9 @@
     ],
     "website_url": "https://www.zendesk.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=zendesk.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.zendesk.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1753,7 +1829,7 @@
     "category": "Customer Support & Product Analytics",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$15/agent/mo",
-    "starting_price_usd": 15.0,
+    "starting_price_usd": 0.0,
     "rating": 4.5,
     "summary": "Cloud-based omnichannel helpdesk software delivering automated ticket dispatch, SLA management, and self-service knowledge bases.",
     "features_matrix": {
@@ -1784,7 +1860,9 @@
     ],
     "website_url": "https://www.freshworks.com/freshdesk/",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=freshworks.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.freshworks.com/freshdesk/&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1799,7 +1877,7 @@
     "category": "Customer Support & Product Analytics",
     "pricing_model": "Paid (Free Trial)",
     "pricing_starting_at": "$22/user/mo",
-    "starting_price_usd": 22.0,
+    "starting_price_usd": 0.0,
     "rating": 4.7,
     "summary": "Human-centric shared inbox, knowledge base (Docs), and in-app beacon widget designed for SaaS and e-commerce teams.",
     "features_matrix": {
@@ -1829,7 +1907,9 @@
     ],
     "website_url": "https://www.helpscout.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=helpscout.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.helpscout.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1844,7 +1924,7 @@
     "category": "Customer Support & Product Analytics",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$25/workspace/mo",
-    "starting_price_usd": 25.0,
+    "starting_price_usd": 0.0,
     "rating": 4.6,
     "summary": "Flat-rate multichannel business messaging platform combining live chat, AI chatbot builder, shared inbox, and CRM.",
     "features_matrix": {
@@ -1875,7 +1955,9 @@
     ],
     "website_url": "https://crisp.chat",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=crisp.chat&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://crisp.chat&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1921,7 +2003,9 @@
     ],
     "website_url": "https://posthog.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=posthog.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://posthog.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1936,7 +2020,7 @@
     "category": "Customer Support & Product Analytics",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$24/mo",
-    "starting_price_usd": 24.0,
+    "starting_price_usd": 0.0,
     "rating": 4.6,
     "summary": "Self-serve event-based product analytics platform that helps web and mobile teams measure funnel conversion, retention, and user cohorts.",
     "features_matrix": {
@@ -1967,7 +2051,9 @@
     ],
     "website_url": "https://mixpanel.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=mixpanel.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://mixpanel.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -1982,7 +2068,7 @@
     "category": "Customer Support & Product Analytics",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$49/mo",
-    "starting_price_usd": 49.0,
+    "starting_price_usd": 0.0,
     "rating": 4.5,
     "summary": "Enterprise digital analytics and experimentation platform built for deep behavioral cohorting, predictive analytics, and cross-product journeys.",
     "features_matrix": {
@@ -2013,7 +2099,9 @@
     ],
     "website_url": "https://amplitude.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=amplitude.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://amplitude.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -2028,7 +2116,7 @@
     "category": "Workflow Automation & Collaboration",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$19.99/mo",
-    "starting_price_usd": 19.99,
+    "starting_price_usd": 0.0,
     "rating": 4.7,
     "summary": "The world's largest no-code automation platform connecting 7,000+ web apps with automated triggers, AI actions, Tables, and Interfaces.",
     "features_matrix": {
@@ -2042,13 +2130,13 @@
     },
     "pros": [
       "Unrivaled catalog of 7,000+ native app connectors",
-      "Zero coding required\u2014business users build Zaps in minutes",
+      "Zero coding required—business users build Zaps in minutes",
       "Includes Zapier Tables, Interfaces, and AI Chatbots"
     ],
     "cons": [
       "Task-based pricing becomes expensive at high execution volumes",
       "Linear workflow editor is less visual for complex branching than Make",
-      "Polling intervals on lower tiers are 2\u201315 minutes"
+      "Polling intervals on lower tiers are 2–15 minutes"
     ],
     "alternatives_ids": [
       "make",
@@ -2059,7 +2147,9 @@
     ],
     "website_url": "https://zapier.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=zapier.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://zapier.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -2074,7 +2164,7 @@
     "category": "Workflow Automation & Collaboration",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$9/mo",
-    "starting_price_usd": 9.0,
+    "starting_price_usd": 0.0,
     "rating": 4.7,
     "summary": "Visual low-code integration and workflow automation platform enabling complex multi-branch routers, iterators, and HTTP API orchestration.",
     "features_matrix": {
@@ -2105,7 +2195,9 @@
     ],
     "website_url": "https://www.make.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=make.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.make.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -2120,7 +2212,7 @@
     "category": "Workflow Automation & Collaboration",
     "pricing_model": "Freemium / Fair-Code",
     "pricing_starting_at": "$20/mo (or Free Self-Hosted)",
-    "starting_price_usd": 20.0,
+    "starting_price_usd": 0.0,
     "rating": 4.8,
     "summary": "Source-available, AI-native workflow automation platform combining visual node building with custom JavaScript/Python code and LangChain agents.",
     "features_matrix": {
@@ -2151,7 +2243,9 @@
     ],
     "website_url": "https://n8n.io",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=n8n.io&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://n8n.io&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -2166,7 +2260,7 @@
     "category": "Workflow Automation & Collaboration",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$7.25/user/mo",
-    "starting_price_usd": 7.25,
+    "starting_price_usd": 0.0,
     "rating": 4.6,
     "summary": "Channel-based enterprise messaging platform uniting team communication, Huddles, Workflow Builder automations, and 2,600+ app integrations.",
     "features_matrix": {
@@ -2185,7 +2279,7 @@
     ],
     "cons": [
       "Free tier restricts message history to 90 days",
-      "Can create \u2018always-on\u2019 notification distraction without team norms",
+      "Can create ‘always-on’ notification distraction without team norms",
       "Expensive when organizations already pay for Microsoft 365"
     ],
     "alternatives_ids": [
@@ -2197,7 +2291,9 @@
     ],
     "website_url": "https://slack.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=slack.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://slack.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -2212,7 +2308,7 @@
     "category": "Workflow Automation & Collaboration",
     "pricing_model": "Freemium / Bundled",
     "pricing_starting_at": "$4/user/mo",
-    "starting_price_usd": 4.0,
+    "starting_price_usd": 0.0,
     "rating": 4.3,
     "summary": "Enterprise communication, video conferencing, and SharePoint file collaboration hub bundled natively with Microsoft 365.",
     "features_matrix": {
@@ -2243,7 +2339,9 @@
     ],
     "website_url": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.microsoft.com/en-us/microsoft-teams/group-chat-software&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,
@@ -2258,7 +2356,7 @@
     "category": "Workflow Automation & Collaboration",
     "pricing_model": "Freemium",
     "pricing_starting_at": "$12.50/creator/mo",
-    "starting_price_usd": 12.5,
+    "starting_price_usd": 0.0,
     "rating": 4.7,
     "summary": "Asynchronous video messaging platform that lets teams record screen, camera, and AI-summarized walkthroughs to replace unnecessary meetings.",
     "features_matrix": {
@@ -2271,7 +2369,7 @@
       "enterprise_security": true
     },
     "pros": [
-      "Instant link sharing\u2014videos are ready to watch the second you stop recording",
+      "Instant link sharing—videos are ready to watch the second you stop recording",
       "Loom AI automatically generates titles, chapters, summaries, and Jira tasks",
       "Free viewer accounts for teammates and clients"
     ],
@@ -2289,7 +2387,9 @@
     ],
     "website_url": "https://www.loom.com",
     "affiliate_url": "",
-    "last_updated": "2026-10-19",
+    "logo_url": "https://www.google.com/s2/favicons?domain=loom.com&sz=128",
+    "screenshot_url": "https://api.microlink.io?url=https://www.loom.com&screenshot=true&meta=false&embed=screenshot.url",
+    "last_updated": "2026-10-22",
     "seo_metrics": {
       "completeness_score": 100,
       "should_index": true,

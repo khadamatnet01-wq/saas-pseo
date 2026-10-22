@@ -25,6 +25,8 @@ export const SaaSToolSchema = z.object({
   alternatives_ids: z.array(z.string()),
   website_url: z.string().url(),
   affiliate_url: z.string().optional().default(''),
+  logo_url: z.string().url().optional(),
+  screenshot_url: z.string().url().optional(),
   last_updated: z.string()
 });
 

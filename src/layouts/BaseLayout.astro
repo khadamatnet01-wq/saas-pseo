@@ -13,6 +13,7 @@ const { seo } = Astro.props;
 <html lang="en" dir="ltr">
   <head>
     <SEOHead seo={seo} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -24,46 +25,55 @@ const { seo } = Astro.props;
         --accent-hover: #1d4ed8;
         --accent-soft: #eff6ff;
         --text: #0f172a;
-        --text-muted: #64748b;
+        --text-muted: #334155;
+        --text-subtle: #64748b;
         --border: #e2e8f0;
-        --bg: #f8fafc;
+        --border-hover: #cbd5e1;
+        --bg: #ffffff;
         --surface: #ffffff;
+        --surface-subtle: #f8fafc;
         --success: #10b981;
         --success-soft: #ecfdf5;
         --danger: #ef4444;
         --danger-soft: #fef2f2;
         --warning: #f59e0b;
         --warning-soft: #fffbeb;
-        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06);
         --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
         --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
         --radius: 12px;
         --radius-lg: 16px;
       }
       * { box-sizing: border-box; margin: 0; padding: 0; }
+      html {
+        scroll-behavior: smooth;
+        background-color: #ffffff;
+      }
       body {
         font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         background-color: var(--bg);
         color: var(--text);
-        line-height: 1.6;
+        line-height: 1.65;
         -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
       }
       a { color: var(--accent); text-decoration: none; transition: color 0.15s ease; }
       a:hover { color: var(--accent-hover); }
 
-      /* Header */
+      /* Sticky Top Navbar */
       .site-header {
         position: sticky;
         top: 0;
-        z-index: 50;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--border);
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1.5px solid var(--border);
       }
       .nav-container {
-        max-width: 1200px;
+        max-width: 1240px;
         margin: 0 auto;
-        padding: 0.9rem 1.5rem;
+        padding: 0.85rem 1.25rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -74,51 +84,97 @@ const { seo } = Astro.props;
         color: var(--primary);
         display: flex;
         align-items: center;
-        gap: 0.5rem;
-        letter-spacing: -0.02em;
+        gap: 0.55rem;
+        letter-spacing: -0.025em;
+        text-decoration: none;
       }
       .brand-badge {
         font-size: 0.7rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.05em;
-        background: #dbeafe;
-        color: #1e40af;
+        background: #eff6ff;
+        color: #1d4ed8;
+        border: 1px solid #bfdbfe;
         padding: 0.2rem 0.55rem;
         border-radius: 6px;
       }
       .nav-links {
         display: flex;
-        gap: 1.5rem;
+        gap: 1.75rem;
         align-items: center;
         font-size: 0.92rem;
         font-weight: 600;
       }
-      .nav-links a { color: var(--text-muted); }
-      .nav-links a:hover { color: var(--text); }
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        padding: 0.4rem 0.2rem;
+        transition: color 0.15s ease;
+      }
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 0.5rem;
+        cursor: pointer;
+        color: var(--primary);
+        min-height: 44px;
+        min-width: 44px;
+        align-items: center;
+        justify-content: center;
+      }
+      .mobile-nav-drawer {
+        display: none;
+        flex-direction: column;
+        background: #ffffff;
+        border-bottom: 1.5px solid var(--border);
+        padding: 1rem 1.25rem 1.5rem;
+        gap: 0.75rem;
+      }
+      .mobile-nav-drawer.open {
+        display: flex;
+      }
+      .mobile-nav-drawer a {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text);
+        padding: 0.6rem 0.5rem;
+        border-radius: 8px;
+      }
+      .mobile-nav-drawer a:hover {
+        background: var(--surface-subtle);
+        color: var(--accent);
+      }
 
       /* Layout */
       .main-container {
-        max-width: 1200px;
+        max-width: 1240px;
         margin: 0 auto;
-        padding: 2.5rem 1.5rem 4rem;
+        padding: 2rem 1.25rem 4rem;
+        min-height: calc(100vh - 400px);
       }
 
-      /* Cards & Containers */
+      /* Cards & Elevation */
       .card {
-        background: var(--surface);
-        border: 1px solid var(--border);
+        background: #ffffff;
+        border: 1.5px solid var(--border);
         border-radius: var(--radius-lg);
         padding: 1.75rem;
         box-shadow: var(--shadow-sm);
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
       }
       .card-hover:hover {
         transform: translateY(-2px);
         box-shadow: var(--shadow);
+        border-color: var(--border-hover);
       }
 
-      /* Buttons & CTA (Affiliate Architecture) */
+      /* Buttons & CTA */
       .btn {
         display: inline-flex;
         align-items: center;
@@ -132,6 +188,8 @@ const { seo } = Astro.props;
         transition: all 0.15s ease;
         border: none;
         text-align: center;
+        min-height: 44px;
+        text-decoration: none;
       }
       .btn-primary {
         background: var(--accent);
@@ -145,11 +203,11 @@ const { seo } = Astro.props;
       }
       .btn-secondary {
         background: #ffffff;
-        color: var(--text) !important;
-        border: 1px solid var(--border);
+        color: var(--primary) !important;
+        border: 1.5px solid var(--border);
       }
       .btn-secondary:hover {
-        background: #f8fafc;
+        background: var(--surface-subtle);
         border-color: #cbd5e1;
       }
 
@@ -163,111 +221,152 @@ const { seo } = Astro.props;
         padding: 0.3rem 0.75rem;
         border-radius: 9999px;
       }
-      .badge-neutral { background: #f1f5f9; color: #475569; }
-      .badge-success { background: var(--success-soft); color: #047857; }
-      .badge-accent { background: var(--accent-soft); color: var(--accent); }
-      .badge-warning { background: var(--warning-soft); color: #b45309; }
+      .badge-neutral { background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0; }
+      .badge-success { background: var(--success-soft); color: #047857; border: 1px solid #a7f3d0; }
+      .badge-accent { background: var(--accent-soft); color: var(--accent); border: 1px solid #bfdbfe; }
+      .badge-warning { background: var(--warning-soft); color: #b45309; border: 1px solid #fde68a; }
 
       /* Grids */
-      .grid-3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
-      .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
-
-      /* Table */
-      .table-wrapper {
-        overflow-x: auto;
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        box-shadow: var(--shadow-sm);
-        margin: 1.5rem 0;
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1.5rem;
       }
-      table { width: 100%; border-collapse: collapse; text-align: left; }
-      th, td { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); }
-      th { background: #f8fafc; font-weight: 700; font-size: 0.88rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
-      td { font-size: 0.95rem; }
-      tr:last-child td { border-bottom: none; }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
 
       /* Editorial Footer */
       .site-footer {
         background: #ffffff;
-        border-top: 1px solid var(--border);
-        padding: 3rem 1.5rem 2.5rem;
-        margin-top: 4rem;
+        border-top: 1.5px solid var(--border);
+        padding: 3.5rem 1.25rem 2.5rem;
+        margin-top: 5rem;
         font-size: 0.9rem;
         color: var(--text-muted);
       }
       .footer-inner {
-        max-width: 1200px;
+        max-width: 1240px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: 2fr 1fr 1fr;
-        gap: 2.5rem;
+        gap: 3rem;
       }
+
+      /* Responsive Mobile Overrides */
       @media (max-width: 768px) {
-        .footer-inner { grid-template-columns: 1fr; }
+        .nav-links { display: none; }
+        .mobile-menu-btn { display: flex; }
+        .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
         .grid-3 { grid-template-columns: 1fr; }
+        .grid-2 { grid-template-columns: 1fr; }
+        .main-container { padding: 1.25rem 1rem 3rem; }
+        .card { padding: 1.25rem; }
       }
     </style>
   </head>
   <body>
+    <!-- Fixed Top Navbar -->
     <header class="site-header">
       <div class="nav-container">
-        <a href="/" class="brand-logo">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a href="/" class="brand-logo" aria-label="StackVS Homepage">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M2 17L12 22L22 17" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M2 12L12 17L22 12" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          StackVS
+          <span>StackVS</span>
           <span class="brand-badge">B2B Directory</span>
         </a>
+
+        <!-- Desktop Links -->
         <nav class="nav-links">
           <a href="/#software">All Software</a>
           <a href="/#comparisons">Comparisons</a>
-          <a href="/sitemap-index.xml">Sitemap</a>
+          <a href="/sitemap-0.xml">Sitemap (272 Pages)</a>
         </nav>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobileMenuToggle" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <nav id="mobileNavDrawer" class="mobile-nav-drawer">
+        <a href="/#searchSection">🔍 Search Software</a>
+        <a href="/#software">📦 All 50 Tools</a>
+        <a href="/#comparisons">⚖️ 171 Comparisons</a>
+        <a href="/sitemap-0.xml">🗺️ Sitemap XML</a>
+      </nav>
     </header>
 
     <main class="main-container">
       <slot />
     </main>
 
+    <!-- Global Footer -->
     <footer class="site-footer">
       <div class="footer-inner">
         <div>
-          <div style="font-weight: 800; font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem;">
+          <div style="font-weight: 800; font-size: 1.25rem; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+              <path d="M2 17L12 22L22 17"/>
+              <path d="M2 12L12 17L22 12"/>
+            </svg>
             StackVS
           </div>
-          <p style="line-height: 1.6; max-width: 440px;">
-            StackVS is an independent software research and buyer's intelligence platform. We test, benchmark, and review enterprise software to help growing teams select the right tech stack.
+          <p style="line-height: 1.6; max-width: 440px; color: var(--text-muted);">
+            StackVS is an independent B2B software benchmarking and evaluation directory. We analyze pricing, user feedback, and technical features across 50 enterprise platforms to help teams build their ideal stack.
           </p>
-          <p style="margin-top: 0.75rem; font-size: 0.8rem; color: #94a3b8;">
-            Affiliate Disclosure: We may earn a commission when you click partner links on our site at no additional cost to you.
+          <p style="margin-top: 1rem; font-size: 0.8rem; color: #64748b; line-height: 1.5; background: #f8fafc; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border);">
+            <strong>Affiliate Transparency:</strong> When you purchase or trial software through links on our site, we may earn an affiliate commission at no extra cost to you. All evaluations remain 100% editorial and data-backed.
           </p>
         </div>
+
         <div>
-          <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.75rem;">Categories</div>
-          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-            <a href="/#software">Project Management</a>
-            <a href="/#software">Issue Tracking</a>
-            <a href="/#software">Connected Workspaces</a>
-            <a href="/#software">Relational Databases</a>
+          <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.85rem; font-size: 1rem;">Core Clusters</div>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <a href="/#software">Project Management & Sprints</a>
+            <a href="/#software">Docs & Knowledge Workspaces</a>
+            <a href="/#software">CRM & Sales Operations</a>
+            <a href="/#software">Customer Helpdesk & Support</a>
+            <a href="/#software">Workflow Automation & Chat</a>
           </div>
         </div>
+
         <div>
-          <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.75rem;">Editorial Trust</div>
-          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-            <span>✓ 100% Independent Reviews</span>
-            <span>✓ Real Feature Matrix Testing</span>
-            <span>✓ Updated for 2026</span>
+          <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.85rem; font-size: 1rem;">Editorial Standards</div>
+          <div style="display: flex; flex-direction: column; gap: 0.55rem; color: var(--text-muted);">
+            <span>✓ Verified Feature Matrices</span>
+            <span>✓ Real Active Pricing Data</span>
+            <span>✓ 272 Canonical Guides</span>
+            <span>✓ Updated Continuously for 2026</span>
           </div>
         </div>
       </div>
-      <div style="max-width: 1200px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 0.85rem;">
-        <p>&copy; 2026 StackVS. All rights reserved.</p>
-        <p>Verified Software Intelligence</p>
+
+      <div style="max-width: 1240px; margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1.5px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; color: #64748b;">
+        <p>&copy; 2026 StackVS (stackvs.xyz). All rights reserved.</p>
+        <p>B2B Software Intelligence Platform</p>
       </div>
     </footer>
+
+    <script is:inline>
+      const menuBtn = document.getElementById('mobileMenuToggle');
+      const drawer = document.getElementById('mobileNavDrawer');
+      if (menuBtn && drawer) {
+        menuBtn.addEventListener('click', () => {
+          drawer.classList.toggle('open');
+        });
+      }
+    </script>
   </body>
 </html>

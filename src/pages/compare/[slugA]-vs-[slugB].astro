@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import ProsConsCard from '../../components/ProsConsCard.astro';
 import FAQSection from '../../components/FAQSection.astro';
+import MentionedToolsBox from '../../components/MentionedToolsBox.astro';
 import { getAllComparisonPairs, type ComparisonPair, getOutboundUrl } from '../../lib/data-loader';
 import { generateComparisonFAQs, generateComparisonVerdict } from '../../lib/content-engine';
 import {
@@ -54,16 +55,53 @@ const seo = buildSEOMetadata({
 ---
 
 <BaseLayout seo={seo}>
-  <!-- Face-Off Header -->
-  <div class="card" style="margin-bottom: 2rem;">
-    <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
-      <span class="badge badge-accent">Head-to-Head Comparison</span>
+  <!-- Face-Off Header with Tool Logos -->
+  <div class="card" style="margin-bottom: 2rem; background: #ffffff; border: 1.5px solid #e2e8f0; padding: 2rem 1.5rem;">
+    <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap;">
+      <span class="badge badge-accent" style="font-weight: 700;">Head-to-Head Comparison</span>
       <span class="badge badge-neutral">{pair.sharedFeaturesCount}/7 Shared Core Features</span>
+      <span class="badge badge-neutral">{toolA.category}</span>
     </div>
-    <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--primary); margin: 0.5rem 0;">
-      {toolA.tool_name} vs {toolB.tool_name}
+
+    <!-- Dual Logo Header -->
+    <div style="display: flex; align-items: center; gap: 1rem; margin: 0.75rem 0 1rem; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 0.65rem;">
+        <div style="width: 48px; height: 48px; border-radius: 10px; background: #f8fafc; border: 1.5px solid #e2e8f0; display: flex; align-items: center; justify-content: center; padding: 6px;">
+          <img
+            src={toolA.logo_url}
+            alt={`${toolA.tool_name} logo`}
+            width="34"
+            height="34"
+            loading="eager"
+            style="max-width: 100%; max-height: 100%; object-fit: contain;"
+            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'34\' height=\'34\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%232563eb\' stroke-width=\'2\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'4\'/><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' font-weight=\'bold\' fill=\'%232563eb\'>${toolA.tool_name.substring(0, 2).toUpperCase()}</text></svg>';"
+          />
+        </div>
+        <span style="font-size: 1.6rem; font-weight: 800; color: #0f172a;">{toolA.tool_name}</span>
+      </div>
+
+      <span style="font-size: 1.25rem; font-weight: 800; color: #94a3b8; padding: 0 0.25rem;">VS</span>
+
+      <div style="display: flex; align-items: center; gap: 0.65rem;">
+        <div style="width: 48px; height: 48px; border-radius: 10px; background: #f8fafc; border: 1.5px solid #e2e8f0; display: flex; align-items: center; justify-content: center; padding: 6px;">
+          <img
+            src={toolB.logo_url}
+            alt={`${toolB.tool_name} logo`}
+            width="34"
+            height="34"
+            loading="eager"
+            style="max-width: 100%; max-height: 100%; object-fit: contain;"
+            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'34\' height=\'34\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%232563eb\' stroke-width=\'2\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'4\'/><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' font-weight=\'bold\' fill=\'%232563eb\'>${toolB.tool_name.substring(0, 2).toUpperCase()}</text></svg>';"
+          />
+        </div>
+        <span style="font-size: 1.6rem; font-weight: 800; color: #0f172a;">{toolB.tool_name}</span>
+      </div>
+    </div>
+
+    <h1 style="font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; color: #0f172a; margin: 0.25rem 0 0.85rem; letter-spacing: -0.025em; line-height: 1.2;">
+      {toolA.tool_name} vs {toolB.tool_name}: 2026 Comparison
     </h1>
-    <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; max-width: 840px;">
+    <p style="font-size: 1.05rem; color: #475569; line-height: 1.65; max-width: 860px;">
       {verdict}
     </p>
 
@@ -75,7 +113,7 @@ const seo = buildSEOMetadata({
         rel="sponsored nofollow noopener noreferrer"
         class="btn btn-primary"
       >
-        Try {toolA.tool_name} &rarr;
+        Try {toolA.tool_name} Official &rarr;
       </a>
       <a
         href={getOutboundUrl(toolB)}
@@ -83,28 +121,36 @@ const seo = buildSEOMetadata({
         rel="sponsored nofollow noopener noreferrer"
         class="btn btn-secondary"
       >
-        Try {toolB.tool_name} &rarr;
+        Try {toolB.tool_name} Official &rarr;
       </a>
     </div>
   </div>
 
-  <!-- Comparison Matrix -->
+  <!-- Comparison Matrix with Screenshots & Logos -->
   <ComparisonTable tools={[toolA, toolB]} />
 
   <!-- Side-by-side Pros & Cons Breakdown -->
-  <div style="margin: 2.5rem 0 1rem;">
-    <h2 style="font-size: 1.45rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">
+  <div style="margin: 3rem 0 1.5rem;">
+    <h2 style="font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">
       {toolA.tool_name} Detailed Assessment
     </h2>
     <ProsConsCard toolName={toolA.tool_name} pros={toolA.pros} cons={toolA.cons} />
   </div>
 
-  <div style="margin: 2rem 0 1rem;">
-    <h2 style="font-size: 1.45rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">
+  <div style="margin: 2.5rem 0 1.5rem;">
+    <h2 style="font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">
       {toolB.tool_name} Detailed Assessment
     </h2>
     <ProsConsCard toolName={toolB.tool_name} pros={toolB.pros} cons={toolB.cons} />
   </div>
 
+  <!-- FAQs -->
   <FAQSection faqs={faqs} heading={`Choosing Between ${toolA.tool_name} and ${toolB.tool_name}`} />
+
+  <!-- Mentioned Tools Direct Links Box -->
+  <MentionedToolsBox
+    tools={[toolA, toolB]}
+    title={`Official Links for ${toolA.tool_name} & ${toolB.tool_name}`}
+    subtitle={`Direct official links and registration access for the software platforms evaluated in this comparison:`}
+  />
 </BaseLayout>

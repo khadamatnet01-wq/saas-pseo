@@ -11,74 +11,151 @@ const { tools } = Astro.props;
 const featureKeys = Object.keys(tools[0]?.features_matrix || {});
 ---
 
-<div class="table-wrapper">
-  <table>
-    <thead>
-      <tr>
-        <th style="width: 28%;">Feature / Benchmark</th>
-        {tools.map((t) => (
-          <th style="width: calc(72% / tools.length);">
-            <div style="font-size: 1.05rem; font-weight: 800; color: var(--primary);">{t.tool_name}</div>
-            <div style="font-size: 0.8rem; font-weight: 500; text-transform: none; color: var(--text-muted); margin-top: 0.2rem;">
-              {t.pricing_model}
-            </div>
-          </th>
-        ))}
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Starting Price</strong></td>
-        {tools.map((t) => (
-          <td>
-            <span style="font-weight: 700; color: var(--accent);">{t.pricing_starting_at}</span>
-          </td>
-        ))}
-      </tr>
-      <tr>
-        <td><strong>User Rating</strong></td>
-        {tools.map((t) => (
-          <td>
-            <span style="color: #b45309; font-weight: 700;">★ {t.rating}</span> / 5.0
-          </td>
-        ))}
-      </tr>
-      {featureKeys.map((key) => (
+<div class="comparison-container" style="margin: 2rem 0;">
+  <div class="mobile-scroll-hint" style="display: none; align-items: center; justify-content: space-between; font-size: 0.82rem; color: #64748b; margin-bottom: 0.5rem; padding: 0.25rem 0.5rem;">
+    <span>↔ Swipe sideways to compare all features</span>
+    <span style="font-weight: 700; color: #2563eb;">Scrollable Table</span>
+  </div>
+
+  <div class="table-wrapper" style="overflow-x: auto; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.03);">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 600px;">
+      <thead>
         <tr>
-          <td>
-            <div style="font-weight: 600;">{FEATURE_METADATA[key]?.label || key}</div>
-            <div style="font-size: 0.8rem; color: var(--text-muted);">{FEATURE_METADATA[key]?.description || ''}</div>
-          </td>
-          {tools.map((t) => {
-            const hasFeature = t.features_matrix[key];
-            return (
-              <td>
-                {hasFeature ? (
-                  <span class="badge badge-success">✓ Supported</span>
-                ) : (
-                  <span class="badge badge-neutral" style="color: #94a3b8;">✕ Not Native</span>
-                )}
-              </td>
-            );
-          })}
+          <th style="width: 26%; background: #f8fafc; padding: 1.25rem 1rem; border-bottom: 2px solid #e2e8f0; font-size: 0.85rem; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">
+            Specification / Metric
+          </th>
+          {tools.map((t) => (
+            <th style={`width: ${Math.floor(74 / tools.length)}%; background: #ffffff; padding: 1.25rem 1rem; border-bottom: 2px solid #e2e8f0; vertical-align: top;`}>
+              <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.4rem;">
+                <div style="width: 36px; height: 36px; border-radius: 8px; background: #f8fafc; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 4px;">
+                  <img
+                    src={t.logo_url}
+                    alt={`${t.tool_name} logo`}
+                    width="28"
+                    height="28"
+                    loading="lazy"
+                    style="max-width: 100%; max-height: 100%; object-fit: contain;"
+                    onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'28\' height=\'28\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%232563eb\' stroke-width=\'2\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'4\'/><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' font-weight=\'bold\' fill=\'%232563eb\'>${t.tool_name.substring(0, 2).toUpperCase()}</text></svg>';"
+                  />
+                </div>
+                <div>
+                  <div style="font-size: 1.15rem; font-weight: 800; color: #0f172a; line-height: 1.2;">
+                    {t.tool_name}
+                  </div>
+                  <div style="font-size: 0.78rem; font-weight: 600; color: #64748b; margin-top: 0.15rem;">
+                    {t.category}
+                  </div>
+                </div>
+              </div>
+            </th>
+          ))}
         </tr>
-      ))}
-      <tr>
-        <td><strong>Official Access</strong></td>
-        {tools.map((t) => (
-          <td>
-            <a
-              href={getOutboundUrl(t)}
-              target="_blank"
-              rel="sponsored nofollow noopener noreferrer"
-              class="btn btn-primary"
-              style="padding: 0.5rem 1rem; font-size: 0.85rem;"
-            >
-              Visit {t.tool_name} &rarr;
-            </a>
+      </thead>
+      <tbody>
+        <!-- UI Screenshot Row -->
+        <tr>
+          <td style="padding: 1.1rem 1rem; border-bottom: 1px solid #e2e8f0; font-weight: 700; color: #0f172a; background: #f8fafc;">
+            Platform Interface
           </td>
+          {tools.map((t) => (
+            <td style="padding: 1.1rem 1rem; border-bottom: 1px solid #e2e8f0;">
+              <div style="width: 100%; max-width: 280px; height: 130px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f1f5f9; overflow: hidden; position: relative;">
+                <img
+                  src={t.screenshot_url}
+                  alt={`${t.tool_name} interface screenshot`}
+                  width="280"
+                  height="130"
+                  loading="lazy"
+                  decoding="async"
+                  style="width: 100%; height: 100%; object-fit: cover;"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80';"
+                />
+              </div>
+            </td>
+          ))}
+        </tr>
+
+        <!-- Pricing Row -->
+        <tr>
+          <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0; font-weight: 700; color: #0f172a; background: #f8fafc;">
+            Starting Price
+          </td>
+          {tools.map((t) => (
+            <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">
+              <div style="font-size: 1.1rem; font-weight: 800; color: #0f172a;">{t.pricing_starting_at}</div>
+              <div style="font-size: 0.8rem; color: #64748b;">{t.pricing_model}</div>
+            </td>
+          ))}
+        </tr>
+
+        <!-- Rating Row -->
+        <tr>
+          <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0; font-weight: 700; color: #0f172a; background: #f8fafc;">
+            Verified User Score
+          </td>
+          {tools.map((t) => (
+            <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">
+              <span class="badge badge-warning" style="font-size: 0.9rem; font-weight: 700; padding: 0.35rem 0.65rem;">
+                ★ {t.rating} / 5.0
+              </span>
+            </td>
+          ))}
+        </tr>
+
+        <!-- Features Matrix -->
+        {featureKeys.map((key) => (
+          <tr>
+            <td style="padding: 0.9rem 1rem; border-bottom: 1px solid #e2e8f0; background: #f8fafc;">
+              <div style="font-weight: 700; color: #0f172a; font-size: 0.92rem;">
+                {FEATURE_METADATA[key]?.label || key}
+              </div>
+              <div style="font-size: 0.78rem; color: #64748b; line-height: 1.35; margin-top: 0.15rem;">
+                {FEATURE_METADATA[key]?.description || ''}
+              </div>
+            </td>
+            {tools.map((t) => {
+              const hasFeature = t.features_matrix[key];
+              return (
+                <td style="padding: 0.9rem 1rem; border-bottom: 1px solid #e2e8f0;">
+                  {hasFeature ? (
+                    <span class="badge badge-success" style="font-weight: 600;">✓ Supported</span>
+                  ) : (
+                    <span class="badge badge-neutral" style="color: #94a3b8; font-weight: 500;">✕ Not Native</span>
+                  )}
+                </td>
+              );
+            })}
+          </tr>
         ))}
-      </tr>
-    </tbody>
-  </table>
+
+        <!-- Outbound Action Row -->
+        <tr>
+          <td style="padding: 1.25rem 1rem; font-weight: 800; color: #0f172a; background: #f8fafc;">
+            Official Site & Trial
+          </td>
+          {tools.map((t) => (
+            <td style="padding: 1.25rem 1rem;">
+              <a
+                href={getOutboundUrl(t)}
+                target="_blank"
+                rel="sponsored nofollow noopener noreferrer"
+                class="btn btn-primary"
+                style="padding: 0.65rem 1.15rem; font-size: 0.88rem; width: 100%;"
+              >
+                Try {t.tool_name} &rarr;
+              </a>
+            </td>
+          ))}
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
+
+<style>
+  @media (max-width: 768px) {
+    .mobile-scroll-hint {
+      display: flex !important;
+    }
+  }
+</style>

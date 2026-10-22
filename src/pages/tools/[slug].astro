@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProsConsCard from '../../components/ProsConsCard.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import FAQSection from '../../components/FAQSection.astro';
+import MentionedToolsBox from '../../components/MentionedToolsBox.astro';
 import { getAllTools, getResolvedAlternatives, getOutboundUrl } from '../../lib/data-loader';
 import { generateToolFAQs } from '../../lib/content-engine';
 import {
@@ -51,27 +52,41 @@ const seo = buildSEOMetadata({
 ---
 
 <BaseLayout seo={seo}>
-  <!-- Hero Card with High-Converting CTA -->
   <article>
-    <div class="card" style="margin-bottom: 2rem; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);">
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
-        <div>
-          <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
-            <span class="badge badge-neutral">{tool.category}</span>
-            <span class="badge badge-warning">★ {tool.rating} / 5.0 Rating</span>
+    <!-- Hero Card with High-Res Logo and High-Converting CTA -->
+    <div class="card" style="margin-bottom: 2rem; background: #ffffff; border: 1.5px solid #e2e8f0; padding: 2rem 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem;">
+        <div style="display: flex; gap: 1.25rem; align-items: flex-start; min-width: 0; flex: 1;">
+          <div style="width: 68px; height: 68px; border-radius: 14px; background: #f8fafc; border: 1.5px solid #e2e8f0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 8px;">
+            <img
+              src={tool.logo_url}
+              alt={`${tool.tool_name} logo`}
+              width="52"
+              height="52"
+              loading="eager"
+              style="max-width: 100%; max-height: 100%; object-fit: contain;"
+              onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'52\' height=\'52\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%232563eb\' stroke-width=\'2\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'4\'/><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' font-weight=\'bold\' fill=\'%232563eb\'>${tool.tool_name.substring(0, 2).toUpperCase()}</text></svg>';"
+            />
           </div>
-          <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--primary); letter-spacing: -0.02em;">
-            {tool.tool_name} Review
-          </h1>
-          <p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.4rem; max-width: 720px;">
-            {tool.summary}
-          </p>
+          <div>
+            <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap;">
+              <span class="badge badge-neutral">{tool.category}</span>
+              <span class="badge badge-warning">★ {tool.rating} / 5.0 Rating</span>
+              <span class="badge badge-accent">{tool.pricing_model}</span>
+            </div>
+            <h1 style="font-size: clamp(1.85rem, 4vw, 2.6rem); font-weight: 800; color: #0f172a; letter-spacing: -0.025em; line-height: 1.2;">
+              {tool.tool_name} Review (2026)
+            </h1>
+            <p style="font-size: 1.05rem; color: #475569; margin-top: 0.5rem; max-width: 720px; line-height: 1.6;">
+              {tool.summary}
+            </p>
+          </div>
         </div>
 
-        <!-- High Converting CTA Card -->
-        <div style="background: #ffffff; border: 1px solid var(--border); padding: 1.25rem 1.5rem; border-radius: var(--radius); min-width: 260px; text-align: center; box-shadow: var(--shadow-sm);">
-          <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Starting Price</div>
-          <div style="font-size: 1.65rem; font-weight: 800; color: var(--primary); margin: 0.2rem 0 0.75rem;">
+        <!-- High-Converting CTA Box -->
+        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; padding: 1.35rem 1.75rem; border-radius: 14px; min-width: 250px; text-align: center; box-shadow: var(--shadow-sm); flex-shrink: 0;">
+          <div style="font-size: 0.8rem; color: #64748b; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em;">Starting Price</div>
+          <div style="font-size: 1.75rem; font-weight: 800; color: #0f172a; margin: 0.2rem 0 0.85rem;">
             {tool.pricing_starting_at}
           </div>
           <a
@@ -79,14 +94,36 @@ const seo = buildSEOMetadata({
             target="_blank"
             rel="sponsored nofollow noopener noreferrer"
             class="btn btn-primary"
-            style="width: 100%;"
+            style="width: 100%; font-size: 0.95rem;"
           >
             Visit Official Site &rarr;
           </a>
-          <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.5rem;">
-            Direct official website access
+          <div style="font-size: 0.78rem; color: #64748b; margin-top: 0.5rem;">
+            Direct official website & signup access
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Interface Screenshot Showcase -->
+    <div class="card" style="margin-bottom: 2.5rem; padding: 1.5rem; border: 1.5px solid #e2e8f0; background: #ffffff;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0;">
+          {tool.tool_name} Platform Interface & Workspace
+        </h2>
+        <span class="badge badge-neutral" style="font-size: 0.75rem;">Verified Interface</span>
+      </div>
+      <div style="width: 100%; max-height: 440px; border-radius: 12px; border: 1px solid #cbd5e1; background: #0f172a; overflow: hidden; position: relative;">
+        <img
+          src={tool.screenshot_url}
+          alt={`${tool.tool_name} web application screenshot`}
+          width="1200"
+          height="630"
+          loading="lazy"
+          decoding="async"
+          style="width: 100%; height: auto; max-height: 440px; object-fit: cover; object-position: top center; display: block;"
+          onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80';"
+        />
       </div>
     </div>
 
@@ -94,19 +131,19 @@ const seo = buildSEOMetadata({
     <ProsConsCard toolName={tool.tool_name} pros={tool.pros} cons={tool.cons} />
 
     <!-- Feature Matrix Benchmark -->
-    <div style="margin: 2.5rem 0;">
-      <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">
+    <div style="margin: 3rem 0;">
+      <h2 style="font-size: 1.6rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem;">
         Feature Matrix & Benchmark
       </h2>
-      <p style="color: var(--text-muted); margin-bottom: 1rem;">
+      <p style="color: #64748b; margin-bottom: 1.25rem; font-size: 0.95rem;">
         Comparing {tool.tool_name} against its closest category competitors.
       </p>
       <ComparisonTable tools={[tool, ...alternatives.slice(0, 2)]} />
     </div>
 
     <!-- Direct Alternatives Quick Links -->
-    <div class="card" style="margin: 2rem 0;">
-      <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin-bottom: 0.75rem;">
+    <div class="card" style="margin: 2.5rem 0; border: 1.5px solid #e2e8f0;">
+      <h2 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem;">
         Compare {tool.tool_name} with Key Rivals
       </h2>
       <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
@@ -116,7 +153,7 @@ const seo = buildSEOMetadata({
         {alternatives.map((alt) => {
           const [first, second] = [tool.slug, alt.slug].sort((a, b) => a.localeCompare(b));
           return (
-            <a href={`/compare/${first}-vs-${second}`} class="badge badge-accent" style="padding: 0.5rem 0.85rem; font-size: 0.88rem;">
+            <a href={`/compare/${first}-vs-${second}`} class="badge badge-accent" style="padding: 0.55rem 0.95rem; font-size: 0.88rem;">
               {tool.tool_name} vs {alt.tool_name}
             </a>
           );
@@ -126,5 +163,12 @@ const seo = buildSEOMetadata({
 
     <!-- FAQs -->
     <FAQSection faqs={faqs} heading={`${tool.tool_name} FAQ`} />
+
+    <!-- Mentioned Tools Section -->
+    <MentionedToolsBox
+      tools={[tool, ...alternatives.slice(0, 4)]}
+      title={`Official Links for ${tool.tool_name} & Top Alternatives`}
+      subtitle={`Direct official website and trial links for ${tool.tool_name} and competing ${tool.category} platforms mentioned in this review:`}
+    />
   </article>
 </BaseLayout>

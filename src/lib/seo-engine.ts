@@ -33,15 +33,22 @@ export function buildSEOMetadata(input: SEOMetadataInput): ComputedSEOMetadata {
     ? 'index, follow, max-snippet:-1, max-image-preview:large'
     : 'noindex, follow';
 
-  const fullTitle = `${input.title} | ${SITE_NAME}`;
+  // Format clean title without redundant domain or URL leakage
+  const cleanTitle = input.title.replace(/^https?:\/\/[^\s]+/, '').trim();
+  const fullTitle = cleanTitle.includes(SITE_NAME)
+    ? cleanTitle
+    : `${cleanTitle} | ${SITE_NAME}`;
+
+  // Format clean description ensuring keywords rather than URLs
+  const cleanDescription = input.description.replace(/^https?:\/\/[^\s]+/, '').trim();
 
   return {
     fullTitle,
-    description: input.description,
+    description: cleanDescription,
     canonicalUrl,
     ogImageUrl,
     robotsDirective,
-    lastModified: input.lastModified || '2026-10-19',
+    lastModified: input.lastModified || '2026-10-22',
     jsonLdString: JSON.stringify(input.schemas || [])
   };
 }

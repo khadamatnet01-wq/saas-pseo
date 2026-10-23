@@ -23,7 +23,7 @@ export function getToolBySlug(slug: string): EnrichedSaaSTool | undefined {
 export function getResolvedAlternatives(tool: EnrichedSaaSTool): EnrichedSaaSTool[] {
   return tool.alternatives_ids
     .map((slug) => toolsMap.get(slug))
-    .filter((item): item is EnrichedSaaSTool => Boolean(item));
+    .filter((item): item is EnrichedSaaSTool => Boolean(item) && item.slug !== tool.slug);
 }
 
 export function getAllComparisonPairs(): ComparisonPair[] {
@@ -33,7 +33,7 @@ export function getAllComparisonPairs(): ComparisonPair[] {
   for (const toolA of toolsCache) {
     for (const altSlug of toolA.alternatives_ids) {
       const toolB = toolsMap.get(altSlug);
-      if (!toolB) continue;
+      if (!toolB || toolB.slug === toolA.slug) continue;
 
       const [first, second] = [toolA, toolB].sort((a, b) => a.slug.localeCompare(b.slug));
       const pairKey = `${first.slug}-vs-${second.slug}`;

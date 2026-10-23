@@ -41,7 +41,6 @@ export function generateToolFAQs(
   alternatives: EnrichedSaaSTool[]
 ): FAQItem[] {
   const altNames = alternatives.map((a) => a.tool_name).join(', ');
-  const supportedCount = tool.seo_metrics.supported_features_count;
 
   return [
     {
@@ -72,16 +71,29 @@ export function generateComparisonFAQs(
   toolB: EnrichedSaaSTool
 ): FAQItem[] {
   const higherRated = toolA.rating >= toolB.rating ? toolA : toolB;
+  const lowerRated = higherRated.slug === toolA.slug ? toolB : toolA;
+
   const cheaper = toolA.starting_price_usd <= toolB.starting_price_usd ? toolA : toolB;
+  const pricier = cheaper.slug === toolA.slug ? toolB : toolA;
+
+  const pricingAnswer =
+    toolA.starting_price_usd === toolB.starting_price_usd
+      ? `${toolA.tool_name} starts at ${toolA.pricing_starting_at} (${toolA.pricing_model}), while ${toolB.tool_name} also begins at ${toolB.pricing_starting_at} (${toolB.pricing_model}). Since both platforms share the same entry price point, total cost-effectiveness depends on seat scaling and enterprise add-ons.`
+      : `${cheaper.tool_name} starts at an entry rate of ${cheaper.pricing_starting_at} (${cheaper.pricing_model}), whereas ${pricier.tool_name} begins at ${pricier.pricing_starting_at} (${pricier.pricing_model}). For teams prioritizing lean software budgets, ${cheaper.tool_name} provides a more accessible starting point.`;
+
+  const ratingAnswer =
+    toolA.rating === toolB.rating
+      ? `Both ${toolA.tool_name} and ${toolB.tool_name} are tied with a verified user rating of ${toolA.rating}/5.0. Users praise ${toolA.tool_name} for ${toolA.pros[0]}, whereas ${toolB.tool_name} stands out for ${toolB.pros[0]}.`
+      : `${higherRated.tool_name} holds the edge with a verified rating of ${higherRated.rating}/5.0, praised especially for ${higherRated.pros[0]}. Meanwhile, ${lowerRated.tool_name} scores ${lowerRated.rating}/5.0 and is recognized for ${lowerRated.pros[0]}.`;
 
   return [
     {
       question: `Which is more cost-effective: ${toolA.tool_name} or ${toolB.tool_name}?`,
-      answer: `${cheaper.tool_name} starts at an entry rate of ${cheaper.pricing_starting_at} (${cheaper.pricing_model}), whereas ${toolA.tool_name === cheaper ? toolB.tool_name : toolA.tool_name} begins at ${toolA.tool_name === cheaper ? toolB.pricing_starting_at : toolA.pricing_starting_at}. For teams prioritizing lean software budgets, ${cheaper.tool_name} provides an accessible starting point.`
+      answer: pricingAnswer
     },
     {
       question: `How do ${toolA.tool_name} and ${toolB.tool_name} compare in verified user ratings?`,
-      answer: `${higherRated.tool_name} holds the edge with a verified rating of ${higherRated.rating}/5.0, praised especially for ${higherRated.pros[0]}. Meanwhile, ${toolA.tool_name === higherRated ? toolB.tool_name : toolA.tool_name} scores ${toolA.tool_name === higherRated ? toolB.rating : toolA.rating}/5.0.`
+      answer: ratingAnswer
     },
     {
       question: `When should you choose ${toolA.tool_name} over ${toolB.tool_name}?`,

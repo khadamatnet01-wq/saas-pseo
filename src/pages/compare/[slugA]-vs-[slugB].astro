@@ -35,49 +35,31 @@ interface Props {
 }
 
 const { pairSlug, toolA, toolB, sharedFeaturesCount, shouldIndex } = Astro.props;
-
 const CURRENT_YEAR = 2026;
 
-function extractShortHook(rawPro?: string, fallbackCategory?: string): string {
-  if (!rawPro || rawPro.trim().length === 0) {
-    return fallbackCategory ? fallbackCategory.split('&')[0].trim() : 'Core Features';
-  }
-  const cleaned = rawPro
-    .replace(/^(Best-in-class|Industry-leading|Unmatched|Unrivaled|Native|Built-in|Generous|Powerful|Ultra-fast|Sub-\d+ms)\s+/i, '')
+function extractShortHook(rawPro?: string, fallback?: string): string {
+  const source = rawPro && rawPro.trim().length > 0 ? rawPro : fallback || 'Enterprise Power';
+  const cleaned = source
+    .replace(/^(Best-in-class|Industry-leading|Unmatched|Unrivaled|Native|Built-in|Generous|Powerful|Ultra-fast|Sub-\d+ms|Extremely|Deep|Full-stack)\s+/i, '')
     .replace(/\([^)]*\)/g, '')
     .trim();
   const words = cleaned.split(/\s+/).slice(0, 3).join(' ');
   return words.charAt(0).toUpperCase() + words.slice(1);
 }
 
-function truncateClean(text: string, maxLength: number): string {
-  const clean = text.replace(/\s+/g, ' ').trim();
-  if (clean.length <= maxLength) return clean;
-  const sliced = clean.slice(0, maxLength - 1);
-  const lastSpace = sliced.lastIndexOf(' ');
-  return (lastSpace > 30 ? sliced.slice(0, lastSpace) : sliced).replace(/[.,;:!?-]+$/, '') + '...';
-}
+const proA = toolA.pros?.[0] || `${toolA.pricing_starting_at} Value`;
+const proB = toolB.pros?.[0] || `${toolB.pricing_starting_at} Workflows`;
 
-const proA = toolA.pros?.[0];
-const proB = toolB.pros?.[0];
+const hookA = extractShortHook(proA, toolA.category);
+const hookB = extractShortHook(proB, toolB.category);
 
-let dynamicTitle = `${toolA.tool_name} vs ${toolB.tool_name} (${CURRENT_YEAR}): In-Depth Comparison`;
-let dynamicDescription = `Compare ${toolA.tool_name} vs ${toolB.tool_name} (${CURRENT_YEAR}). Side-by-side pricing, feature matrices, pros, cons, and verified ratings.`;
+const dynamicTitle = `${toolA.tool_name} vs ${toolB.tool_name} ${CURRENT_YEAR}: ${hookA} or ${hookB}?`;
 
-if (proA && proB) {
-  const hookA = extractShortHook(proA, toolA.category);
-  const hookB = extractShortHook(proB, toolB.category);
-  const candidateTitle = `${toolA.tool_name} vs ${toolB.tool_name} ${CURRENT_YEAR}: ${hookA} or ${hookB}?`;
-  dynamicTitle =
-    candidateTitle.length <= 62
-      ? candidateTitle
-      : truncateClean(`${toolA.tool_name} vs ${toolB.tool_name} ${CURRENT_YEAR}: ${hookA} or ${hookB}?`, 60);
-
-  dynamicDescription = truncateClean(
-    `Stuck between ${toolA.tool_name} and ${toolB.tool_name}? Compare ${toolA.tool_name}'s ${proA.toLowerCase()} against ${toolB.tool_name}'s ${proB.toLowerCase()}. See ${CURRENT_YEAR} pricing and feature matrices.`,
-    155
-  );
-}
+const rawDesc = `Stuck between ${toolA.tool_name} and ${toolB.tool_name}? Compare ${toolA.tool_name}'s ${proA.toLowerCase()} against ${toolB.tool_name}'s ${proB.toLowerCase()}. See ${CURRENT_YEAR} pricing and feature matrices.`;
+const dynamicDescription =
+  rawDesc.length <= 155
+    ? rawDesc
+    : rawDesc.slice(0, 152).replace(/\s+\S*$/, '') + '...';
 
 const seo = buildSEOMetadata({
   title: dynamicTitle,
@@ -110,7 +92,6 @@ const schemas = [
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   ))}
 
-  <!-- Breadcrumb Navigation -->
   <nav aria-label="Breadcrumb" style="margin-bottom: 1.5rem; font-size: 0.88rem; color: #64748b; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
     <a href="/" style="color: #2563eb; font-weight: 600;">Home</a>
     <span>/</span>
@@ -119,7 +100,6 @@ const schemas = [
     <span style="color: #0f172a; font-weight: 700;">{toolA.tool_name} vs {toolB.tool_name}</span>
   </nav>
 
-  <!-- Comparison Hero Card -->
   <section class="card" style="margin-bottom: 2.5rem; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); border: 1.5px solid #e2e8f0;">
     <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1rem;">
       <span class="badge badge-accent">2026 Head-to-Head Benchmark</span>
@@ -127,7 +107,6 @@ const schemas = [
       <span class="badge badge-success">{sharedFeaturesCount}/7 Shared Core Capabilities</span>
     </div>
 
-    <!-- Dual Logo Face-Off Header -->
     <div style="display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
       <div style="display: flex; align-items: center; gap: 0.75rem; background: #ffffff; padding: 0.65rem 1rem; border-radius: 12px; border: 1.5px solid #e2e8f0; box-shadow: 0 1px 2px rgba(0,0,0,0.04);">
         <img src={toolA.logo_url} alt={`${toolA.tool_name} logo`} width="40" height="40" loading="eager" style="object-fit: contain; border-radius: 6px;" />
@@ -150,15 +129,14 @@ const schemas = [
       </div>
     </div>
 
-    <h1 style="font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; color: #0f172a; line-height: 1.2; margin-bottom: 1rem;">
-      {toolA.tool_name} vs {toolB.tool_name} ({CURRENT_YEAR}): Which Is Better?
+    <h1 style="font-size: clamp(1.65rem, 3.8vw, 2.35rem); font-weight: 800; color: #0f172a; line-height: 1.2; margin-bottom: 1rem;">
+      {dynamicTitle}
     </h1>
 
     <p style="font-size: 1.05rem; color: #334155; line-height: 1.7; max-width: 900px; margin-bottom: 1.5rem;">
       {verdict}
     </p>
 
-    <!-- Dual Action CTA Bar -->
     <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
       <a
         href={outboundA}
@@ -179,7 +157,6 @@ const schemas = [
     </div>
   </section>
 
-  <!-- Side-by-Side Technical Feature Matrix -->
   <section style="margin-bottom: 3rem;">
     <h2 style="font-size: 1.6rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">
       Side-by-Side Feature & Pricing Matrix
@@ -190,7 +167,6 @@ const schemas = [
     <ComparisonTable tools={[toolA, toolB]} />
   </section>
 
-  <!-- Pros & Cons Breakdown for Both Platforms -->
   <section style="margin-bottom: 3rem;">
     <h2 style="font-size: 1.6rem; font-weight: 800; color: #0f172a; margin-bottom: 1.25rem;">
       Strengths & Limitations Breakdown
@@ -222,13 +198,11 @@ const schemas = [
     </div>
   </section>
 
-  <!-- Dynamic Comparison FAQs -->
   <FAQSection
     title={`Frequently Asked Questions: ${toolA.tool_name} vs ${toolB.tool_name}`}
     faqs={faqs}
   />
 
-  <!-- Mentioned Tools Direct Official Links Box -->
   <section class="card" style="margin-top: 3rem; background: #f8fafc; border: 1.5px solid #e2e8f0;">
     <h2 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem;">
       Official Links & Resources for Mentioned Tools

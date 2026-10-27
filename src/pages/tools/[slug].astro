@@ -1,12 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ComparisonTable from '../../components/ComparisonTable.astro';
 import ProsConsCard from '../../components/ProsConsCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import { getAllTools, getResolvedAlternatives, getOutboundUrl } from '../../lib/data-loader';
-import { buildSEOMetadata } from '../../lib/seo-engine';
 import { generateToolFAQs } from '../../lib/content-engine';
-import { generateSoftwareSchema, generateFAQSchema, generateBreadcrumbSchema } from '../../lib/schema-generator';
+import {
+  generateToolProductSchema,
+  generateFAQPageSchema,
+  generateBreadcrumbSchema
+} from '../../lib/schema-generator';
+import { buildSEOMetadata } from '../../lib/seo-engine';
 import type { EnrichedSaaSTool } from '../../schemas/tool.schema';
 
 export async function getStaticPaths() {
@@ -24,75 +28,52 @@ interface Props {
 const { tool } = Astro.props;
 const allTools = getAllTools();
 const resolvedAlts = getResolvedAlternatives(tool);
-
-// Guarantee a closest competitor for 100% of tools (from alternatives_ids or same category)
 const sameCategoryRivals = allTools.filter(
   (t) => t.category === tool.category && t.slug !== tool.slug
 );
 const alternatives = resolvedAlts.length > 0 ? resolvedAlts : sameCategoryRivals.slice(0, 4);
-const closestCompetitor =
-  alternatives[0] || allTools.find((t) => t.slug !== tool.slug)!;
+const closestCompetitor = alternatives[0] || allTools.find((t) => t.slug !== tool.slug)!;
 
-const CURRENT_YEAR = 2026;
+const faqs = generateToolFAQs(tool, alternatives);
+const siteUrl = (process.env.PUBLIC_SITE_URL || 'https://stackvs.xyz').replace(/\/+$/, '');
+const pageUrl = `${siteUrl}/tools/${tool.slug}`;
+const mentionedTools = [tool, ...alternatives.slice(0, 4)];
 
-// Clean competitor short name (e.g. "HubSpot CRM" -> "HubSpot" if needed, or full name)
 const rivalShortName = closestCompetitor.tool_name
   .replace(/\s+(Sales Cloud|CRM|Software|Enterprise Pro|Business|Studio)$/i, '')
   .trim();
 
-const dynamicTitle = `${tool.tool_name} Review ${CURRENT_YEAR}: Is It Actually Better Than ${rivalShortName}?`;
-
-const rawDesc = `Our independent ${CURRENT_YEAR} ${tool.tool_name} review. Discover why its feature-to-price ratio (${tool.pricing_starting_at}) beats ${closestCompetitor.tool_name}, plus a deep dive into top features and starting costs.`;
-const dynamicDescription =
-  rawDesc.length <= 155
-    ? rawDesc
-    : rawDesc.slice(0, 152).replace(/\s+\S*$/, '') + '...';
+const dynamicTitle = `${tool.tool_name} Review 2026: Is It Actually Better Than ${rivalShortName}?`;
+const dynamicDescription = `Our independent 2026 ${tool.tool_name} review. Discover why its feature-to-price ratio (${tool.pricing_starting_at}) beats ${closestCompetitor.tool_name}, plus top features and starting costs.`;
 
 const seo = buildSEOMetadata({
   title: dynamicTitle,
   description: dynamicDescription,
   canonicalPath: `/tools/${tool.slug}`,
   ogSlug: `tool-${tool.slug}`,
-  shouldIndex: tool.seo_metrics.should_index
+  shouldIndex: tool.seo_metrics.should_index,
+  lastModified: tool.last_updated,
+  schemas: [
+    generateToolProductSchema(tool, pageUrl),
+    generateFAQPageSchema(faqs),
+    generateBreadcrumbSchema([
+      { name: 'Home', url: siteUrl },
+      { name: 'Software', url: `${siteUrl}/#software` },
+      { name: tool.tool_name, url: pageUrl }
+    ])
+  ]
 });
-
-const faqs = generateToolFAQs(tool, alternatives);
-const outboundUrl = getOutboundUrl(tool);
-const benchmarkTools = [tool, ...alternatives.slice(0, 2)];
-
-const siteUrl = (import.meta.env?.PUBLIC_SITE_URL || 'https://stackvs.xyz').replace(/\/$/, '');
-const schemas = [
-  generateSoftwareSchema(tool, `${siteUrl}/tools/${tool.slug}`),
-  generateFAQSchema(faqs),
-  generateBreadcrumbSchema([
-    { name: 'Home', url: siteUrl },
-    { name: tool.category, url: `${siteUrl}/#software` },
-    { name: `${tool.tool_name} Review`, url: `${siteUrl}/tools/${tool.slug}` }
-  ])
-];
 ---
 
 <BaseLayout seo={seo}>
-  {schemas.map((schema) => (
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-  ))}
-
-  <nav aria-label="Breadcrumb" style="margin-bottom: 1.5rem; font-size: 0.88rem; color: #64748b; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-    <a href="/" style="color: #2563eb; font-weight: 600;">Home</a>
-    <span>/</span>
-    <a href="/#software" style="color: #2563eb; font-weight: 600;">{tool.category}</a>
-    <span>/</span>
-    <span style="color: #0f172a; font-weight: 700;">{tool.tool_name} Review</span>
-  </nav>
-
-  <section class="card" style="margin-bottom: 2.5rem; border: 1.5px solid #e2e8f0; background: #ffffff;">
-    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap;">
-      <div style="flex: 1; min-width: 280px;">
-        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-          <div style="width: 68px; height: 68px; border-radius: 14px; background: #f8fafc; border: 1.5px solid #e2e8f0; display: flex; align-items: center; justify-content: center; padding: 8px; flex-shrink: 0;">
+  <article>
+    <div class="card" style="margin-bottom: 2rem; background: #ffffff; border: 1.5px solid #e2e8f0; padding: 2rem 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem;">
+        <div style="display: flex; gap: 1.25rem; align-items: flex-start; min-width: 0; flex: 1;">
+          <div style="width: 68px; height: 68px; border-radius: 14px; background: #f8fafc; border: 1.5px solid #e2e8f0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 8px;">
             <img
               src={tool.logo_url}
-              alt={`${tool.tool_name} official logo`}
+              alt={`${tool.tool_name} logo`}
               width="52"
               height="52"
               loading="eager"
@@ -100,163 +81,134 @@ const schemas = [
             />
           </div>
           <div>
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.35rem;">
-              <span class="badge badge-accent">{tool.category}</span>
+            <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap;">
+              <span class="badge badge-neutral">{tool.category}</span>
               <span class="badge badge-warning">★ {tool.rating} / 5.0 Rating</span>
-              <span class="badge badge-neutral">{tool.pricing_model}</span>
+              <span class="badge badge-accent">{tool.pricing_model}</span>
             </div>
-            <h1 style="font-size: clamp(1.65rem, 3.8vw, 2.3rem); font-weight: 800; color: #0f172a; line-height: 1.2;">
+            <h1 style="font-size: clamp(1.85rem, 4vw, 2.5rem); font-weight: 800; color: #0f172a; letter-spacing: -0.025em; line-height: 1.2;">
               {dynamicTitle}
             </h1>
+            <p style="font-size: 1.05rem; color: #475569; margin-top: 0.5rem; max-width: 720px; line-height: 1.6;">
+              {tool.summary}
+            </p>
           </div>
         </div>
 
-        <p style="font-size: 1.05rem; color: #334155; line-height: 1.7; margin-bottom: 1.25rem;">
-          {tool.summary}
-        </p>
-
-        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; padding: 1.35rem 1.75rem; border-radius: 14px; min-width: 250px; text-align: center; box-shadow: var(--shadow-sm); flex-shrink: 0;">
+          <div style="font-size: 0.8rem; color: #64748b; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em;">Starting Price</div>
+          <div style="font-size: 1.75rem; font-weight: 800; color: #0f172a; margin: 0.2rem 0 0.85rem;">
+            {tool.pricing_starting_at}
+          </div>
           <a
-            href={outboundUrl}
+            href={getOutboundUrl(tool)}
             target="_blank"
             rel="sponsored nofollow noopener noreferrer"
             class="btn btn-primary"
+            style="width: 100%; font-size: 0.95rem;"
           >
-            Visit {tool.tool_name} Official Site &rarr;
+            Visit Official Site &rarr;
           </a>
-          <a href={`/alternatives/${tool.slug}-alternatives`} class="btn btn-secondary">
-            Compare Top {alternatives.length} Alternatives
-          </a>
-        </div>
-      </div>
-
-      <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 1.25rem 1.5rem; min-width: 250px;">
-        <div style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: #64748b; margin-bottom: 0.25rem;">
-          Starting Price
-        </div>
-        <div style="font-size: 1.65rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem;">
-          {tool.pricing_starting_at}
-        </div>
-        <div style="font-size: 0.85rem; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 0.75rem; display: flex; flex-direction: column; gap: 0.35rem;">
-          <div><strong>Model:</strong> {tool.pricing_model}</div>
-          <div><strong>Features Supported:</strong> {tool.seo_metrics.supported_features_count}/7 Core</div>
-          <div>
-            <strong>Closest Competitor:</strong>{' '}
-            <a href={`/compare/${[tool.slug, closestCompetitor.slug].sort().join('-vs-')}`} style="font-weight: 700;">
-              vs {closestCompetitor.tool_name}
-            </a>
+          <div style="font-size: 0.78rem; color: #64748b; margin-top: 0.5rem;">
+            Direct official website & signup access
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  {tool.screenshot_url && (
-    <section class="card" style="margin-bottom: 2.5rem; padding: 1.25rem; background: #ffffff; border: 1.5px solid #e2e8f0;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem; flex-wrap: wrap; gap: 0.5rem;">
-        <h2 style="font-size: 1.25rem; font-weight: 800; color: #0f172a;">
-          {tool.tool_name} Platform Interface Overview
+    <div class="card" style="margin-bottom: 2.5rem; padding: 1.5rem; border: 1.5px solid #e2e8f0; background: #ffffff;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0;">
+          {tool.tool_name} Platform Interface & Workspace
         </h2>
-        <span style="font-size: 0.8rem; color: #64748b; font-weight: 600;">Live Official Web Snapshot</span>
+        <span class="badge badge-neutral" style="font-size: 0.75rem;">Verified Interface</span>
       </div>
-      <div style="border-radius: 10px; overflow: hidden; border: 1px solid #e2e8f0; background: #f8fafc; max-height: 440px; display: flex; align-items: center; justify-content: center;">
+      <div style="width: 100%; max-height: 440px; border-radius: 12px; border: 1px solid #cbd5e1; background: #0f172a; overflow: hidden; position: relative;">
         <img
           src={tool.screenshot_url}
-          alt={`${tool.tool_name} application interface screenshot`}
-          width="960"
-          height="540"
+          alt={`${tool.tool_name} web application screenshot`}
+          width="1200"
+          height="630"
           loading="lazy"
           decoding="async"
-          style="width: 100%; height: auto; object-fit: cover; display: block;"
+          style="width: 100%; height: auto; max-height: 440px; object-fit: cover; object-position: top center; display: block;"
         />
       </div>
-    </section>
-  )}
+    </div>
 
-  <section style="margin-bottom: 3rem;">
-    <h2 style="font-size: 1.6rem; font-weight: 800; color: #0f172a; margin-bottom: 1rem;">
-      {tool.tool_name} Key Strengths & Limitations
-    </h2>
     <ProsConsCard toolName={tool.tool_name} pros={tool.pros} cons={tool.cons} />
-  </section>
 
-  <section style="margin-bottom: 3rem;">
-    <h2 style="font-size: 1.6rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">
-      {tool.tool_name} vs {closestCompetitor.tool_name} & Top Rivals
-    </h2>
-    <p style="font-size: 0.92rem; color: #64748b; margin-bottom: 1.25rem;">
-      Side-by-side technical benchmark comparing {tool.tool_name} against {closestCompetitor.tool_name} and category peers.
-    </p>
-    <ComparisonTable tools={benchmarkTools} highlightSlug={tool.slug} />
-  </section>
-
-  {alternatives.length > 0 && (
-    <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 1.45rem; font-weight: 800; color: #0f172a; margin-bottom: 1rem;">
-        Direct {tool.tool_name} Head-to-Head Comparisons
+    <div style="margin: 3rem 0;">
+      <h2 style="font-size: 1.6rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem;">
+        Feature Matrix & Benchmark
       </h2>
-      <div class="grid-3">
+      <p style="color: #64748b; margin-bottom: 1.25rem; font-size: 0.95rem;">
+        Comparing {tool.tool_name} against {closestCompetitor.tool_name} and its closest category competitors.
+      </p>
+      <ComparisonTable tools={[tool, ...alternatives.slice(0, 2)]} />
+    </div>
+
+    <div class="card" style="margin: 2.5rem 0; border: 1.5px solid #e2e8f0;">
+      <h2 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem;">
+        Compare {tool.tool_name} with Key Rivals
+      </h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+        <a href={`/alternatives/${tool.slug}-alternatives`} class="btn btn-secondary" style="font-size: 0.88rem;">
+          View All {tool.tool_name} Alternatives ({alternatives.length}) &rarr;
+        </a>
         {alternatives.map((alt) => {
-          const pairSlug = [tool.slug, alt.slug].sort((a, b) => a.localeCompare(b)).join('-vs-');
+          const [first, second] = [tool.slug, alt.slug].sort((a, b) => a.localeCompare(b));
           return (
-            <a
-              href={`/compare/${pairSlug}`}
-              class="card card-hover"
-              style="display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 1.25rem; text-decoration: none;"
-            >
-              <div style="display: flex; align-items: center; gap: 0.65rem;">
-                <img src={alt.logo_url} alt={alt.tool_name} width="28" height="28" loading="lazy" style="object-fit: contain; border-radius: 4px;" />
-                <span style="font-weight: 800; color: #0f172a; font-size: 0.98rem;">
-                  {tool.tool_name} vs {alt.tool_name}
-                </span>
-              </div>
-              <span style="color: #2563eb; font-weight: 800;">&rarr;</span>
+            <a href={`/compare/${first}-vs-${second}`} class="badge badge-accent" style="padding: 0.55rem 0.95rem; font-size: 0.88rem;">
+              {tool.tool_name} vs {alt.tool_name}
             </a>
           );
         })}
       </div>
-    </section>
-  )}
-
-  <FAQSection title={`${tool.tool_name} Frequently Asked Questions`} faqs={faqs} />
-
-  <section class="card" style="margin-top: 3rem; background: #f8fafc; border: 1.5px solid #e2e8f0;">
-    <h2 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem;">
-      Official Links for {tool.tool_name} & Top Alternatives
-    </h2>
-    <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.25rem;">
-      Direct links to official product pages, live pricing tiers, and comparison guides:
-    </p>
-    <div class="grid-3">
-      {[tool, ...alternatives.slice(0, 5)].map((item) => (
-        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.85rem;">
-          <div style="display: flex; align-items: center; gap: 0.65rem;">
-            <img src={item.logo_url} alt={item.tool_name} width="32" height="32" loading="lazy" style="object-fit: contain; border-radius: 6px;" />
-            <div>
-              <div style="font-weight: 800; color: #0f172a; font-size: 0.95rem;">{item.tool_name}</div>
-              <div style="font-size: 0.76rem; color: #64748b;">{item.pricing_starting_at} • ★ {item.rating}</div>
-            </div>
-          </div>
-          <div style="display: flex; gap: 0.5rem;">
-            <a
-              href={getOutboundUrl(item)}
-              target="_blank"
-              rel="sponsored nofollow noopener noreferrer"
-              class="btn btn-primary"
-              style="padding: 0.45rem 0.75rem; font-size: 0.78rem; flex: 1;"
-            >
-              Official Site &rarr;
-            </a>
-            <a
-              href={`/tools/${item.slug}`}
-              class="btn btn-secondary"
-              style="padding: 0.45rem 0.75rem; font-size: 0.78rem;"
-            >
-              Review
-            </a>
-          </div>
-        </div>
-      ))}
     </div>
-  </section>
+
+    <FAQSection faqs={faqs} heading={`${tool.tool_name} FAQ`} />
+
+    <section style="margin: 3.5rem 0 2rem;">
+      <div class="card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 2rem 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem;">
+          <span class="badge badge-accent" style="font-weight: 700;">Direct Directory</span>
+          <span class="badge badge-neutral" style="font-weight: 600;">{mentionedTools.length} Featured Platforms</span>
+        </div>
+        <h2 style="font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 0.35rem;">
+          Official Links for {tool.tool_name} & Top Alternatives
+        </h2>
+        <p style="font-size: 0.95rem; color: #475569; margin-bottom: 1.5rem;">
+          Direct official website and trial links for {tool.tool_name} and competing {tool.category} platforms mentioned in this review:
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          {mentionedTools.map((t) => (
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.15rem 1.25rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; flex-wrap: wrap;">
+              <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 48px; height: 48px; border-radius: 10px; background: #f8fafc; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 6px;">
+                  <img src={t.logo_url} alt={`${t.tool_name} logo`} width="36" height="36" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
+                </div>
+                <div>
+                  <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                    <h3 style="font-size: 1.1rem; font-weight: 700; color: #0f172a; margin: 0;">
+                      <a href={`/tools/${t.slug}`} style="color: #0f172a;">{t.tool_name}</a>
+                    </h3>
+                    <span class="badge badge-neutral" style="font-size: 0.75rem;">{t.category}</span>
+                    <span style="font-size: 0.82rem; font-weight: 700; color: #b45309;">★ {t.rating}</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #64748b; margin-top: 0.2rem;">
+                    Starting at <strong style="color: #0f172a;">{t.pricing_starting_at}</strong> • {t.pricing_model}
+                  </div>
+                </div>
+              </div>
+              <div style="display: flex; gap: 0.65rem; align-items: center; flex-wrap: wrap;">
+                <a href={`/tools/${t.slug}`} class="btn btn-secondary" style="padding: 0.6rem 0.9rem; font-size: 0.85rem;">Full Review</a>
+                <a href={getOutboundUrl(t)} target="_blank" rel="sponsored nofollow noopener noreferrer" class="btn btn-primary" style="padding: 0.6rem 1.1rem; font-size: 0.85rem;">Visit Official Site &rarr;</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </article>
 </BaseLayout>
